@@ -1,0 +1,30 @@
+@import ../../style/color
+
+.enonic.button
+	border: none
+	box-sizing: border-box
+	cursor: pointer
+	font-family: Open Sans,Helvetica,sans-serif
+	font-size: 1rem
+	padding: 4px 19px
+	&:focus
+		outline-offset: -2px
+		outline-style: auto
+		outline-width: 2px
+	//──────────────────────────────────────────────────────────────────────────
+	// Color
+	//──────────────────────────────────────────────────────────────────────────
+	color: $color-white
+	background-color: $color-grey-light
+	&:hover:not(:disabled)
+		background-color: $color-grey-lighter
+	&.primary
+		background-color: $color-blue-light
+		&:hover:not(:disabled)
+			background-color: $color-blue-lighter
+	&.transparent
+		color: $color-grey
+		background-color: transparent
+		&:hover:not(:disabled)
+			color: $color-grey-dark
+			background-color: transparent
