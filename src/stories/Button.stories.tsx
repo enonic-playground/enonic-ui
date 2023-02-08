@@ -33,8 +33,9 @@ Transparent.args = {
 	transparent: true,
 };
 
-// export const Small = Template.bind({});
-// Small.args = {
-//   size: 'small',
-//   label: 'Button',
-// };
+export const Input = Template.bind({});
+Input.args = {
+  as: 'input',
+  type: 'button',
+  value: 'Input type"button"',
+};
