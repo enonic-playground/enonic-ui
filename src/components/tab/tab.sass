@@ -2,29 +2,139 @@
 
 $color-tab-border: $color-gray-lighter
 
-.enonic.tab
-	background-color: $color-gray-lightest
-	border: 1px solid $color-tab-border
+.enonic.tab:not(.group)
+	border-bottom-color: transparent
+	border-bottom-style: none
+	border-bottom-width: 0
+
+	border-left-color: transparent
+	border-left-style: solid
+	border-left-width: 1px
+
+	border-right-color: transparent
+	border-right-style: solid
+	border-right-width: 1px
+
+	border-top-color: transparent
 	border-top-left-radius: 5px
 	border-top-right-radius: 5px
+	border-top-style: solid
+	border-top-width: 1px
+
 	box-sizing: border-box
+	color: inherit
+	cursor: pointer
 	margin-bottom: -1px
 	padding: 5px
 
 	&.active
-		background-color: $color-white
-		border-bottom: 1px solid transparent
+		background-color: $color-background
+		border-left-color: $color-tab-border
+		border-right-color: $color-tab-border
+		border-top-color: $color-tab-border
+	&:hover:not(:disabled)
+		background-color: $color-gray-lightest
 
-	&.group
-		background-color: transparent
-		border: 0 none
-		border-bottom: 1px solid $color-tab-border
-		box-sizing: border-box
-		display: flex
-		padding: 0
-		list-style: none
-		margin-block-start: unset
-		margin-block-end: unset
-		margin-inline-start: unset
-		margin-inline-end: unset
-		padding-inline-start: unset
+	//──────────────────────────────────────────────────────────────────────────
+	// Colors
+	//──────────────────────────────────────────────────────────────────────────
+	&.black
+		background-color: $color-black
+		border-left-color: transparent
+		border-right-color: transparent
+		border-top-color: transparent
+		color: $color-background
+		&.active
+			background-color: $color-gray-darker
+		&:hover:not(:disabled)
+			background-color: $color-gray-light
+	&.blue
+		background-color: $color-blue
+		border-left-color: transparent
+		border-right-color: transparent
+		border-top-color: transparent
+		color: $color-background
+		&.active
+			background-color: $color-blue-dark
+		&:hover:not(:disabled)
+			background-color: $color-blue-lighter
+	&.gray
+		background-color: $color-gray
+		border-left-color: transparent
+		border-right-color: transparent
+		border-top-color: transparent
+		color: $color-background
+		&.active
+			background-color: $color-gray-darker
+		&:hover:not(:disabled)
+			background-color: $color-gray-light
+	&.green
+		background-color: $color-green
+		border-left-color: transparent
+		border-right-color: transparent
+		border-top-color: transparent
+		color: $color-background
+		&.active
+			background-color: $color-green-dark
+		&:hover:not(:disabled)
+			background-color: $color-green-lighter
+	&.orange
+		background-color: $color-orange
+		border-left-color: transparent
+		border-right-color: transparent
+		border-top-color: transparent
+		color: $color-background
+		&.active
+			background-color: $color-orange-dark
+		&:hover:not(:disabled)
+			background-color: $color-orange-lighter
+	&.red
+		background-color: $color-red
+		border-left-color: transparent
+		border-right-color: transparent
+		border-top-color: transparent
+		color: $color-background
+		&.active
+			background-color: $color-red-dark
+		&:hover:not(:disabled)
+			background-color: $color-red-lighter
+	&.white
+		background-color: $color-white
+		&.active
+			background-color: $color-background
+
+//──────────────────────────────────────────────────────────────────────────────
+// Tab.Group
+//──────────────────────────────────────────────────────────────────────────────
+.enonic.tab.group
+	background-color: transparent
+	border: 0 none
+	border-bottom: 1px solid $color-tab-border
+	box-sizing: border-box
+	display: flex
+	padding: 0
+
+ul.enonic.tab.group // override 'user agent stylesheet'
+	list-style: none
+	margin-block-start: unset
+	margin-block-end: unset
+	margin-inline-start: unset
+	margin-inline-end: unset
+	padding-inline-start: unset
+
+//──────────────────────────────────────────────────────────────────────────────
+// Dark-theme
+//──────────────────────────────────────────────────────────────────────────────
+.dark-theme .enonic.tab
+	color: $color-foreground-dark-theme
+	&.active
+		background-color: $color-background-dark-theme
+	&:hover:not(:disabled)
+		color: $color-foreground
+
+	&.white
+		color: $color-foreground
+		&.active
+			background-color: $color-gray-light
+		&:hover:not(:disabled)
+			background-color: $color-gray-lighter

@@ -15,6 +15,7 @@ export default {
 
 const AppBarTemplate = (args) => <AppBarComponent {...args} />;
 // const BarTemplate = (args) => <Bar {...args} />;
+const DivTemplate = (args) => <div {...args} />;
 const ToolBarTemplate = (args) => <ToolBarComponent {...args} />;
 
 export const AppBar = AppBarTemplate.bind({});
@@ -34,7 +35,7 @@ AppBar.args = {
 			<Button>Middle</Button>
 		</Bar.Item>,
 		<Bar.Item verticalAlign='top'>
-			<Button>XP</Button>
+			<Button>Top</Button>
 		</Bar.Item>
 	],
 	style: {
@@ -52,3 +53,28 @@ ToolBar.args = {
 		height: '39px'
 	}
 };
+
+export const DarkTheme = DivTemplate.bind({});
+DarkTheme.args = {
+	children: [
+		<Bar>
+			<Button>Users</Button>
+			<Bar.Item verticalAlign='bottom'>
+				<Tab.Group style={{
+				height: 36
+				}}>
+					<Tab>Administrator</Tab>
+					<Tab active>Anonymous</Tab>
+					<Tab>Editors</Tab>
+				</Tab.Group>
+			</Bar.Item>
+			<Bar.Item verticalAlign='middle'>
+				<Button>Middle</Button>
+			</Bar.Item>
+			<Bar.Item verticalAlign='top'>
+				<Button>Top</Button>
+			</Bar.Item>
+		</Bar>
+	],
+	className: 'dark-theme'
+}

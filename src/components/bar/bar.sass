@@ -1,37 +1,46 @@
 @import ../../style/color
 
-.enonic.bar
+.enonic.bar:not(.item)
 	// align-items: stretch // on cross-axis // stretch is the default
 	box-sizing: border-box
+	background-color: $color-background
+	color: $color-foreground
 	display: flex
 	flex-direction: row // sets main-axis
 	gap: 10px
 	justify-content: flex-start // on main-axis
 
 	//──────────────────────────────────────────────────────────────────────────
-	// Bar.Item
-	//──────────────────────────────────────────────────────────────────────────
-	&.item
-		&.bottom
-			align-self: flex-end
-		&.baseline
-			align-self: baseline
-		&.middle
-			align-self: center
-		&.stretch
-			align-self: stretch
-		&.top
-			align-self: flex-start
-
-	//──────────────────────────────────────────────────────────────────────────
 	// AppBar
 	//──────────────────────────────────────────────────────────────────────────
-	&.app
-		background-color: $color-gray-darkest
+	// &.app
+	// 	background-color: $color-gray-darkest
 
 	//──────────────────────────────────────────────────────────────────────────
 	// ToolBar
 	//──────────────────────────────────────────────────────────────────────────
 	&.tool
-		background-color: $color-white
+		// background-color: $color-white
 		border-bottom: 1px solid $color-gray
+
+//──────────────────────────────────────────────────────────────────────────────
+// Bar.Item
+//──────────────────────────────────────────────────────────────────────────────
+.enonic.bar.item
+	&.bottom
+		align-self: flex-end
+	&.baseline
+		align-self: baseline
+	&.middle
+		align-self: center
+	&.stretch
+		align-self: stretch
+	&.top
+		align-self: flex-start
+
+//──────────────────────────────────────────────────────────────────────────────
+// Dark-theme
+//──────────────────────────────────────────────────────────────────────────────
+.dark-theme .enonic.bar
+	background-color: $color-background-dark-theme
+	color: $color-foreground-dark-theme

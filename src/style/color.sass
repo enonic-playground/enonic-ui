@@ -173,3 +173,39 @@ $color-blue-dark: cssDarken(--color-blue-hue, --color-blue-saturation, --color-b
 $color-blue-light: cssLighten(--color-blue-hue, --color-blue-saturation, --color-blue-lightness, 10)
 $color-blue-lighter: cssLighten(--color-blue-hue, --color-blue-saturation, --color-blue-lightness, 20)
 $color-blue-lightest: cssLighten(--color-blue-hue, --color-blue-saturation, --color-blue-lightness, 30)
+
+
+// https://m2.material.io/design/color/dark-theme.html#properties
+// $material-recommended-dark-theme-surface-color: #121212 // rgb(18, 18, 18) // hsl(0, 0%, 7.1%)
+// $dark-theme-text-color: hsl(0, 0%, 92.9%) // rgb(237, 237, 237) // #ededed
+
+:root
+	--color-background-hue: 0
+	--color-background-saturation: 0%
+	--color-background-lightness: 92.9%
+	--color-foreground-hue: 0
+	--color-foreground-saturation: 0%
+	--color-foreground-lightness: 7.1%
+
+$color-background: hsl(var(--color-background-hue), var(--color-background-saturation), var(--color-background-lightness))
+$color-foreground: hsl(var(--color-foreground-hue), var(--color-foreground-saturation), var(--color-foreground-lightness))
+$color-foreground-dark-theme: $color-background
+$color-background-dark-theme: $color-foreground
+
+body
+	background-color: $color-background
+	color: $color-foreground
+
+.dark-theme
+	background-color: $color-background-dark-theme
+	color: $color-foreground-dark-theme
+
+.light-theme
+	background-color: $color-background
+	color: $color-foreground
+
+// @media (prefers-color-scheme: dark) {
+// }
+
+// @media (prefers-color-scheme: light) {
+// }

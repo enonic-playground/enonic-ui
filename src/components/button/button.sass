@@ -1,6 +1,6 @@
 @import ../../style/color
 
-.enonic.button
+.enonic.button:not(.group)
 	border: none
 	box-sizing: border-box
 	cursor: pointer
@@ -85,20 +85,18 @@
 			color: $color-red
 			&:hover:not(:disabled)
 				color: $color-red-light
-
 	//──────────────────────────────────────────────────────────────────────────
 	// Button.Group
 	//──────────────────────────────────────────────────────────────────────────
 	&.group
-		background-color: unset
 		box-sizing: border-box
-		color: unset
-		cursor: unset
 		margin: 0
 		padding: 0
-		&:focus
-			outline-offset: unset
-			outline-style: unset
-			outline-width: unset
-		&:hover:not(:disabled)
-			background-color: unset
+
+//──────────────────────────────────────────────────────────────────────────────
+// Dark-theme
+//──────────────────────────────────────────────────────────────────────────────
+.dark-theme .enonic.button.transparent.black:not(.group)
+	color: $color-white
+	&:hover:not(:disabled)
+		color: $color-gray-lighter

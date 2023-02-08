@@ -2,10 +2,12 @@ import cx from 'clsx';
 import React from 'react';
 import './tab.sass';
 
+export type TabColor = 'white'|'red'|'orange'|'green'|'blue'|'gray'|'black'
 
 export interface StrictTabProps extends React.HTMLAttributes<HTMLElement> {
 	active?: boolean
 	as?: any
+	color?: TabColor
 }
 
 export interface StrictTabGroupProps extends React.HTMLAttributes<HTMLElement> {
@@ -16,8 +18,9 @@ export interface StrictTabGroupProps extends React.HTMLAttributes<HTMLElement> {
 export function Tab({
 	active,
 	as = 'li',
-	className,
 	children,
+	className,
+	color,
 	...props
 }: StrictTabProps) {
 	const ElementType = as;
@@ -27,6 +30,7 @@ export function Tab({
 				'enonic',
 				'tab',
 				{active},
+				color,
 				className
 			)}
 			{...props}

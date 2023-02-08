@@ -12,41 +12,38 @@ export default {
 };
 
 const Template = (args) => <Header {...args} />;
+const DivTemplate = (args) => <div {...args} />;
 
 export const Normal = Template.bind({});
 Normal.args = {
 	children: 'Normal'
 };
 
-export const Huge = Template.bind({});
-Huge.args = {
-	children: 'Huge',
-	size: 'huge',
-};
+export const Sizes = DivTemplate.bind({});
+Sizes.args = {
+	children: [
+		<Header size='huge'>Huge</Header>,
+		<Header size='large'>Large</Header>,
+		<Header>Normal</Header>,
+		<Header size='medium'>Medium</Header>,
+		<Header size='small'>Small</Header>,
+		<Header size='tiny'>Tiny</Header>
+	],
+	// className: 'light-theme'
+}
 
-export const Large = Template.bind({});
-Large.args = {
-	children: 'Large',
-	size: 'large',
-};
-
-export const Medium = Template.bind({});
-Medium.args = {
-	children: 'Medium',
-	size: 'medium',
-};
-
-export const Small = Template.bind({});
-Small.args = {
-	children: 'Small',
-	size: 'small',
-};
-
-export const Tiny = Template.bind({});
-Tiny.args = {
-	children: 'Tiny',
-	size: 'tiny',
-};
+export const DarkTheme = DivTemplate.bind({});
+DarkTheme.args = {
+	children: [
+		<Header size='huge'>Huge</Header>,
+		<Header size='large'>Large</Header>,
+		<Header>Normal</Header>,
+		<Header size='medium'>Medium</Header>,
+		<Header size='small'>Small</Header>,
+		<Header size='tiny'>Tiny</Header>
+	],
+	className: 'dark-theme'
+}
 
 export const Div = Template.bind({});
 Div.args = {

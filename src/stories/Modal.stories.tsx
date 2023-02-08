@@ -8,6 +8,7 @@ export default {
 	argTypes: {},
 };
 
+const DivTemplate = (args) => <div {...args} />;
 const ModalTemplate = (args) => <Modal {...args} />;
 
 Modal.Header.displayName = 'Modal.Header';
@@ -26,6 +27,19 @@ Example.args = {
 		</Modal.Actions>
 	],
 };
+
+export const DarkTheme = DivTemplate.bind({});
+DarkTheme.args = {
+	children: <Modal>
+		<Modal.Header>Header</Modal.Header>
+		<Modal.Content>Content</Modal.Content>
+		<Modal.Actions>
+			<Button primary>Change password</Button>
+			<Button>Cancel</Button>
+		</Modal.Actions>
+	</Modal>,
+	className: 'dark-theme'
+}
 
 export const JustHeader = ModalTemplate.bind({});
 JustHeader.args = {
