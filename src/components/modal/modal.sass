@@ -1,0 +1,21 @@
+@import ../../style/color
+$padding-vertical-modal: 20px
+
+.enonic.modal
+	background-color: $color-white
+	display: flex
+	flex-direction: column
+	gap: $padding-vertical-modal
+	padding: $padding-vertical-modal 30px
+
+	&.actions,
+	&.content,
+	&.header
+		padding: 0
+		margin: 0
+
+	&.actions
+		display: flex
+		justify-content: flex-end
+		flex-direction: row
+		gap: 10px

@@ -13,19 +13,13 @@ export const Header = ({
 	children,
 	className,
 	size,
-	as = !size
-		? 'h3'
-		:size === 'huge'
-			? 'h1'
-			: size === 'large'
-				? 'h2'
-				: size === 'medium'
-					? 'h4'
-					: size === 'small'
-						? 'h5'
-						: size === 'tiny'
-							? 'h6'
-							: 'h3',
+	as = size && {
+		'huge': 'h1',
+		'large': 'h2',
+		'medium': 'h4',
+		'small': 'h5',
+		'tiny': 'h6'
+	}[size] || 'h3',
 	...props
 }: StrictHeaderProps) => {
 	const ElementType = as;

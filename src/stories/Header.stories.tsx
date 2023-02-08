@@ -48,16 +48,28 @@ Tiny.args = {
 	size: 'tiny',
 };
 
+export const Div = Template.bind({});
+Div.args = {
+	as: 'div',
+	children: 'Div'
+};
+
+export const Span = Template.bind({});
+Span.args = {
+	as: 'span',
+	children: 'Span'
+};
+
 export const HugeH6 = Template.bind({});
 HugeH6.args = {
 	as: 'h6',
-	children: 'h6 size="huge"',
+	children: 'Huge H6',
 	size: 'huge',
 };
 
 export const TinyH1 = Template.bind({});
 TinyH1.args = {
 	as: 'h1',
-	children: 'h1 size="tiny"',
+	children: 'Tiny H1',
 	size: 'tiny',
 };
