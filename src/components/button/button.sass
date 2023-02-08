@@ -11,20 +11,94 @@
 		outline-offset: -2px
 		outline-style: auto
 		outline-width: 2px
+
 	//──────────────────────────────────────────────────────────────────────────
-	// Color
+	// Colors
 	//──────────────────────────────────────────────────────────────────────────
 	color: $color-white
 	background-color: $color-gray-light
 	&:hover:not(:disabled)
 		background-color: $color-gray-lighter
+	&.black
+		background-color: $color-black
+		&:hover:not(:disabled)
+			background-color: $color-gray-darkest
+	&.blue
+		background-color: $color-blue
+		&:hover:not(:disabled)
+			background-color: $color-blue-light
+	// Same as default above
+	// &.gray
+	// 	background-color: $color-gray-light
+	// 	&:hover:not(:disabled)
+	// 		background-color: $color-gray-lighter
+	&.green
+		background-color: $color-green
+		&:hover:not(:disabled)
+			background-color: $color-green-light
+	&.orange
+		background-color: $color-orange
+		&:hover:not(:disabled)
+			background-color: $color-orange-light
+	&.red
+		background-color: $color-red
+		&:hover:not(:disabled)
+			background-color: $color-red-light
+
 	&.primary
 		background-color: $color-blue-light
 		&:hover:not(:disabled)
 			background-color: $color-blue-lighter
+
+	//──────────────────────────────────────────────────────────────────────────
+	// Transparent
+	//──────────────────────────────────────────────────────────────────────────
 	&.transparent
 		color: $color-gray
 		background-color: transparent
 		&:hover:not(:disabled)
 			color: $color-gray-dark
 			background-color: transparent
+
+		&.black
+			color: $color-black
+			&:hover:not(:disabled)
+				color: $color-gray-darkest
+		&.blue
+			color: $color-blue
+			&:hover:not(:disabled)
+				color: $color-blue-light
+		// Same as default above
+		// &.gray
+		// 	color: $color-gray-light
+		// 	&:hover:not(:disabled)
+		// 		color: $color-gray-lighter
+		&.green
+			color: $color-green
+			&:hover:not(:disabled)
+				color: $color-green-light
+		&.orange
+			color: $color-orange
+			&:hover:not(:disabled)
+				color: $color-orange-light
+		&.red
+			color: $color-red
+			&:hover:not(:disabled)
+				color: $color-red-light
+
+	//──────────────────────────────────────────────────────────────────────────
+	// Button.Group
+	//──────────────────────────────────────────────────────────────────────────
+	&.group
+		background-color: unset
+		box-sizing: border-box
+		color: unset
+		cursor: unset
+		margin: 0
+		padding: 0
+		&:focus
+			outline-offset: unset
+			outline-style: unset
+			outline-width: unset
+		&:hover:not(:disabled)
+			background-color: unset
