@@ -1,10 +1,50 @@
+@import ./functions
+
 $color-black: #000
 $color-white: #fff
 
-$color-grey: #808080
-$color-grey-dark: darken($color-grey, 10)
-$color-grey-light: lighten($color-grey, 10) // 9a9a9a
-$color-grey-lighter: lighten($color-grey, 20) // b3b3b3
+//──────────────────────────────────────────────────────────────────────────────
+// Gray
+//──────────────────────────────────────────────────────────────────────────────
+// enonic-admin-artifacts
+//──────────────────────────────────────────────────────────────────────────────
+// $admin-almost-white: #f5f5f5
+// $admin-dark-gray: #53585F
+// $admin-shadow-gray: #888888
+//
+// $admin-bg-light-gray: #eeeeee
+// $admin-bg-dark-gray: #333333
+// $admin-bg-light-blue: #ebf5ff
+// $admin-bg-almost-white: #fafafa
+// $admin-bg-toolbar: #f7f7f7
+//
+// $admin-medium-gray-border: #cccccc
+// $admin-dark-gray-border: #aaaaaa
+//
+// $admin-font-gray: #eeeeee
+// $admin-font-gray1: #acacac
+// $admin-font-gray2: #777777
+// $admin-font-gray3: #333333
+//──────────────────────────────────────────────────────────────────────────────
+// CSS Named Colors
+//──────────────────────────────────────────────────────────────────────────────
+// gray: #808080 // 128,128,128
+// darkgray: #a9a9a9 // 169,169,169
+// dimgray: #696969 // 105,105,105
+// lightgray: #d3d3d3 // 211,211,211
+
+:root
+	--color-gray-hue: 0
+	--color-gray-saturation: 0%
+	--color-gray-lightness: 50.2%
+
+$color-gray: hsl(var(--color-gray-hue), var(--color-gray-saturation), var(--color-gray-lightness))
+$color-gray-darkest: cssDarken(--color-gray-hue, --color-gray-saturation, --color-gray-lightness, 30)
+$color-gray-darker: cssDarken(--color-gray-hue, --color-gray-saturation, --color-gray-lightness, 20)
+$color-gray-dark: cssDarken(--color-gray-hue, --color-gray-saturation, --color-gray-lightness, 10)
+$color-gray-light: cssLighten(--color-gray-hue, --color-gray-saturation, --color-gray-lightness, 15)
+$color-gray-lighter: cssLighten(--color-gray-hue, --color-gray-saturation, --color-gray-lightness, 30)
+$color-gray-lightest: cssLighten(--color-gray-hue, --color-gray-saturation, --color-gray-lightness, 45)
 
 //──────────────────────────────────────────────────────────────────────────────
 // Blue
@@ -22,9 +62,9 @@ $color-grey-lighter: lighten($color-grey, 20) // b3b3b3
 //──────────────────────────────────────────────────────────────────────────────
 // CSS Named Colors
 //──────────────────────────────────────────────────────────────────────────────
-// $color-named-blue: #00F
-// $color-named-cornflowerblue: #6495ED
-// $color-named-royalblue: #4169E1
+// blue: #00F
+// cornflowerblue: #6495ED
+// royalblue: #4169E1
 $color-blue: cornflowerblue
 $color-blue-light: lighten($color-blue, 10%)
 $color-blue-lighter: lighten($color-blue, 20%)

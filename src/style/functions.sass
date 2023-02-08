@@ -1,0 +1,5 @@
+@function cssDarken($hue, $saturation, $lightness, $percent)
+	@return hsl(var($hue), var($saturation), calc(var($lightness) - $percent * 1%))
+
+@function cssLighten($hue, $saturation, $lightness, $percent)
+	@return hsl(var($hue), var($saturation), calc(var($lightness) + $percent * 1%))

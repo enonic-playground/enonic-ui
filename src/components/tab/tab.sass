@@ -1,0 +1,30 @@
+@import ../../style/color
+
+$color-tab-border: $color-gray-lighter
+
+.enonic.tab
+	background-color: $color-gray-lightest
+	border: 1px solid $color-tab-border
+	border-top-left-radius: 5px
+	border-top-right-radius: 5px
+	box-sizing: border-box
+	margin-bottom: -1px
+	padding: 5px
+
+	&.active
+		background-color: $color-white
+		border-bottom: 1px solid transparent
+
+	&.group
+		background-color: transparent
+		border: 0 none
+		border-bottom: 1px solid $color-tab-border
+		box-sizing: border-box
+		display: flex
+		padding: 0
+		list-style: none
+		margin-block-start: unset
+		margin-block-end: unset
+		margin-inline-start: unset
+		margin-inline-end: unset
+		padding-inline-start: unset

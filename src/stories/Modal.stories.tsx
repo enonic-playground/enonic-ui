@@ -9,7 +9,6 @@ export default {
 };
 
 const ModalTemplate = (args) => <Modal {...args} />;
-// const ModalHeaderTemplate = (args) => <Modal.Header {...args} />;
 
 Modal.Header.displayName = 'Modal.Header';
 Modal.Content.displayName = 'Modal.Content';

@@ -89,4 +89,3 @@ Modal.Actions = ({
 		</ElementType>
 	);
 }
-// export default Modal;
