@@ -2,7 +2,7 @@ import cx from 'clsx';
 import React from 'react';
 import './tab.sass';
 
-export type TabColor = 'white'|'red'|'orange'|'green'|'blue'|'gray'|'black'
+export type TabColor = 'white'|'red'|'orange'|'green'|'blue'|'purple'|'gray'|'black'
 
 export interface StrictTabProps extends React.HTMLAttributes<HTMLElement> {
 	active?: boolean

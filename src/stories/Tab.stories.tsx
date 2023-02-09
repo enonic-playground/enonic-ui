@@ -68,6 +68,13 @@ Colors.args = {
 			<Tab color='blue'>Five</Tab>
 		</Tab.Group>,
 		<Tab.Group style={{marginBottom: '20px'}}>
+			<Tab color='purple'>One</Tab>
+			<Tab color='purple'>Two</Tab>
+			<Tab active color='purple'>Three</Tab>
+			<Tab color='purple'>Four</Tab>
+			<Tab color='purple'>Five</Tab>
+		</Tab.Group>,
+		<Tab.Group style={{marginBottom: '20px'}}>
 			<Tab color='gray'>One</Tab>
 			<Tab color='gray'>Two</Tab>
 			<Tab active color='gray'>Three</Tab>
@@ -88,6 +95,7 @@ Colors.args = {
 			<Tab color='orange'>Orange</Tab>
 			<Tab color='green'>Green</Tab>
 			<Tab color='blue'>Blue</Tab>
+			<Tab color='purple'>Purple</Tab>
 			<Tab color='gray'>Gray</Tab>
 			<Tab color='black'>Black</Tab>
 		</Tab.Group>
@@ -152,6 +160,13 @@ DarkTheme.args = {
 			<Tab color='gray'>Five</Tab>
 		</Tab.Group>,
 		<Tab.Group style={{marginBottom: '20px'}}>
+			<Tab color='purple'>One</Tab>
+			<Tab color='purple'>Two</Tab>
+			<Tab active color='purple'>Three</Tab>
+			<Tab color='purple'>Four</Tab>
+			<Tab color='purple'>Five</Tab>
+		</Tab.Group>,
+		<Tab.Group style={{marginBottom: '20px'}}>
 			<Tab color='black'>One</Tab>
 			<Tab color='black'>Two</Tab>
 			<Tab active color='black'>Three</Tab>
@@ -165,6 +180,7 @@ DarkTheme.args = {
 			<Tab color='orange'>Orange</Tab>
 			<Tab color='green'>Green</Tab>
 			<Tab color='blue'>Blue</Tab>
+			<Tab color='purple'>Purple</Tab>
 			<Tab color='gray'>Gray</Tab>
 			<Tab color='black'>Black</Tab>
 		</Tab.Group>

@@ -1,30 +1,11 @@
 @import ./functions
+@import ./color/_enonicAdminArtifacts
 
 $color-black: #000
 $color-white: #fff
 
 //──────────────────────────────────────────────────────────────────────────────
 // Gray
-//──────────────────────────────────────────────────────────────────────────────
-// enonic-admin-artifacts
-//──────────────────────────────────────────────────────────────────────────────
-// $admin-almost-white: #f5f5f5
-// $admin-dark-gray: #53585F
-// $admin-shadow-gray: #888888
-//
-// $admin-bg-light-gray: #eeeeee
-// $admin-bg-dark-gray: #333333
-// $admin-bg-light-blue: #ebf5ff
-// $admin-bg-almost-white: #fafafa
-// $admin-bg-toolbar: #f7f7f7
-//
-// $admin-medium-gray-border: #cccccc
-// $admin-dark-gray-border: #aaaaaa
-//
-// $admin-font-gray: #eeeeee
-// $admin-font-gray1: #acacac
-// $admin-font-gray2: #777777
-// $admin-font-gray3: #333333
 //──────────────────────────────────────────────────────────────────────────────
 // CSS Named Colors
 //──────────────────────────────────────────────────────────────────────────────
@@ -48,23 +29,6 @@ $color-gray-lightest: cssLighten(--color-gray-hue, --color-gray-saturation, --co
 
 //──────────────────────────────────────────────────────────────────────────────
 // Red
-//──────────────────────────────────────────────────────────────────────────────
-// enonic-admin-artifacts
-//──────────────────────────────────────────────────────────────────────────────
-// $admin-red: #cb0300 // rgb(203, 3, 0) / hsl(1, 100%, 39.8%)
-$admin-red-hue: 1
-$admin-red-saturation: 100%
-$admin-red-lightness: 39.8%
-//
-// $input-dark-red: #843534
-// $input-red-text: #a94442
-// $input-light-red: #f2dede
-//
-// $admin-input-red: #f0a197
-//
-// $page-editor-error-red: #A31012
-//
-// $admin-level-3: #ca3319
 //──────────────────────────────────────────────────────────────────────────────
 // CSS Named Colors
 //──────────────────────────────────────────────────────────────────────────────
@@ -95,13 +59,6 @@ $color-red-lightest: cssLighten(--color-red-hue, --color-red-saturation, --color
 //──────────────────────────────────────────────────────────────────────────────
 // Orange
 //──────────────────────────────────────────────────────────────────────────────
-// enonic-admin-artifacts
-//──────────────────────────────────────────────────────────────────────────────
-// $admin-orange: darkorange // #ff8c00 // rgb(255, 140, 0) // hsl(33, 100%, 50%)
-$admin-orange-hue: 33
-$admin-orange-saturation: 100%
-$admin-orange-lightness: 50%
-
 :root
 	--color-orange-hue: #{$admin-orange-hue}
 	--color-orange-saturation: #{$admin-orange-saturation}
@@ -116,15 +73,24 @@ $color-orange-lighter: cssLighten(--color-orange-hue, --color-orange-saturation,
 $color-orange-lightest: cssLighten(--color-orange-hue, --color-orange-saturation, --color-orange-lightness, 30)
 
 //──────────────────────────────────────────────────────────────────────────────
+// Yellow
+//──────────────────────────────────────────────────────────────────────────────
+:root
+	--color-yellow-hue: #{$admin-level-2-hue}
+	--color-yellow-saturation: #{$admin-level-2-saturation}
+	--color-yellow-lightness: #{$admin-level-2-lightness}
+
+$color-yellow: hsl(var(--color-yellow-hue), var(--color-yellow-saturation), var(--color-yellow-lightness))
+$color-yellow-darkest: cssDarken(--color-yellow-hue, --color-yellow-saturation, --color-yellow-lightness, 30)
+$color-yellow-darker: cssDarken(--color-yellow-hue, --color-yellow-saturation, --color-yellow-lightness, 20)
+$color-yellow-dark: cssDarken(--color-yellow-hue, --color-yellow-saturation, --color-yellow-lightness, 10)
+$color-yellow-light: cssLighten(--color-yellow-hue, --color-yellow-saturation, --color-yellow-lightness, 10)
+$color-yellow-lighter: cssLighten(--color-yellow-hue, --color-yellow-saturation, --color-yellow-lightness, 20)
+$color-yellow-lightest: cssLighten(--color-yellow-hue, --color-yellow-saturation, --color-yellow-lightness, 30)
+
+//──────────────────────────────────────────────────────────────────────────────
 // Green
 //──────────────────────────────────────────────────────────────────────────────
-// enonic-admin-artifacts
-//──────────────────────────────────────────────────────────────────────────────
-// $admin-green: # // rgb(96, 158, 36) // hsl(90, 62.9%, 38%)
-$admin-green-hue: 90
-$admin-green-saturation: 62.9%
-$admin-green-lightness: 38%
-
 :root
 	--color-green-hue: #{$admin-green-hue}
 	--color-green-saturation: #{$admin-green-saturation}
@@ -140,20 +106,6 @@ $color-green-lightest: cssLighten(--color-green-hue, --color-green-saturation, -
 
 //──────────────────────────────────────────────────────────────────────────────
 // Blue
-//──────────────────────────────────────────────────────────────────────────────
-// enonic-admin-artifacts
-//──────────────────────────────────────────────────────────────────────────────
-// $admin-bg-light-blue: #ebf5ff
-// $admin-blue: #4294de
-// $admin-button-blue1: #5a94ee
-// $admin-button-blue2: #2c76e9
-// $admin-button-blue3: #263fe9 // rgb(38, 63, 233) // hsl(232, 81.6, 53.1)
-$admin-button-blue3-hue: 232
-$admin-button-blue3-saturation: 81.6%
-$admin-button-blue3-lightness: 53.1%
-// $page-editor-message-blue: #224E83
-// $admin-option-set-header-bg: $admin-input-blue
-// $admin-option-set-input-checked: #0e4d8a
 //──────────────────────────────────────────────────────────────────────────────
 // CSS Named Colors
 //──────────────────────────────────────────────────────────────────────────────
@@ -174,7 +126,23 @@ $color-blue-light: cssLighten(--color-blue-hue, --color-blue-saturation, --color
 $color-blue-lighter: cssLighten(--color-blue-hue, --color-blue-saturation, --color-blue-lightness, 20)
 $color-blue-lightest: cssLighten(--color-blue-hue, --color-blue-saturation, --color-blue-lightness, 30)
 
+//──────────────────────────────────────────────────────────────────────────────
+// Purple
+//──────────────────────────────────────────────────────────────────────────────
+:root
+	--color-purple-hue: #{$admin-level-0-hue}
+	--color-purple-saturation: #{$admin-level-0-saturation}
+	--color-purple-lightness: #{$admin-level-0-lightness}
 
+$color-purple: hsl(var(--color-purple-hue), var(--color-purple-saturation), var(--color-purple-lightness))
+$color-purple-darkest: cssDarken(--color-purple-hue, --color-purple-saturation, --color-purple-lightness, 30)
+$color-purple-darker: cssDarken(--color-purple-hue, --color-purple-saturation, --color-purple-lightness, 20)
+$color-purple-dark: cssDarken(--color-purple-hue, --color-purple-saturation, --color-purple-lightness, 10)
+$color-purple-light: cssLighten(--color-purple-hue, --color-purple-saturation, --color-purple-lightness, 10)
+$color-purple-lighter: cssLighten(--color-purple-hue, --color-purple-saturation, --color-purple-lightness, 20)
+$color-purple-lightest: cssLighten(--color-purple-hue, --color-purple-saturation, --color-purple-lightness, 30)
+
+//──────────────────────────────────────────────────────────────────────────────
 // https://m2.material.io/design/color/dark-theme.html#properties
 // $material-recommended-dark-theme-surface-color: #121212 // rgb(18, 18, 18) // hsl(0, 0%, 7.1%)
 // $dark-theme-text-color: hsl(0, 0%, 92.9%) // rgb(237, 237, 237) // #ededed

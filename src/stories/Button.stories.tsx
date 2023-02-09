@@ -31,6 +31,7 @@ Colors.args = {
 		<Button color='orange'>Orange</Button>,
 		<Button color='green'>Green</Button>,
 		<Button color='blue'>Blue</Button>,
+		<Button color='purple'>Purple</Button>,
 		<Button color='gray'>Gray</Button>,
 		<Button color='black'>Black</Button>
 	]
@@ -44,6 +45,7 @@ TransparentColors.args = {
 		<Button color='orange' transparent>Orange</Button>,
 		<Button color='green' transparent>Green</Button>,
 		<Button color='blue' transparent>Blue</Button>,
+		<Button color='purple' transparent>Purple</Button>,
 		<Button color='gray' transparent>Gray</Button>,
 		<Button color='black' transparent>Black</Button>
 	]
@@ -60,6 +62,7 @@ DarkTheme.args = {
 			<Button color='orange'>Orange</Button>
 			<Button color='green'>Green</Button>
 			<Button color='blue'>Blue</Button>
+			<Button color='purple'>Purple</Button>
 			<Button color='gray'>Gray</Button>
 			<Button color='black'>Black</Button>
 		</Button.Group>,
@@ -69,6 +72,7 @@ DarkTheme.args = {
 			<Button color='orange' transparent>Orange</Button>
 			<Button color='green' transparent>Green</Button>
 			<Button color='blue' transparent>Blue</Button>
+			<Button color='purple' transparent>Purple</Button>
 			<Button color='gray' transparent>Gray</Button>
 			<Button color='black' transparent>Black</Button>
 		</Button.Group>

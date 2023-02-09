@@ -6,7 +6,7 @@ import './button.sass';
 // Typings
 //──────────────────────────────────────────────────────────────────────────
 
-export type ButtonColor = 'red'|'orange'|'green'|'blue'|'gray'|'black'
+export type ButtonColor = 'red'|'orange'|'green'|'blue'|'gray'|'purple'|'black'
 
 export interface StrictButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 	as?: any

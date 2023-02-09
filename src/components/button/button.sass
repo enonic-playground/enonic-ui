@@ -40,6 +40,14 @@
 		background-color: $color-orange
 		&:hover:not(:disabled)
 			background-color: $color-orange-light
+	&.purple
+		--button-purple-h: var(--color-purple-hue)
+		--button-purple-s: var(--color-purple-saturation)
+		--button-purple-l: calc(var(--color-purple-lightness) + 10%)
+		background-color: hsl(var(--button-purple-h), var(--button-purple-s), var(--button-purple-l))
+		&:hover:not(:disabled)
+			--button-purple-l: calc(var(--color-purple-lightness) + 20%)
+			background-color: hsl(var(--button-purple-h), var(--button-purple-s), var(--button-purple-l))
 	&.red
 		background-color: $color-red
 		&:hover:not(:disabled)
@@ -81,6 +89,10 @@
 			color: $color-orange
 			&:hover:not(:disabled)
 				color: $color-orange-light
+		&.purple
+			color: $color-purple-light
+			&:hover:not(:disabled)
+				color: $color-purple-lighter
 		&.red
 			color: $color-red
 			&:hover:not(:disabled)
@@ -96,7 +108,13 @@
 //──────────────────────────────────────────────────────────────────────────────
 // Dark-theme
 //──────────────────────────────────────────────────────────────────────────────
-.dark-theme .enonic.button.transparent.black:not(.group)
-	color: $color-white
-	&:hover:not(:disabled)
-		color: $color-gray-lighter
+.dark-theme .enonic.button:not(.group)
+	&.transparent
+		&.black
+			color: $color-white
+			&:hover:not(:disabled)
+				color: $color-gray-lighter
+		&.purple
+			color: $color-purple-lighter
+			&:hover:not(:disabled)
+				color: $color-purple-lightest
