@@ -2,7 +2,7 @@ import React from 'react';
 import { Tab } from '../components/tab/Tab.tsx';
 
 export default {
-	title: 'Example/Tab',
+	title: 'Modules/Tab',
 	component: Tab,
 	argTypes: {},
 };

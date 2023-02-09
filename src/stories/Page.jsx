@@ -4,7 +4,7 @@ import React from 'react';
 // import './page.css';
 
 export const Page = () => {
-  const [user, setUser] = React.useState();
+//   const [user, setUser] = React.useState();
 
   return (
     <article>

@@ -3,7 +3,7 @@ import { Button } from '../components/button/Button.tsx';
 import { Modal } from '../components/modal/Modal.tsx';
 
 export default {
-	title: 'Example/Modal',
+	title: 'Modules/Modal',
 	component: Modal,
 	argTypes: {},
 };

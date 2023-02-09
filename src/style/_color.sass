@@ -148,6 +148,25 @@ $color-purple-lightest: cssLighten(--color-purple-hue, --color-purple-saturation
 // $dark-theme-text-color: hsl(0, 0%, 92.9%) // rgb(237, 237, 237) // #ededed
 
 :root
+	--color-high-shade-bg: #333
+	--color-high-shade-fg: #eee
+
+	// Contrast Ratio 8.72:1 #a7a7a7 on #000, and color diff 501 :)
+	--darkmode-color-pair-darkest-bg: #000
+	--darkmode-color-pair-darkest-fr: #a7a7a7
+
+	// Contrast Ratio 9.62:1 #c8c8c8 on #212121 and color diff 501 :)
+	--darkmode-color-pair-darker-bg: #212121
+	--darkmode-color-pair-darker-fg: #c8c8c8
+
+	// Contrast Ratio 9.04:1 #dadada on #333, and color diff 501 :)
+	--darkmode-color-pair-dark-bg: #333
+	--darkmode-color-pair-dark-fg: #dadada
+
+	// Contrast Ratio 7.11:1 #fff on #585858, and color diff 501 :)
+	--darkmode-color-pair-lightest-bg: #585858
+	--darkmode-color-pair-lightest-fg: #fff
+
 	--color-background-hue: 0
 	--color-background-saturation: 0%
 	--color-background-lightness: 92.9%
@@ -157,23 +176,23 @@ $color-purple-lightest: cssLighten(--color-purple-hue, --color-purple-saturation
 
 $color-background: hsl(var(--color-background-hue), var(--color-background-saturation), var(--color-background-lightness))
 $color-foreground: hsl(var(--color-foreground-hue), var(--color-foreground-saturation), var(--color-foreground-lightness))
-$color-foreground-dark-theme: $color-background
-$color-background-dark-theme: $color-foreground
+// $color-foreground-dark-theme: $color-background
+// $color-background-dark-theme: $color-foreground
 
+// @media (prefers-color-scheme: dark)
+// 	background-color: var(--darkmode-color-pair-darkest-bg)
+// 	color: var(--darkmode-color-pair-darkest-fg)
+
+// @media (prefers-color-scheme: light)
 body
 	background-color: $color-background
 	color: $color-foreground
 
 .dark-theme
-	background-color: $color-background-dark-theme
-	color: $color-foreground-dark-theme
+	background-color: var(--darkmode-color-pair-darkest-bg)
+	color: var(--darkmode-color-pair-darkest-fg)
 
 .light-theme
 	background-color: $color-background
 	color: $color-foreground
 
-// @media (prefers-color-scheme: dark) {
-// }
-
-// @media (prefers-color-scheme: light) {
-// }

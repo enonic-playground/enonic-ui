@@ -3,7 +3,7 @@ import { Header } from '../components/header/Header.tsx';
 
 
 export default {
-	title: 'Example/Header',
+	title: 'Elements/Header',
 	component: Header,
 	parameters: {
 		// More on Story layout: https://storybook.js.org/docs/react/configure/story-layout

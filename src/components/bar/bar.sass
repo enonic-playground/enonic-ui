@@ -3,12 +3,14 @@
 .enonic.bar:not(.item)
 	// align-items: stretch // on cross-axis // stretch is the default
 	box-sizing: border-box
-	background-color: $color-background
-	color: $color-foreground
 	display: flex
 	flex-direction: row // sets main-axis
 	gap: 10px
 	justify-content: flex-start // on main-axis
+
+	&.high-shade
+		background-color: var(--color-high-shade-bg)
+		color: var(--color-high-shade-fg)
 
 	//──────────────────────────────────────────────────────────────────────────
 	// AppBar
@@ -41,6 +43,6 @@
 //──────────────────────────────────────────────────────────────────────────────
 // Dark-theme
 //──────────────────────────────────────────────────────────────────────────────
-.dark-theme .enonic.bar
-	background-color: $color-background-dark-theme
-	color: $color-foreground-dark-theme
+// .dark-theme .enonic.bar
+// 	background-color: var(--darkmode-color-pair-darkest-bg)
+// 	color: var(--darkmode-color-pair-darkest-fg)

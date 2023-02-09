@@ -1,37 +1,21 @@
+import type {
+	StrictAppBarProps,
+	StrictBarItemProps,
+	StrictBarProps,
+	StrictToolBarProps,
+} from './bar.d'
+
 import cx from 'clsx';
 import React from 'react';
 import './bar.sass';
 
 
-export interface StrictBarProps extends React.HTMLAttributes<HTMLElement> {
-	as?: any
-	type?: 'app'|'tool'
-}
-
-export interface StrictBarItemProps extends React.HTMLAttributes<HTMLElement> {
-	as?: any
-	verticalAlign:
-		|'baseline'
-		|'bottom'
-		|'middle'
-		|'stretch'
-		|'top'
-}
-
-export interface StrictAppBarProps extends React.HTMLAttributes<HTMLElement> {
-	as?: any
-	type: never
-}
-
-export interface StrictToolBarProps extends React.HTMLAttributes<HTMLElement> {
-	as?: any
-	type: never
-}
-
 export function Bar({
 	as = 'header',
 	className,
 	children,
+	shade = 'none',
+	tint = 'none',
 	type = 'app',
 	...props
 }: StrictBarProps) {
@@ -42,6 +26,14 @@ export function Bar({
 				'enonic',
 				'bar',
 				type,
+				shade && {
+					low: 'low-shade',
+					high: 'high-shade',
+				}[shade],
+				tint && {
+					low: 'low-tint',
+					high: 'high-tint',
+				}[tint],
 				className
 			)}
 			{...props}
@@ -51,10 +43,13 @@ export function Bar({
 	);
 }
 
+
 export const AppBar = ({
+	shade = 'high',
 	type,
 	...props
 }: StrictAppBarProps) => Bar({
+	shade,
 	type: 'app',
 	...props
 });
@@ -63,10 +58,11 @@ export const AppBar = ({
 export const ToolBar = ({
 	type,
 	...props
-}: StrictAppBarProps) => Bar({
+}: StrictToolBarProps) => Bar({
 	type: 'tool',
 	...props
 });
+
 
 Bar.Item = ({
 	as = 'div',

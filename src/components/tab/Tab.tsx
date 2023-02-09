@@ -31,7 +31,7 @@ export function Tab({
 				'tab',
 				{active},
 				color,
-				className
+				className,
 			)}
 			{...props}
 		>

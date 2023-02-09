@@ -136,9 +136,9 @@ ul.enonic.tab.group // override 'user agent stylesheet'
 // Dark-theme
 //──────────────────────────────────────────────────────────────────────────────
 .dark-theme .enonic.tab
-	color: $color-foreground-dark-theme
+	color: var(--darkmode-color-pair-darkest-fg)
 	&.active
-		background-color: $color-background-dark-theme
+		background-color: var(--darkmode-color-pair-darkest-bg)
 	&:hover:not(:disabled)
 		color: $color-foreground
 

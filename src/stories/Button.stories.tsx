@@ -4,7 +4,7 @@ import { Button } from '../components/button/Button.tsx';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-	title: 'Example/Button',
+	title: 'Elements/Button',
 	component: Button,
 	// More on argTypes: https://storybook.js.org/docs/react/api/argtypes
 	argTypes: {

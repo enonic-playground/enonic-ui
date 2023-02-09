@@ -2,21 +2,20 @@ import React from 'react';
 import {
 	AppBar as AppBarComponent,
 	Bar,
-	ToolBar as ToolBarComponent
-} from '../components/bar/Bar.tsx';
-import { Button } from '../components/button/Button.tsx';
-import { Tab } from '../components/tab/Tab.tsx';
+} from '../../components/bar/Bar.tsx';
+import { Button } from '../../components/button/Button.tsx';
+import { Tab } from '../../components/tab/Tab.tsx';
 
 export default {
-	title: 'Example/Bar',
-	component: Bar,
+	title: 'Modules/Bar/AppBar',
+	component: AppBarComponent,
 	argTypes: {},
 };
 
 const AppBarTemplate = (args) => <AppBarComponent {...args} />;
-// const BarTemplate = (args) => <Bar {...args} />;
 const DivTemplate = (args) => <div {...args} />;
-const ToolBarTemplate = (args) => <ToolBarComponent {...args} />;
+
+
 
 export const AppBar = AppBarTemplate.bind({});
 AppBar.args = {
@@ -43,25 +42,15 @@ AppBar.args = {
 	}
 };
 
-export const ToolBar = ToolBarTemplate.bind({});
-ToolBar.args = {
-	children: [
-		<Button transparent>Save</Button>,
-		<Button transparent>Delete</Button>
-	],
-	style: {
-		height: '39px'
-	}
-};
 
 export const DarkTheme = DivTemplate.bind({});
 DarkTheme.args = {
 	children: [
-		<Bar>
+		<AppBar>
 			<Button>Users</Button>
 			<Bar.Item verticalAlign='bottom'>
 				<Tab.Group style={{
-				height: 36
+					height: 36
 				}}>
 					<Tab>Administrator</Tab>
 					<Tab active>Anonymous</Tab>
@@ -74,7 +63,7 @@ DarkTheme.args = {
 			<Bar.Item verticalAlign='top'>
 				<Button>Top</Button>
 			</Bar.Item>
-		</Bar>
+		</AppBar>
 	],
 	className: 'dark-theme'
 }
