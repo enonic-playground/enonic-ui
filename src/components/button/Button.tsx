@@ -1,6 +1,5 @@
 import cx from 'clsx';
 import React from 'react';
-import './button.sass';
 
 //──────────────────────────────────────────────────────────────────────────
 // Typings

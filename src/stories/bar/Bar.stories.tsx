@@ -20,12 +20,7 @@ export default {
 	},
 };
 
-const BarTemplate = (args: StrictBarProps, { globals }) => {
-	return globals && globals.backgrounds && globals.backgrounds.value === '#212121'
-		? <div className='dark-theme'><Bar {...args} /></div>
-		: <Bar {...args} />;
-}
-
+const BarTemplate = (args: StrictBarProps) => <Bar {...args} />;
 const DivTemplate = (args: React.HTMLAttributes<HTMLElement>) => <div {...args} />;
 
 export const Default = BarTemplate.bind({});

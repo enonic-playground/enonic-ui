@@ -148,12 +148,19 @@ $color-purple-lightest: cssLighten(--color-purple-hue, --color-purple-saturation
 // $dark-theme-text-color: hsl(0, 0%, 92.9%) // rgb(237, 237, 237) // #ededed
 
 :root
+	// Default light-theme colors
+	--color-bg: #fff
+	--color-fg: #000
+
+	--color-low-shade-bg: #f7f7f7
+	--color-low-shade-fg: var(--color-fg)
+
 	--color-high-shade-bg: #333
 	--color-high-shade-fg: #eee
 
 	// Contrast Ratio 8.72:1 #a7a7a7 on #000, and color diff 501 :)
 	--darkmode-color-pair-darkest-bg: #000
-	--darkmode-color-pair-darkest-fr: #a7a7a7
+	--darkmode-color-pair-darkest-fg: #a7a7a7
 
 	// Contrast Ratio 9.62:1 #c8c8c8 on #212121 and color diff 501 :)
 	--darkmode-color-pair-darker-bg: #212121
@@ -180,19 +187,16 @@ $color-foreground: hsl(var(--color-foreground-hue), var(--color-foreground-satur
 // $color-background-dark-theme: $color-foreground
 
 // @media (prefers-color-scheme: dark)
-// 	background-color: var(--darkmode-color-pair-darkest-bg)
-// 	color: var(--darkmode-color-pair-darkest-fg)
+// 	background-color: var(--darkmode-color-pair-darker-bg)
+// 	color: var(--darkmode-color-pair-darker-fg)
 
 // @media (prefers-color-scheme: light)
-body
-	background-color: $color-background
-	color: $color-foreground
-
-.dark-theme
-	background-color: var(--darkmode-color-pair-darkest-bg)
-	color: var(--darkmode-color-pair-darkest-fg)
-
+body,
 .light-theme
-	background-color: $color-background
-	color: $color-foreground
+	background-color: var(--color-bg)
+	color: var(--color-fg)
 
+// .dark-theme .enonic
+.dark-theme
+	background-color: var(--darkmode-color-pair-darker-bg)
+	color: var(--darkmode-color-pair-darker-fg)

@@ -1,7 +1,6 @@
 import cx from 'clsx';
 import React from 'react';
 import {Header} from '../header/Header.tsx';
-import './modal.sass';
 
 
 export interface StrictModalProps extends React.HTMLAttributes<HTMLElement> {

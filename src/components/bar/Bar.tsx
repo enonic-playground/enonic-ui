@@ -7,7 +7,6 @@ import type {
 
 import cx from 'clsx';
 import React from 'react';
-import './bar.sass';
 
 
 export function Bar({
@@ -15,7 +14,7 @@ export function Bar({
 	className,
 	children,
 	shade = 'none',
-	tint = 'none',
+	tint = shade,
 	type = 'app',
 	...props
 }: StrictBarProps) {

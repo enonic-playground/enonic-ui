@@ -1,6 +1,5 @@
 import cx from 'clsx';
 import React from 'react';
-import './tab.sass';
 
 export type TabColor = 'white'|'red'|'orange'|'green'|'blue'|'purple'|'gray'|'black'
 

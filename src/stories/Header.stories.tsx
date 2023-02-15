@@ -1,9 +1,8 @@
-import React from 'react';
 import { Header } from '../components/header/Header.tsx';
 
 
 export default {
-	title: 'Elements/Header',
+	title: 'Semantic/Header',
 	component: Header,
 	parameters: {
 		// More on Story layout: https://storybook.js.org/docs/react/configure/story-layout
@@ -17,6 +16,20 @@ const DivTemplate = (args) => <div {...args} />;
 export const Normal = Template.bind({});
 Normal.args = {
 	children: 'Normal'
+};
+
+export const LowShade = Template.bind({});
+LowShade.storyName = 'shade=low'
+LowShade.args = {
+	children: 'Low Shade',
+	shade: 'low'
+};
+
+export const HighShade = Template.bind({});
+HighShade.storyName = 'shade=high'
+HighShade.args = {
+	children: 'High Shade',
+	shade: 'high'
 };
 
 export const Sizes = DivTemplate.bind({});
@@ -45,19 +58,22 @@ DarkTheme.args = {
 	className: 'dark-theme'
 }
 
-export const Div = Template.bind({});
-Div.args = {
+export const AsDiv = Template.bind({});
+AsDiv.storyName = 'as=div'
+AsDiv.args = {
 	as: 'div',
 	children: 'Div'
 };
 
-export const Span = Template.bind({});
-Span.args = {
+export const AsSpan = Template.bind({});
+AsSpan.storyName = 'as=span'
+AsSpan.args = {
 	as: 'span',
 	children: 'Span'
 };
 
 export const HugeH6 = Template.bind({});
+HugeH6.storyName = 'as=h6 size=huge'
 HugeH6.args = {
 	as: 'h6',
 	children: 'Huge H6',
@@ -65,6 +81,7 @@ HugeH6.args = {
 };
 
 export const TinyH1 = Template.bind({});
+TinyH1.storyName = 'as=h1 size=tiny'
 TinyH1.args = {
 	as: 'h1',
 	children: 'Tiny H1',

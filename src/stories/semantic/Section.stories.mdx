@@ -1,0 +1,75 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+import { Section } from '../../components/Section.tsx';
+
+# Section component
+
+<Meta
+	argTypes={{
+		/*shade: {
+			control: {
+				type: 'radio',
+			},
+			description: 'Affects light-theme',
+			name: 'Section shade',
+			options: ['none', 'low', 'high'],
+			required: false,
+			table: {
+				defaultValue: {
+					summary: 'none'
+				},
+				type: {
+					summary: 'Shows options to the Badge',
+					detail: 'Listing of available options'
+				},
+			},
+		},*/
+	}}
+	component={Section}
+	title='Semantic/Section'
+/>
+
+export const Template = (args) => <Section {...args} />;
+
+<Canvas>
+	<Story
+			name='Normal'
+			args={{
+				children: 'Bla bla bla',
+			}}>
+			{Template.bind({})}
+	</Story>
+</Canvas>
+
+## Attributes
+
+<ArgsTable of={Section} />
+
+## Stories
+
+### Shade
+
+#### Low
+
+<Canvas>
+	<Story
+		name='Shade-low'
+		args={{
+			children: 'Bla bla bla',
+			shade: 'low',
+		}}>
+		{Template.bind({})}
+	</Story>
+</Canvas>
+
+#### High
+
+<Canvas>
+	<Story
+		name='Shade-high'
+		args={{
+			children: 'Bla bla bla',
+			shade: 'high',
+		}}>
+		{Template.bind({})}
+	</Story>
+</Canvas>
