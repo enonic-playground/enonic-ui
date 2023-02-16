@@ -13,6 +13,7 @@ export interface StrictButtonProps extends React.ButtonHTMLAttributes<HTMLButton
 	color?: ButtonColor
 	primary?: boolean
 	transparent?: boolean
+	uppercase?: boolean
 }
 
 export interface StrictButtonGroupProps extends CommonProps {
@@ -31,6 +32,7 @@ export const Button = ({
 	primary,
 	type = as === 'input' ? 'button' : undefined,
 	transparent,
+	uppercase,
 	...props
 }: StrictButtonProps) => {
 	const ElementType = as;
@@ -42,7 +44,8 @@ export const Button = ({
 				'button',
 				{
 					primary,
-					transparent
+					transparent,
+					uppercase
 				},
 				color,
 				className

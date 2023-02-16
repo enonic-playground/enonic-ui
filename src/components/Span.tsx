@@ -1,15 +1,18 @@
-import type {CommonProps} from '..';
+import type {CommonProps} from '.';
 import cx from 'clsx';
 import * as React from 'react';
 
 
-export type StrictSpanProps = CommonProps;
+export interface StrictSpanProps extends CommonProps {
+	uppercase?: boolean
+}
 
 
 export const Span = ({
+	as = 'span',
 	children,
 	className,
-	as = 'span',
+	uppercase,
 	...props
 }: StrictSpanProps) => {
 	const ElementType = as;
@@ -18,6 +21,9 @@ export const Span = ({
 			className={cx(
 				'enonic',
 				'span',
+				{
+					uppercase
+				},
 				className
 			)}
 			{...props}

@@ -1,4 +1,6 @@
 import '../src/style/index.sass';
+const { addDecorator } = require('@storybook/react');
+// const { jsxDecorator } = require('storybook-addon-jsx'); // Doesn't work
 
 export const parameters = {
 	actions: { argTypesRegex: "^on[A-Z].*" },
@@ -28,23 +30,22 @@ export const parameters = {
 	}
 }
 
-export const decorators = [
-	(Story, whatever) => {
-		// console.debug('whatever', whatever);
-		const {
-			globals: {
-				backgrounds: {
-					value: backgroundColor
-				} = {}
+
+addDecorator((Story, whatever) => {
+	// console.debug('whatever', whatever);
+	const {
+		globals: {
+			backgrounds: {
+				value: backgroundColor
 			} = {}
-		} = whatever;
-		return backgroundColor === '#212121'
-		? (
-			<div className='dark-theme'>
-				<Story />
-			</div>
-		) : (
+		} = {}
+	} = whatever;
+	return backgroundColor === '#212121'
+	? (
+		<div className='dark-theme'>
 			<Story />
-		);
-	}
-];
+		</div>
+	) : (
+		<Story />
+	);
+})

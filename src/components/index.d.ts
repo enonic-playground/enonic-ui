@@ -29,8 +29,8 @@ export interface CommonProps extends Omit<
 	'className'
 > {
 	as?: any
-	className?: ClassValue
 	children?: React.ReactNode
+	className?: ClassValue
 }
 
 export interface CommonPropsWithShadeTint extends CommonProps {

@@ -6,6 +6,7 @@ module.exports = {
 		'@storybook/addon-essentials',
 		'@storybook/addon-interactions',
 		'@storybook/preset-create-react-app',
+		// 'storybook-addon-jsx', // Doesn't work
 		// '@storybook/preset-scss',
 		// {
 		// 	name: 'storybook-addon-sass-postcss',
@@ -30,6 +31,7 @@ module.exports = {
 		previewMdx2: true,
 	},
 	framework: '@storybook/react',
+	// staticDirs: [{ from: '../public', to: '/public' }],
 	stories: [
 		'../src/**/*.stories.mdx',
 		'../src/**/*.stories.@(js|jsx|ts|tsx)',
