@@ -1,10 +1,9 @@
+import type {CommonProps} from '..';
 import cx from 'clsx';
-import React from 'react';
+import * as React from 'react';
 
 
-export interface StrictSpanProps extends React.HTMLAttributes<HTMLElement> {
-	as?: any
-}
+export type StrictSpanProps = CommonProps;
 
 
 export const Span = ({

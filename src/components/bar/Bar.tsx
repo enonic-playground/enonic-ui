@@ -6,7 +6,7 @@ import type {
 } from './bar.d'
 
 import cx from 'clsx';
-import React from 'react';
+import * as React from 'react';
 
 
 export function Bar({

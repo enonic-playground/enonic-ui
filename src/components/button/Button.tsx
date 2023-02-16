@@ -1,11 +1,12 @@
+import type {Color, CommonProps} from '../';
 import cx from 'clsx';
-import React from 'react';
+import * as React from 'react';
 
 //──────────────────────────────────────────────────────────────────────────
 // Typings
 //──────────────────────────────────────────────────────────────────────────
 
-export type ButtonColor = 'red'|'orange'|'green'|'blue'|'gray'|'purple'|'black'
+export type ButtonColor = Color
 
 export interface StrictButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 	as?: any
@@ -14,8 +15,7 @@ export interface StrictButtonProps extends React.ButtonHTMLAttributes<HTMLButton
 	transparent?: boolean
 }
 
-export interface StrictButtonGroupProps extends React.HTMLAttributes<HTMLElement> {
-	as?: any
+export interface StrictButtonGroupProps extends CommonProps {
 	// color?: ButtonColor
 }
 

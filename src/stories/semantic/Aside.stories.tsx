@@ -1,4 +1,4 @@
-import { Aside } from '../../components/Aside.tsx';
+import { Aside } from '../../components/Aside';
 
 
 export default {

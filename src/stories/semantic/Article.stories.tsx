@@ -1,4 +1,4 @@
-import { Article } from '../../components/Article.tsx';
+import { Article } from '../../components/Article';
 
 
 export default {

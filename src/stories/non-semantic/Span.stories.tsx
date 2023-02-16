@@ -1,4 +1,4 @@
-import { Span } from '../../components/Span.tsx';
+import { Span } from '../../components/Span';
 
 
 export default {

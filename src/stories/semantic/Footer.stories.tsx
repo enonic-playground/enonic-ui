@@ -1,4 +1,4 @@
-import { Footer } from '../../components/Footer.tsx';
+import { Footer } from '../../components/Footer';
 
 
 export default {

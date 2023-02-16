@@ -1,15 +1,7 @@
-import type {Shade, Tint} from '../'
+import type {StrictHeaderProps} from '.';
 
 import cx from 'clsx';
-import React from 'react';
-
-
-export interface StrictHeaderProps extends React.HTMLAttributes<HTMLElement> {
-	as?: any
-	shade?: Shade
-	tint?: Tint
-	size?: 'tiny' | 'small' | 'medium' | 'large' | 'huge'
-}
+import * as React from 'react';
 
 
 export const Header = ({

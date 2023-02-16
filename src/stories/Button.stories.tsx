@@ -1,6 +1,6 @@
-import React from 'react';
+import * as React from 'react';
 
-import { Button } from '../components/button/Button.tsx';
+import { Button } from '../components/button/Button';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -27,6 +27,7 @@ export const Colors = ButtonGroupTemplate.bind({});
 Colors.args = {
 	children: [
 		<Button>Standard</Button>,
+		<Button color='white'>White</Button>,
 		<Button color='red'>Red</Button>,
 		<Button color='orange'>Orange</Button>,
 		<Button color='green'>Green</Button>,
@@ -41,6 +42,7 @@ export const TransparentColors = ButtonGroupTemplate.bind({});
 TransparentColors.args = {
 	children: [
 		<Button transparent>Standard</Button>,
+		<Button color='white' transparent>White</Button>,
 		<Button color='red' transparent>Red</Button>,
 		<Button color='orange' transparent>Orange</Button>,
 		<Button color='green' transparent>Green</Button>,
@@ -58,6 +60,7 @@ DarkTheme.args = {
 			marginBottom: '20px'
 		}}>
 			<Button>Standard</Button>
+			<Button color='white'>White</Button>
 			<Button color='red'>Red</Button>
 			<Button color='orange'>Orange</Button>
 			<Button color='green'>Green</Button>
@@ -68,6 +71,7 @@ DarkTheme.args = {
 		</Button.Group>,
 		<Button.Group>
 			<Button transparent>Standard</Button>
+			<Button color='white' transparent>White</Button>
 			<Button color='red' transparent>Red</Button>
 			<Button color='orange' transparent>Orange</Button>
 			<Button color='green' transparent>Green</Button>

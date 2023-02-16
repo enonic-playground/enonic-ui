@@ -1,10 +1,10 @@
-import React from 'react';
+import * as React from 'react';
 import {
 	AppBar as AppBarComponent,
 	Bar,
-} from '../../components/bar/Bar.tsx';
-import { Button } from '../../components/button/Button.tsx';
-import { Tab } from '../../components/tab/Tab.tsx';
+} from '../../components/bar/Bar';
+import { Button } from '../../components/button/Button';
+import { Tab } from '../../components/tab/Tab';
 
 export default {
 	title: 'Modules/Bar/AppBar',

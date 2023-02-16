@@ -1,6 +1,6 @@
-import React from 'react';
-import { Button } from '../components/button/Button.tsx';
-import { Modal } from '../components/modal/Modal.tsx';
+import * as React from 'react';
+import { Button } from '../components/button/Button';
+import { Modal } from '../components/modal/Modal';
 
 export default {
 	title: 'Modules/Modal',
@@ -11,8 +11,11 @@ export default {
 const DivTemplate = (args) => <div {...args} />;
 const ModalTemplate = (args) => <Modal {...args} />;
 
+//@ts-ignore
 Modal.Header.displayName = 'Modal.Header';
+//@ts-ignore
 Modal.Content.displayName = 'Modal.Content';
+//@ts-ignore
 Modal.Actions.displayName = 'Modal.Actions';
 
 

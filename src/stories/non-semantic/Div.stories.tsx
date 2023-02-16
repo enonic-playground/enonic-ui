@@ -1,4 +1,4 @@
-import { Div } from '../../components/Div.tsx';
+import { Div } from '../../components/Div';
 
 
 export default {

@@ -1,14 +1,10 @@
-import type {Shade, Tint} from './'
+import type {CommonPropsWithShadeTint} from '../';
 
 import cx from 'clsx';
-import React from 'react';
+import * as React from 'react';
 
 
-export interface StrictAsideProps extends React.HTMLAttributes<HTMLElement> {
-	as?: any
-	shade?: Shade
-	tint?: Tint
-}
+export type StrictAsideProps = CommonPropsWithShadeTint;
 
 
 export const Aside = ({

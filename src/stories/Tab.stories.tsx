@@ -1,5 +1,5 @@
-import React from 'react';
-import { Tab } from '../components/tab/Tab.tsx';
+import * as React from 'react';
+import { Tab } from '../components/tab/Tab';
 
 export default {
 	title: 'Modules/Tab',

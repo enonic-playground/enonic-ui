@@ -1,6 +1,6 @@
-import React from 'react';
-import {ToolBar as ToolBarComponent} from '../../components/bar/Bar.tsx';
-import { Button } from '../../components/button/Button.tsx';
+import * as React from 'react';
+import {ToolBar as ToolBarComponent} from '../../components/bar/Bar';
+import { Button } from '../../components/button/Button';
 
 export default {
 	title: 'Modules/Bar/ToolBar',

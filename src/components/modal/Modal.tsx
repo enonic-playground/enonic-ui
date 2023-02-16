@@ -1,15 +1,16 @@
+import type {CommonProps} from '../';
+import {StrictHeaderProps} from '../header';
+
 import cx from 'clsx';
-import React from 'react';
-import {Header} from '../header/Header.tsx';
+import * as React from 'react';
+import {Header} from '../header/Header';
 
 
-export interface StrictModalProps extends React.HTMLAttributes<HTMLElement> {
-	as?: any
-}
+export type StrictModalProps = CommonProps;
 
-export interface StrictModalContentProps extends React.HTMLAttributes<HTMLElement> {
-	as?: any
-}
+export type StrictModalActionsProps = CommonProps;
+
+export type StrictModalContentProps = CommonProps;
 
 
 export function Modal({
@@ -38,7 +39,7 @@ Modal.Header = ({
 	className,
 	size = 'large',
 	...props
-}) => Header({
+}: StrictHeaderProps) => Header({
 	className: cx('modal', className),
 	size,
 	...props
@@ -72,7 +73,7 @@ Modal.Actions = ({
 	className,
 	children,
 	...props
-}: StrictModalContentProps) => {
+}: StrictModalActionsProps) => {
 	const ElementType = as;
 	return (
 		<ElementType

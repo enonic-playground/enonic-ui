@@ -1,17 +1,15 @@
+import type {Color, CommonProps} from '../';
 import cx from 'clsx';
-import React from 'react';
+import * as React from 'react';
 
-export type TabColor = 'white'|'red'|'orange'|'green'|'blue'|'purple'|'gray'|'black'
+export type TabColor = Color
 
-export interface StrictTabProps extends React.HTMLAttributes<HTMLElement> {
+export interface StrictTabProps extends CommonProps {
 	active?: boolean
-	as?: any
 	color?: TabColor
 }
 
-export interface StrictTabGroupProps extends React.HTMLAttributes<HTMLElement> {
-	as?: any
-}
+export type StrictTabGroupProps = CommonProps;
 
 
 export function Tab({
