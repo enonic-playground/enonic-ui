@@ -1,0 +1,49 @@
+$padding-horizontal-input: 10px
+$padding-vertical-input: 10px
+
+.enonic.input
+	// align-items: middle
+	background-color: var(--color-bg)
+	border-color: $color-gray
+	border-width: 1px
+	border-style: solid
+	box-sizing: border-box
+	display: inline-flex
+	// flex-wrap: wrap
+	gap: $padding-horizontal-input
+	padding: $padding-vertical-input $padding-horizontal-input
+	&:not(.disabled)
+		cursor: text
+	&.disabled
+		opacity: .5
+	&.focus
+		// box-shadow: 0 0 0 1px var(--color-focus)
+		border-color: var(--color-focus)
+	&.error
+		border-color: var(--color-error)
+
+.enonic.input>input
+	// This is needed or the flex-container will sometimes move vertically
+	// depending upon it's items.
+	align-self: baseline
+
+	box-sizing: border-box
+	margin: 0
+	outline: 0
+	// Override User Agent Stylesheet
+	border-width: 0
+	border-style: none
+	border-color: transparent
+	width: 100%
+
+.enonic.input>.enonic.error
+	color: var(--color-error)
+	font-size: .83em // small
+	white-space: nowrap
+
+.enonic.input>.enonic.icon
+	// align-self: center
+	color: $color-gray
+	// cursor: default
+	// &:not(.link)
+	// pointer-events: none

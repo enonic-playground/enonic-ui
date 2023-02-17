@@ -1,0 +1,9 @@
+.enonic.field
+	display: flex
+	flex-direction: column
+	&>label
+		font-size: .83em // small
+	&.required>label:after
+		content: '*'
+	&.error.required>label:after
+		color: var(--color-error)
