@@ -30,6 +30,7 @@ export interface StrictInputProps extends Omit<
 	inputRef?: RefObject<HTMLInputElement>
 	// label: never // Handeled by Form.Field
 	name?: string
+	placeholder?: string
 	required?: boolean
 	type?: 'number'|'email'
 	value?: string|number
