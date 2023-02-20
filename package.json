@@ -66,6 +66,7 @@
     "babel-plugin-named-exports-order": "^0.0.2",
     "clsx": "^1.2.1",
     "css-loader": "^6.7.3",
+    "include-media": "^2.0.0",
     "node-sass": "^8.0.0",
     "postcss": "^8.4.21",
     "prop-types": "^15.8.1",
