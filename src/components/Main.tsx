@@ -1,4 +1,4 @@
-import type {CommonPropsWithShadeTint} from '../'
+import type {CommonPropsWithShadeTint} from './index.d'
 
 import cx from 'clsx';
 import * as React from 'react';

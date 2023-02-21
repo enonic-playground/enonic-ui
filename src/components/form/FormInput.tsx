@@ -12,6 +12,7 @@ import {Field} from './Field'
 export interface StrictFormInputProps extends StrictInputProps {
 	label?: string
 	// labelPosition: 'left'|'right'|'left corner'|'right corner' // TODO
+	stretch?: boolean
 }
 
 
@@ -21,6 +22,7 @@ export function FormInput({
 	name,
 	label,
 	required,
+	stretch,
 	...props
 }: StrictFormInputProps) {
 	const inputRef = createRef<HTMLInputElement>();
@@ -36,12 +38,14 @@ export function FormInput({
 			label={label}
 			name={name}
 			required={required}
+			stretch={stretch}
 		>
 			<Input
 				error={error}
 				inputRef={inputRef}
 				name={name}
 				required={required}
+				stretch={stretch}
 				{...props}
 			/>
 		</Field>

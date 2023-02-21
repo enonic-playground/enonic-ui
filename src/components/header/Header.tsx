@@ -1,4 +1,4 @@
-import type {StrictHeaderProps} from '.';
+import type {StrictHeaderProps} from './index.d';
 
 import cx from 'clsx';
 import * as React from 'react';

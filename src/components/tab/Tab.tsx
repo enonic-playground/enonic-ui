@@ -1,4 +1,4 @@
-import type {Color, CommonProps} from '../';
+import type {Color, CommonProps} from '../index.d';
 import cx from 'clsx';
 import * as React from 'react';
 

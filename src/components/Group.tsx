@@ -1,28 +1,38 @@
 import type {CommonProps} from './index.d';
+
 import cx from 'clsx';
 import * as React from 'react';
 
 
-export interface StrictSpanProps extends CommonProps {
-	uppercase?: boolean
-}
+export interface StrictGroupProps extends CommonProps {
+	center?: boolean
+	right?: boolean
+	stretch?: boolean
+	vertical?: boolean
+};
 
 
-export const Span = ({
-	as = 'span',
+export const Group = ({
+	as = 'div',
+	center,
 	children,
 	className,
-	uppercase,
+	right,
+	stretch,
+	vertical,
 	...props
-}: StrictSpanProps) => {
+}: StrictGroupProps) => {
 	const ElementType = as;
 	return (
 		<ElementType
 			className={cx(
 				'enonic',
-				'span',
+				'group',
 				{
-					uppercase
+					center,
+					right,
+					stretch,
+					vertical,
 				},
 				className
 			)}

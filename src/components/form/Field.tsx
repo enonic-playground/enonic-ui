@@ -2,7 +2,7 @@ import type {
 	ReactNode,
 	RefObject,
 } from 'react';
-import type {CommonProps} from '..';
+import type {CommonProps} from '../index.d';
 
 // import useId from '@accessible/use-id';
 import cx from 'clsx';
@@ -18,6 +18,7 @@ export interface StrictFormFieldProps extends CommonProps {
 	// labelPosition: 'left'|'right'|'left corner'|'right corner' // TODO
 	name?: string
 	required?: boolean
+	stretch?: boolean
 }
 
 
@@ -30,6 +31,7 @@ export function Field({
 	label,
 	name,
 	required,
+	stretch,
 	// type,
 	...props
 }: StrictFormFieldProps) {
@@ -53,6 +55,7 @@ export function Field({
 				'field',
 				{
 					error,
+					stretch,
 					required,
 				},
 				className

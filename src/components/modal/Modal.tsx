@@ -1,5 +1,5 @@
-import type {CommonProps} from '../';
-import {StrictHeaderProps} from '../header';
+import type {CommonProps} from '../index.d';
+import type {StrictHeaderProps} from '../header/index.d';
 
 import cx from 'clsx';
 import * as React from 'react';

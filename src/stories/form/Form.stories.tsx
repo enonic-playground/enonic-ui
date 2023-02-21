@@ -14,11 +14,58 @@ const FormTemplate = (args) => <Form {...args} />;
 export const Normal = FormTemplate.bind({});
 Normal.args = {
 	children: [
-		<Form.Input label='Email' required type='email' placeholder='Please input your email address'/>,
-		<Form.Input label='First name'/>,
-		<Form.Input label='Last name'/>,
-		<Form.Input label='Age' required type='number' value={0}/>,
-	]
+		<Form.Input
+			label='Email'
+			placeholder='Please input your email address'
+			required
+			stretch
+			type='email'
+		/>,
+		<Form.Group>
+			<Form.Input label='First name'/>
+			<Form.Input defaultValue='Doe' label='Last name'/>
+		</Form.Group>,
+		<Form.Group right>
+			<Form.Input
+				defaultValue={120}
+				label='Age'
+				required
+				size={3}
+				type='number'
+			/>
+		</Form.Group>
+	],
+};
+
+export const Stretch = FormTemplate.bind({});
+Stretch.args = {
+	children: [
+		<Form.Input
+			label='Email'
+			placeholder='Please input your email address'
+			required
+			stretch
+			type='email'
+		/>,
+		<Form.Group>
+			<Form.Input label='First name' stretch/>
+			<Form.Input defaultValue='Doe' label='Last name' stretch/>
+		</Form.Group>,
+		<Form.Group stretch>
+			<Form.Input label='What'/>
+			<Form.Input label='Ever'/>
+		</Form.Group>,
+		<Form.Group center>
+			<Form.Input
+				defaultValue={120}
+				label='Age'
+				required
+				size={3}
+				type='number'
+			/>
+		</Form.Group>
+	],
+	stretch: true
 };
 
 export const Error = FormTemplate.bind({});
@@ -33,8 +80,10 @@ export const DarkTheme = FormTemplate.bind({});
 DarkTheme.args = {
 	children: [
 		<Form.Input label='Email' required type='email'/>,
-		<Form.Input label='First name'/>,
-		<Form.Input label='Last name'/>,
+		<Form.Group>
+			<Form.Input label='First name'/>
+			<Form.Input label='Last name'/>
+		</Form.Group>,
 		<Form.Input label='Age' required type='number'/>,
 	],
 	className: 'dark-theme',

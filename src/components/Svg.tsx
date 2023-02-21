@@ -1,11 +1,11 @@
-import type {Color} from '..';
+import type {Color} from './index.d';
 
 import cx, {type ClassValue} from 'clsx';
 import {ReactComponent as Users404x404} from '../icons/users_404x404.svg';
 import {ReactComponent as Users512x464} from '../icons/users_512x464.svg';
 
 
-export interface StrictSvgProps extends React.FC<React.SVGProps<SVGSVGElement>> {
+export interface StrictSvgProps /*extends React.FC<React.SVGProps<SVGSVGElement>>*/ {
 	className?: ClassValue
 	color?: Color
 	height?: number|string

@@ -1,25 +1,15 @@
-// :root
-// 	--breakpoint-phone: 320px // cga, qvga
-// 	--breakpoint-tablet: 768px // pal
-// 	--breakpoint-laptop: 992px
-// 	// --breakpoint-desktop: 1024px
-// 	--breakpoint-hd: 1280px // hd
-// 	--breakpoint-full: 1920px // full hd
-// 	--breakpoint-quad: 2560px // quad hd // uwhd, wqhd, wqxga, qsxga
-// 	// uwqhd 3440
-// 	--breakpoint-ultra: 3840px // ultra hd // uhd1
-// 	// 4k 4096
-// 	// 5k 5120
-// 	// uhd-2 7680
-// 	// 8k 8192
-
-$breakpoints: ('phone': 320px, 'tablet': 768px, 'laptop': 992px, 'hd':1280, 'full': 1920) !default
+// @import include-media // Doesn't work, might have API differences...
+// 4k 4096
+// 5k 5120
+// uhd-2 7680
+// 8k 8192
+$breakpoints: ('phone': 320px, 'tablet': 768px, 'laptop': 992px, 'desktop': 1024px, 'hd':1280px, 'full': 1920px, 'quad': 2560px, 'ultra': 3840px) !default
 
 $media-expressions: ('screen': 'screen', 'print': 'print', 'handheld': 'handheld', 'retina2x': ('(-webkit-min-device-pixel-ratio: 2)', '(min-resolution: 192dpi)'), 'retina3x': ('(-webkit-min-device-pixel-ratio: 3)', '(min-resolution: 350dpi)')) !default
 
 $unit-intervals: ('px': 1,'em': 0.01,'rem': 0.1) !default
 
-@mixin media($conditions)
+@mixin media($conditions...)
   @for $i from 1 through length($conditions)
     $conditions: set-nth($conditions, $i, parse-expression(nth($conditions, $i)))
 
@@ -181,41 +171,110 @@ $unit-intervals: ('px': 1,'em': 0.01,'rem': 0.1) !default
 
   @return $number * nth($units, $index)
 
-
+//──────────────────────────────────────────────────────────────────────────────
+// Exact (min and max)
+//──────────────────────────────────────────────────────────────────────────────
 @mixin phone
-  @include media("<=phone")
+  @include media(">=phone", "<tablet")
     @content
-
-// Explicit, but phone is good enough
-// @mixin phoneDown
-//   @include media("<=phone")
-//     @content
-
-// Useless
-// @mixin phoneUp
-//   @include media(">=phone")
-//     @content
 
 @mixin tablet
   @include media(">=tablet", "<laptop")
     @content
 
-@mixin tabletDown
-  @include media("<=tablet")
+@mixin laptop
+  @include media(">=laptop", "<desktop")
+    @content
+
+@mixin desktop
+  @include media(">=desktop", "<hd")
+    @content
+
+@mixin hd
+  @include media(">=hd", "<full")
+    @content
+
+@mixin full
+  @include media(">=full", "<quad")
+    @content
+
+@mixin quad
+  @include media(">=quad", "<ultra")
+    @content
+
+@mixin ultra
+  @include media(">=ultra")
+    @content
+
+//──────────────────────────────────────────────────────────────────────────────
+// Up (min only)
+//──────────────────────────────────────────────────────────────────────────────
+// Everything except really small screens
+@mixin phoneUp
+  @include media(">=phone")
     @content
 
 @mixin tabletUp
   @include media(">=tablet")
     @content
 
-// @mixin laptop
-//   @include media(">=laptop", "<laptop")
-//     @content
-
-@mixin laptopDown
-  @include media("<=laptop")
-    @content
-
 @mixin laptopUp
   @include media(">=laptop")
     @content
+
+@mixin desktopUp
+  @include media(">=desktop")
+    @content
+
+@mixin hdUp
+  @include media(">=hd")
+    @content
+
+@mixin fullUp
+  @include media(">=full")
+    @content
+
+@mixin quadUp
+  @include media(">=quad")
+    @content
+
+@mixin ultraUp
+  @include media(">=ultra")
+    @content
+
+//──────────────────────────────────────────────────────────────────────────────
+// Down (max only)
+//──────────────────────────────────────────────────────────────────────────────
+@mixin phoneDown
+  @include media("<tablet")
+    @content
+
+@mixin tabletDown
+  @include media("<laptop")
+    @content
+
+@mixin laptopDown
+  @include media("<desktop")
+    @content
+
+@mixin desktopDown
+  @include media("<hd")
+    @content
+
+@mixin hdDown
+  @include media("<full")
+    @content
+
+@mixin fullDown
+  @include media("<quad")
+    @content
+
+@mixin quadDown
+  @include media("<ultra")
+    @content
+
+// Usesless? Means all widths
+// @mixin ultraDown
+//   @content
+
+

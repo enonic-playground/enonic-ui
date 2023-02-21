@@ -1,4 +1,4 @@
-import type {CommonPropsWithShadeTint} from '..';
+import type {CommonPropsWithShadeTint} from '../index.d';
 
 
 export interface StrictHeaderProps extends CommonPropsWithShadeTint {

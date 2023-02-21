@@ -1,0 +1,62 @@
+@import breakpoints
+
+.enonic.test.breakpoints
+	background-color: gray
+	&:before
+		@include phone
+			content: "phone"
+		@include tablet
+			content: "tablet"
+		@include laptop
+			content: "laptop"
+		@include desktop
+			content: "desktop"
+		@include hd
+			content: "hd"
+		@include full
+			content: "full"
+		@include quad
+			content: "quad"
+		@include ultra
+			content: "ultra"
+
+.enonic.test.breakpoints-down
+	background-color: gray
+	&:before
+		// @include ultraDown
+		// 	content: "ultraDown"
+		@include quadDown
+			content: "quadDown"
+		@include fullDown
+			content: "fullDown"
+		@include hdDown
+			content: "hdDown"
+		@include desktopDown
+			content: "desktopDown"
+		@include laptopDown
+			content: "laptopDown"
+		@include tabletDown
+			content: "tabletDown"
+		@include phoneDown
+			content: "phoneDown"
+
+.enonic.test.breakpoints-up
+	background-color: gray
+	&:before
+		@include phoneUp
+			content: "phoneUp"
+		@include tabletUp
+			content: "tabletUp"
+		@include laptopUp
+			content: "laptopUp"
+		@include desktopUp
+			content: "desktopUp"
+		@include hdUp
+			content: "hdUp"
+		@include fullUp
+			content: "fullUp"
+		@include quadUp
+			content: "quadUp"
+		@include ultraUp
+			content: "ultraUp"
+

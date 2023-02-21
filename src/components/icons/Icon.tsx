@@ -1,5 +1,5 @@
-import type {Color} from '..';
-import type {IconName} from '.';
+import type {Color} from '../index.d';
+import type {IconName} from './index.d';
 
 import cx, {type ClassValue} from 'clsx';
 

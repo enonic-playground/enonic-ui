@@ -1,7 +1,7 @@
 import {
 	CommonProps,
 	CommonPropsWithShadeTint
-} from '../';
+} from '../index.d';
 
 export type BarShade = 'none'|'low'|'high' // Affects light-themes
 export type BarTint = 'none'|'low'|'high' // Affects dark-themes
@@ -11,11 +11,11 @@ export interface StrictBarProps extends CommonPropsWithShadeTint {
 }
 
 export interface StrictAppBarProps extends StrictBarProps {
-	type: never
+	type?: never
 }
 
 export interface StrictToolBarProps extends StrictBarProps {
-	type: never
+	type?: never
 }
 
 export interface StrictBarItemProps extends CommonProps {

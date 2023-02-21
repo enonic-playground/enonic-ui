@@ -1,4 +1,4 @@
-import type {IconName} from '.';
+import type {IconName} from './index.d';
 
 export const iconNames: IconName[] = [
 	'home',

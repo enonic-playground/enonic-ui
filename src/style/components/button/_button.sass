@@ -68,10 +68,10 @@
 	// Transparent
 	//──────────────────────────────────────────────────────────────────────────
 	&.transparent
-		// color: $color-gray
+		color: $color-gray
 		background-color: transparent
 		&:hover:not(:disabled)
-			// color: $color-gray-dark
+			color: $color-gray-light
 			background-color: transparent
 
 		&.black
@@ -82,11 +82,10 @@
 			color: $color-blue
 			&:hover:not(:disabled)
 				color: $color-blue-light
-		// Same as default above
-		// &.gray
-		// 	color: $color-gray-light
-		// 	&:hover:not(:disabled)
-		// 		color: $color-gray-lighter
+		&.gray
+			color: $color-gray-light
+			&:hover:not(:disabled)
+				color: $color-gray-lighter
 		&.green
 			color: $color-green
 			&:hover:not(:disabled)

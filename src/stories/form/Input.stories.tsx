@@ -14,10 +14,17 @@ const DivTemplate = (args) => <div {...args} />;
 export const Normal = InputTemplate.bind({});
 Normal.args = {};
 
+export const Stretch = DivTemplate.bind({});
+Stretch.args = {
+	children: [
+		<Input stretch/>,
+	]
+};
+
 export const Placeholder = DivTemplate.bind({});
 Placeholder.args = {
 	children: [
-		<Input disabled placeholder='Please fill me in'/>,
+		<Input placeholder='Please fill me in'/>,
 	]
 };
 

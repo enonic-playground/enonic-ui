@@ -23,17 +23,20 @@ export interface StrictInputProps extends Omit<
 	as?: any
 	children?: ReactNode
 	className?: ClassValue
+	defaultValue?: string|number // Passed via ...props
 	disabled?: boolean
 	error?: boolean|string
 	icon?: IconName
 	iconPosition?: 'left'|'right'
 	inputRef?: RefObject<HTMLInputElement>
-	// label: never // Handeled by Form.Field
+	// label?: never // Handeled by Form.Field
 	name?: string
-	placeholder?: string
-	required?: boolean
+	placeholder?: string // Passed via ...props
+	required?: boolean // Passed via ...props
+	size?: number
+	stretch?: boolean
 	type?: 'number'|'email'
-	value?: string|number
+	// value?: string|number // TODO controlled component?
 };
 
 
@@ -49,13 +52,27 @@ export function Input({
 	name,
 	// onChange
 	// onClick,
-	placeholder,
-	required,
+	size,
+	stretch,
+	style = {},
 	type,
-	value,
+	// value,
 	...props
 }: StrictInputProps) {
 	const [focus, setFocus] = useState(false);
+
+	// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#size
+	// Valid for email, password, tel, url, and text, the size attribute
+	// specifies how much of the input is shown.
+	// Basically creates same result as setting CSS width property with a few
+	// specialities.
+	// The actual unit of the value depends on the input type.
+	// For password and text, it is a number of characters (or em units) with
+	// a default value of 20, and for others, it is pixels (or px units).
+	// CSS width takes precedence over the size attribute.
+	if (size && type === 'number' && !style.width) {
+		style.width = `${size+1}em`;
+	}
 
 	if (!children) {
 		children = [
@@ -64,11 +81,11 @@ export function Input({
 				name={name}
 				onBlur={() => setFocus(false)}
 				onFocus={() => setFocus(true)}
-				placeholder={placeholder}
 				ref={inputRef}
-				required={required}
+				size={size}
+				style={style}
 				type={type}
-				value={value}
+				{...props}
 			/>
 		]
 	}
@@ -93,12 +110,11 @@ export function Input({
 					disabled,
 					error,
 					focus,
-					// required,
+					stretch,
 				},
 				className
 			)}
 			onClick={() => inputRef.current.focus()}
-			{...props}
 		>
 			{children}
 		</ElementType>

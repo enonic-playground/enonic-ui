@@ -8,6 +8,9 @@
 	gap: 10px
 	justify-content: flex-start // on main-axis
 
+	&.low-shade
+		background-color: var(--color-low-shade-bg)
+		color: var(--color-low-shade-fg)
 	&.high-shade
 		background-color: var(--color-high-shade-bg)
 		color: var(--color-high-shade-fg)
@@ -28,6 +31,12 @@
 //──────────────────────────────────────────────────────────────────────────────
 // Dark-theme
 //──────────────────────────────────────────────────────────────────────────────
-// .dark-theme .enonic.bar:not(.item)
-// 	background-color: var(--darkmode-color-pair-darkest-bg)
-// 	color: var(--darkmode-color-pair-darkest-fg)
+.dark-theme .enonic.bar:not(.item)
+	// 	background-color: var(--darkmode-color-pair-darkest-bg)
+	// 	color: var(--darkmode-color-pair-darkest-fg)
+	&.low-tint
+		background-color: var(--darkmode-color-pair-dark-bg)
+		color: var(--darkmode-color-pair-dark-fg)
+	&.high-tint
+		background-color: var(--darkmode-color-pair-lightest-bg)
+		color: var(--darkmode-color-pair-lightest-fg)

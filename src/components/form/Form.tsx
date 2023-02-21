@@ -3,6 +3,7 @@ import type {
 	HTMLAttributes,
 	ReactNode
 } from 'react';
+import {Group} from '../Group';
 import {FormInput} from './FormInput';
 
 import cx from 'clsx';
@@ -14,6 +15,7 @@ HTMLAttributes<HTMLFormElement>, 'className'> {
 	as?: any
 	children?: ReactNode
 	className?: ClassValue
+	stretch?: boolean
 };
 
 
@@ -21,6 +23,7 @@ export function Form({
 	as = 'form',
 	children,
 	className,
+	stretch,
 	...props
 }: StrictFormProps) {
 	const ElementType = as;
@@ -29,6 +32,9 @@ export function Form({
 			className={cx(
 				'enonic',
 				'form',
+				{
+					stretch
+				},
 				className
 			)}
 			{...props}
@@ -39,5 +45,7 @@ export function Form({
 }
 
 Form.Field = Field;
+
+Form.Group = Group;
 
 Form.Input = FormInput;

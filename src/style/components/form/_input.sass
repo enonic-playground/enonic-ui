@@ -2,14 +2,12 @@ $padding-horizontal-input: 10px
 $padding-vertical-input: 10px
 
 .enonic.input
-	// align-items: middle
 	background-color: var(--color-bg)
 	border-color: $color-gray
 	border-width: 1px
 	border-style: solid
 	box-sizing: border-box
 	display: inline-flex
-	// flex-wrap: wrap
 	gap: $padding-horizontal-input
 	padding: $padding-vertical-input $padding-horizontal-input
 	&:not(.disabled)
@@ -21,6 +19,8 @@ $padding-vertical-input: 10px
 		border-color: var(--color-focus)
 	&.error
 		border-color: var(--color-error)
+	&.stretch
+		width: 100%
 
 .enonic.input>input
 	// This is needed or the flex-container will sometimes move vertically
