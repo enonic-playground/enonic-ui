@@ -1,29 +1,25 @@
-import type {CommonPropsWithShadeTint} from './index.d'
-
+import type {CommonPropsWithShadeTint} from './index.d';
 import cx from 'clsx';
 import {forwardRef} from 'react';
 
 
-export interface StrictMainProps extends CommonPropsWithShadeTint {
-	stretch?: boolean
-}
+export type StrictPanelProps = CommonPropsWithShadeTint;
 
 
-export const Main = forwardRef(({
+export const Panel = forwardRef(({
+	as = 'aside',
 	children,
 	className,
-	as = 'main',
 	shade = 'none',
-	stretch,
 	tint = shade,
 	...props
-}: StrictMainProps, ref) => {
+}: StrictPanelProps, ref) => {
 	const ElementType = as;
 	return (
 		<ElementType
 			className={cx(
 				'enonic',
-				'main',
+				'panel',
 				shade && {
 					low: 'low-shade',
 					high: 'high-shade',
@@ -32,9 +28,6 @@ export const Main = forwardRef(({
 					low: 'low-tint',
 					high: 'high-tint',
 				}[tint],
-				{
-					stretch
-				},
 				className
 			)}
 			{...props}

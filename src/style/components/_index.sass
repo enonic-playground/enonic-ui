@@ -1,1 +1,12 @@
-@import bar, button, form, group, header, icon, modal, svg, tab
+@import bar, button, form, grid, group, header, icon, modal, panel, resizable, splitter, svg, tab
+
+.enonic.main
+	min-height: 0
+	min-width: 0
+	overflow: auto
+	&.disabled
+		opacity: .45
+		pointer-events: none
+	&.stretch
+		// flex-grow: 1
+		width: 100%

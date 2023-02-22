@@ -15,8 +15,10 @@ root.render(
 	document.getElementById('root'), // React 17
 	() => {
 		document.title = 'Users - Enonic XP Admin';
+		document.querySelector('html')?.classList.add('enonic')
+		// document.querySelector('html')?.classList.add('html')
 		document.body.classList.add('enonic');
-		document.body.classList.add('body');
+		// document.body.classList.add('body');
 	}
 );
 

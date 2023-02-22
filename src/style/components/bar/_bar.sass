@@ -1,8 +1,6 @@
 // @import ../../color
 
 .enonic.bar:not(.item)
-	// align-items: stretch // on cross-axis // stretch is the default
-	box-sizing: border-box
 	display: flex
 	flex-direction: row // sets main-axis
 	gap: 10px
@@ -16,24 +14,15 @@
 		color: var(--color-high-shade-fg)
 
 	//──────────────────────────────────────────────────────────────────────────
-	// AppBar
-	//──────────────────────────────────────────────────────────────────────────
-	// &.app
-	// 	background-color: $color-gray-darkest
-
-	//──────────────────────────────────────────────────────────────────────────
 	// ToolBar
 	//──────────────────────────────────────────────────────────────────────────
 	&.tool
-		// background-color: $color-white
 		border-bottom: 1px solid $color-gray
 
 //──────────────────────────────────────────────────────────────────────────────
 // Dark-theme
 //──────────────────────────────────────────────────────────────────────────────
 .dark-theme .enonic.bar:not(.item)
-	// 	background-color: var(--darkmode-color-pair-darkest-bg)
-	// 	color: var(--darkmode-color-pair-darkest-fg)
 	&.low-tint
 		background-color: var(--darkmode-color-pair-dark-bg)
 		color: var(--darkmode-color-pair-dark-fg)

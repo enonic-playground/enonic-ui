@@ -1,7 +1,16 @@
 import './style/index.sass';
 import * as React from 'react';
 import {
-	AppBar, Aside, Bar, Button, Group, Header, Icon, Main, Span, Svg, ToolBar
+	AppBar,
+	Bar, Button,
+	Grid,
+	Header,
+	Icon,
+	Main,
+	Panel,
+	Resizable,
+	Span, Svg,
+	ToolBar,
 } from './components';
 import useTheme from './hooks/useTheme';
 
@@ -9,10 +18,12 @@ import useTheme from './hooks/useTheme';
 export default function App() {
 	const {theme, toggleTheme} = useTheme();
 	return (
-		<>
-			<AppBar shade='high' style={{
-				height: '44px'
-			}}>
+		<Grid
+			as='section'
+			rows={['44px','39px']}
+			viewport
+		>
+			<AppBar shade='high'>
 				<Bar.Item
 					style={{
 						marginLeft: 10
@@ -46,9 +57,6 @@ export default function App() {
 			</AppBar>
 			<ToolBar
 				shade='low'
-				style={{
-					height: '39px'
-				}}
 			>
 				<Button transparent>
 					<Icon name="search"/>
@@ -63,16 +71,34 @@ export default function App() {
 					Delete
 				</Button>
 			</ToolBar>
-			<Group as='section'>
-				<Aside style={{
-					width: '522px'
+			<Resizable
+				as='section'
+				style={{
+					overflow: 'auto'
+				}}
+			>
+				<Panel style={{
+					width: '38%'
 				}}>
-					Something
-				</Aside>
-				<Main>
-					<Header>Hello, world!</Header>
+					<div>Panel</div>
+					<div>One</div>
+					<div>Two</div>
+					<div>Three</div>
+					<div>Four</div>
+					<div>Five</div>
+					<div>Six</div>
+				</Panel>
+				<Main
+					stretch
+				>
+					<Header>Main</Header>
+					<div>One</div>
+					<div>Two</div>
+					<div>Three</div>
+					<div>Four</div>
+					<div>Five</div>
 				</Main>
-			</Group>
-		</>
+			</Resizable>
+		</Grid>
 	);
 }

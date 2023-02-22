@@ -1,8 +1,13 @@
 .enonic.group
-	column-gap: var(--air-horizontal)
+	align-items: stretch
 	display: flex
 	flex-wrap: nowrap
+
+	column-gap: var(--air-horizontal)
 	row-gap: var(--air-vertical)
+	&.compact
+		column-gap: 0
+		row-gap: 0
 
 	justify-content: flex-start
 	&.center

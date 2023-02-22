@@ -1,4 +1,12 @@
 @import functions, variables, breakpoints, color, fonts, components, features
 
-.enonic.body
-	margin: 0
+html.enonic
+	height: 100%
+	& *
+		box-sizing: border-box
+		margin: 0
+		padding: 0
+
+body.enonic
+	height: 100%
+	// margin: 0 // covered by reset above under "html.enonic *"

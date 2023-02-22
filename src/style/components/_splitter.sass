@@ -1,0 +1,30 @@
+.enonic.splitter:not(ghost)
+	background-color: #eee
+	position: relative // for ghosts absolute
+	width: 5px
+	&.low-shade
+		background-color: var(--color-low-shade-bg)
+		color: var(--color-low-shade-fg)
+	&.high-shade
+		background-color: var(--color-high-shade-bg)
+		color: var(--color-high-shade-fg)
+
+.enonic.splitter.ghost
+	background-color: transparent
+	bottom: 0
+	cursor: ew-resize
+	left: 0
+	position: absolute
+	right: 0
+	top: 0
+	&:focus
+		background-color: var(--color-focus)
+		outline: none
+
+.dark-theme .enonic.splitter:not(ghost)
+	&.low-tint
+		background-color: var(--darkmode-color-pair-dark-bg)
+		color: var(--darkmode-color-pair-dark-fg)
+	&.high-tint
+		background-color: var(--darkmode-color-pair-lightest-bg)
+		color: var(--darkmode-color-pair-lightest-fg)

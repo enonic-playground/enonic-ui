@@ -1,11 +1,11 @@
 import type {CommonProps} from './index.d';
 
 import cx from 'clsx';
-import * as React from 'react';
 
 
 export interface StrictGroupProps extends CommonProps {
 	center?: boolean
+	compact?: boolean
 	right?: boolean
 	stretch?: boolean
 	vertical?: boolean
@@ -17,6 +17,7 @@ export const Group = ({
 	center,
 	children,
 	className,
+	compact,
 	right,
 	stretch,
 	vertical,
@@ -30,6 +31,7 @@ export const Group = ({
 				'group',
 				{
 					center,
+					compact,
 					right,
 					stretch,
 					vertical,
