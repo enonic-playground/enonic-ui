@@ -33,7 +33,11 @@ Normal.args = {
 				size={3}
 				type='number'
 			/>
-		</Form.Group>
+		</Form.Group>,
+		<Form.Checkbox
+			defaultIndeterminate
+			label='Receive spam?'
+		/>
 	],
 };
 
@@ -73,6 +77,12 @@ Error.args = {
 	children: [
 		<Form.Input error='Invalid email address' label='Email' required type='email' value='fnord'/>,
 		<Form.Input error label='First name'/>,
+		<Form.Checkbox
+			defaultIndeterminate
+			error='Make up your mind'
+			label='Receive spam?'
+			required
+		/>
 	]
 };
 
@@ -85,6 +95,10 @@ DarkTheme.args = {
 			<Form.Input label='Last name'/>
 		</Form.Group>,
 		<Form.Input label='Age' required type='number'/>,
+		<Form.Checkbox
+			defaultIndeterminate
+			label='Receive spam?'
+		/>
 	],
 	className: 'dark-theme',
 	style: {

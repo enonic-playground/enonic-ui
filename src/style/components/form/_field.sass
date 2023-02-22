@@ -1,7 +1,12 @@
 .enonic.field
 	align-items: flex-start // cross axis, so in this case horizontally
 	display: inline-flex
+
 	flex-direction: column // vertical
+	&.right
+		column-gap: var(--air-horizontal)
+		flex-direction: row
+
 	&.stretch
 		width: 100%
 	&>label
@@ -10,3 +15,7 @@
 		content: '*'
 	&.error.required>label:after
 		color: var(--color-error)
+	&>span.enonic.error
+		color: var(--color-error)
+		font-size: .83em // small
+		white-space: nowrap

@@ -4,6 +4,7 @@ import type {
 	ReactNode
 } from 'react';
 import {Group} from '../Group';
+import {FormCheckbox} from './FormCheckbox';
 import {FormInput} from './FormInput';
 
 import cx from 'clsx';
@@ -43,6 +44,8 @@ export function Form({
 		</ElementType>
 	);
 }
+
+Form.Checkbox = FormCheckbox;
 
 Form.Field = Field;
 
