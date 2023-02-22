@@ -28,17 +28,17 @@
 		@include quadDown
 			content: "quadDown"
 		@include fullDown
-			content: "fullDown"
+			content: "fullDown quadDown"
 		@include hdDown
-			content: "hdDown"
+			content: "hdDown fullDown quadDown"
 		@include desktopDown
-			content: "desktopDown"
+			content: "desktopDown hdDown fullDown quadDown"
 		@include laptopDown
-			content: "laptopDown"
+			content: "laptopDown desktopDown hdDown fullDown quadDown"
 		@include tabletDown
-			content: "tabletDown"
+			content: "tabletDown laptopDown desktopDown hdDown fullDown quadDown"
 		@include phoneDown
-			content: "phoneDown"
+			content: "phoneDown tabletDown laptopDown desktopDown hdDown fullDown quadDown"
 
 .enonic.test.breakpoints-up
 	background-color: gray
@@ -46,17 +46,17 @@
 		@include phoneUp
 			content: "phoneUp"
 		@include tabletUp
-			content: "tabletUp"
+			content: "phoneUp tabletUp"
 		@include laptopUp
-			content: "laptopUp"
+			content: "phoneUp tabletUp laptopUp"
 		@include desktopUp
-			content: "desktopUp"
+			content: "phoneUp tabletUp laptopUp desktopUp"
 		@include hdUp
-			content: "hdUp"
+			content: "phoneUp tabletUp laptopUp desktopUp hdUp"
 		@include fullUp
-			content: "fullUp"
+			content: "phoneUp tabletUp laptopUp desktopUp hdUp fullUp"
 		@include quadUp
-			content: "quadUp"
+			content: "phoneUp tabletUp laptopUp desktopUp hdUp fullUp quadUp"
 		@include ultraUp
-			content: "ultraUp"
+			content: "phoneUp tabletUp laptopUp desktopUp hdUp fullUp quadUp ultraUp"
 
