@@ -1,3 +1,6 @@
+//──────────────────────────────────────────────────────────────────────────────
+// Container
+//──────────────────────────────────────────────────────────────────────────────
 $padding-horizontal-input: 10px
 $padding-vertical-input: 10px
 
@@ -19,8 +22,13 @@ $padding-vertical-input: 10px
 	&.error
 		border-color: var(--color-error)
 	&.stretch
-		width: 100%
+		align-self: stretch
+		flex-grow: 1
+		// width: 100% // This makes it overflow
 
+//──────────────────────────────────────────────────────────────────────────────
+// Input
+//──────────────────────────────────────────────────────────────────────────────
 .enonic.input>input
 	// This is needed or the flex-container will sometimes move vertically
 	// depending upon it's items.
@@ -37,11 +45,17 @@ $padding-vertical-input: 10px
 
 	width: 100%
 
+//──────────────────────────────────────────────────────────────────────────────
+// Error message
+//──────────────────────────────────────────────────────────────────────────────
 .enonic.input>.enonic.error
 	color: var(--color-error)
 	font-size: .83em // small
 	white-space: nowrap
 
+//──────────────────────────────────────────────────────────────────────────────
+// Icon
+//──────────────────────────────────────────────────────────────────────────────
 .enonic.input>.enonic.icon
 	// align-self: center
 	color: $color-gray

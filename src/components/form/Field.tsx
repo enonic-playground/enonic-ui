@@ -13,10 +13,11 @@ import {isStringLiteral} from '../../utils/isStringLiteral';
 
 
 export interface StrictFormFieldProps extends CommonProps {
+	disabled?: boolean
 	error?: boolean|string
 	focusRef?: RefObject<HTMLInputElement> // TODO Support more Elements
 	label?: string
-	labelPosition?: 'right'// |'left'|'left corner'|'right corner' // TODO
+	labelPosition?: 'bottom'|'left'|'top'|'right'
 	name?: string
 	required?: boolean
 	stretch?: boolean
@@ -28,6 +29,7 @@ export function Field({
 	as = 'div',
 	children,
 	className,
+	disabled,
 	error,
 	focusRef,
 	label,
@@ -45,13 +47,16 @@ export function Field({
 	if (!children) { children=[]; }
 	if (!Array.isArray(children)) { children=[children]; }
 	if (label) {
-		(children as ReactNode[])[labelPosition === 'right' ? 'push' : 'unshift'](<label
+		(children as ReactNode[])[
+			['bottom', 'right'].includes(labelPosition) ? 'push' : 'unshift'
+		](<label
 			htmlFor={name}
 			onClick={() => focusRef?.current?.focus()}
 		>{label}</label>)
 	}
 	if(type === 'checkbox' && isStringLiteral(error)) {
-		(children as ReactNode[]).push(<span className='enonic error'>{error}</span>);
+		(children as ReactNode[])
+			.push(<span className='enonic error'>{error}</span>);
 	}
 	const ElementType = as;
 	return (
@@ -60,6 +65,7 @@ export function Field({
 				'enonic',
 				'field',
 				{
+					disabled,
 					error,
 					stretch,
 					required,

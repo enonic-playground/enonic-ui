@@ -1,22 +1,46 @@
+//──────────────────────────────────────────────────────────────────────────────
+// Container
+//──────────────────────────────────────────────────────────────────────────────
 .enonic.field
 	align-items: flex-start // cross axis, so in this case horizontally
-
 	display: inline-flex
 	flex-direction: column // vertical
+
+	&.disabled
+		opacity: .5
+		pointer-events: none
+
+	&.left,
 	&.right
+		align-items: center
 		column-gap: var(--air-horizontal)
 		display: flex
 		flex-direction: row
 
 	&.stretch
 		width: 100%
+//──────────────────────────────────────────────────────────────────────────────
+// Label
+//──────────────────────────────────────────────────────────────────────────────
+.enonic.field
 	&>label
 		font-size: .83em // small
+
 	&.required>label:after
 		content: '*'
+
 	&.error.required>label:after
 		color: var(--color-error)
+
+	&:not(.disabled)>label
+		cursor: pointer
+
+//──────────────────────────────────────────────────────────────────────────────
+// Error message
+//──────────────────────────────────────────────────────────────────────────────
+.enonic.field
 	&>span.enonic.error
 		color: var(--color-error)
 		font-size: .83em // small
 		white-space: nowrap
+

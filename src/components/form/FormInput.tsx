@@ -10,17 +10,20 @@ import {Field} from './Field'
 
 
 export interface StrictFormInputProps extends StrictInputProps {
+	disabled?: boolean
 	label?: string
-	// labelPosition: 'left'|'right'|'left corner'|'right corner' // TODO
+	labelPosition?: 'bottom'|'left'|'top'|'right'
 	stretch?: boolean
 }
 
 
 export function FormInput({
 	as = 'div',
+	disabled,
 	error,
 	name,
 	label,
+	labelPosition,
 	required,
 	stretch,
 	...props
@@ -33,14 +36,17 @@ export function FormInput({
 	return (
 		<Field
 			as={as}
+			disabled={disabled}
 			error={error}
 			focusRef={inputRef}
 			label={label}
+			labelPosition={labelPosition}
 			name={name}
 			required={required}
 			stretch={stretch}
 		>
 			<Input
+				disabled={disabled}
 				error={error}
 				inputRef={inputRef}
 				name={name}

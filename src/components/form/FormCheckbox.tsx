@@ -7,10 +7,11 @@ import {Field} from './Field'
 
 
 export interface StrictFormCheckboxProps extends Omit<StrictCheckboxProps,'error'> {
+	disabled?: boolean
 	error?: boolean|string
 	id?: never // generated
 	label?: string
-	labelPosition?: 'right'// |'left'|'left corner'|'right corner' // TODO
+	labelPosition?: never
 	required?: boolean
 	stretch?: boolean
 }
@@ -18,10 +19,11 @@ export interface StrictFormCheckboxProps extends Omit<StrictCheckboxProps,'error
 
 export function FormCheckbox({
 	as = 'div',
+	disabled,
 	error,
 	name,
 	label,
-	labelPosition = 'right',
+	// labelPosition,
 	required,
 	stretch,
 	...props
@@ -32,15 +34,17 @@ export function FormCheckbox({
 		<Field
 			as={as}
 			error={error}
+			disabled={disabled}
 			focusRef={focusRef}
 			label={label}
-			labelPosition={labelPosition}
+			labelPosition='right'
 			name={id}
 			required={required}
 			stretch={stretch}
 			type='checkbox'
 		>
 			<Checkbox
+				disabled={disabled}
 				error={!!error}
 				focusRef={focusRef}
 				id={id}
