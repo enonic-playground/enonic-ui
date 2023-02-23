@@ -56,7 +56,7 @@ DarkMode.args = {
 		<Icon color='purple' name='search'/>,
 		<Icon color='black' name='search'/>,
 	],
-	className: 'dark-theme',
+	className: 'enonic dark-theme',
 	style: {
 		padding: '20px 30px'
 	}

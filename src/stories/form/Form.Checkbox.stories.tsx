@@ -98,7 +98,7 @@ DarkTheme.args = {
 		<Form.Checkbox error='Error message' label='Label'/>,
 		<Form.Checkbox error='Error message' label='Label' required/>,
 	],
-	className: 'dark-theme',
+	className: 'enonic dark-theme',
 	style: {
 		padding: '20px 30px'
 	}

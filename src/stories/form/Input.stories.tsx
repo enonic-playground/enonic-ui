@@ -67,7 +67,7 @@ DarkTheme.args = {
 	children: [
 		<Input icon='search' placeholder='Search...'/>
 	],
-	className: 'dark-theme',
+	className: 'enonic dark-theme',
 	style: {
 		padding: '20px 30px'
 	}

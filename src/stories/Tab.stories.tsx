@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Tab } from '../components/tab/Tab';
+import { Panel } from '../components/Panel';
 
 export default {
 	title: 'Modules/Tab',
@@ -88,17 +89,147 @@ Colors.args = {
 			<Tab color='black'>Four</Tab>
 			<Tab color='black'>Five</Tab>
 		</Tab.Group>,
-		<Tab.Group style={{marginBottom: '20px'}}>
-			<Tab>Standard</Tab>
-			<Tab color='white'>White</Tab>
-			<Tab color='red'>Red</Tab>
-			<Tab color='orange'>Orange</Tab>
-			<Tab color='green'>Green</Tab>
-			<Tab color='blue'>Blue</Tab>
-			<Tab color='purple'>Purple</Tab>
-			<Tab color='gray'>Gray</Tab>
-			<Tab color='black'>Black</Tab>
-		</Tab.Group>
+		// <Tab.Group style={{marginBottom: '20px'}}>
+		// 	<Tab>Standard</Tab>
+		// 	<Tab color='white'>White</Tab>
+		// 	<Tab color='red'>Red</Tab>
+		// 	<Tab color='orange'>Orange</Tab>
+		// 	<Tab color='green'>Green</Tab>
+		// 	<Tab color='blue'>Blue</Tab>
+		// 	<Tab color='purple'>Purple</Tab>
+		// 	<Tab color='gray'>Gray</Tab>
+		// 	<Tab color='black'>Black</Tab>
+		// </Tab.Group>,
+		<Panel shade='low'>
+			<Tab.Group style={{marginBottom: '20px'}}>
+				<Tab>One</Tab>
+				<Tab>Two</Tab>
+				<Tab active>Three</Tab>
+				<Tab>Four</Tab>
+				<Tab>Five</Tab>
+			</Tab.Group>
+			<Tab.Group style={{marginBottom: '20px'}}>
+				<Tab color='white'>One</Tab>
+				<Tab color='white'>Two</Tab>
+				<Tab active  color='white'>Three</Tab>
+				<Tab color='white'>Four</Tab>
+				<Tab color='white'>Five</Tab>
+			</Tab.Group>
+			<Tab.Group style={{marginBottom: '20px'}}>
+				<Tab color='red'>One</Tab>
+				<Tab color='red'>Two</Tab>
+				<Tab active color='red'>Three</Tab>
+				<Tab color='red'>Four</Tab>
+				<Tab color='red'>Five</Tab>
+			</Tab.Group>
+			<Tab.Group style={{marginBottom: '20px'}}>
+				<Tab color='orange'>One</Tab>
+				<Tab color='orange'>Two</Tab>
+				<Tab active color='orange'>Three</Tab>
+				<Tab color='orange'>Four</Tab>
+				<Tab color='orange'>Five</Tab>
+			</Tab.Group>
+			<Tab.Group style={{marginBottom: '20px'}}>
+				<Tab color='green'>One</Tab>
+				<Tab color='green'>Two</Tab>
+				<Tab active color='green'>Three</Tab>
+				<Tab color='green'>Four</Tab>
+				<Tab color='green'>Five</Tab>
+			</Tab.Group>
+			<Tab.Group style={{marginBottom: '20px'}}>
+				<Tab color='blue'>One</Tab>
+				<Tab color='blue'>Two</Tab>
+				<Tab active color='blue'>Three</Tab>
+				<Tab color='blue'>Four</Tab>
+				<Tab color='blue'>Five</Tab>
+			</Tab.Group>
+			<Tab.Group style={{marginBottom: '20px'}}>
+				<Tab color='purple'>One</Tab>
+				<Tab color='purple'>Two</Tab>
+				<Tab active color='purple'>Three</Tab>
+				<Tab color='purple'>Four</Tab>
+				<Tab color='purple'>Five</Tab>
+			</Tab.Group>
+			<Tab.Group style={{marginBottom: '20px'}}>
+				<Tab color='gray'>One</Tab>
+				<Tab color='gray'>Two</Tab>
+				<Tab active color='gray'>Three</Tab>
+				<Tab color='gray'>Four</Tab>
+				<Tab color='gray'>Five</Tab>
+			</Tab.Group>
+			<Tab.Group style={{marginBottom: '20px'}}>
+				<Tab color='black'>One</Tab>
+				<Tab color='black'>Two</Tab>
+				<Tab active color='black'>Three</Tab>
+				<Tab color='black'>Four</Tab>
+				<Tab color='black'>Five</Tab>
+			</Tab.Group>
+		</Panel>,
+		<Panel shade='high'>
+			<Tab.Group style={{marginBottom: '20px'}}>
+				<Tab>One</Tab>
+				<Tab>Two</Tab>
+				<Tab active>Three</Tab>
+				<Tab>Four</Tab>
+				<Tab>Five</Tab>
+			</Tab.Group>
+			<Tab.Group style={{marginBottom: '20px'}}>
+				<Tab color='white'>One</Tab>
+				<Tab color='white'>Two</Tab>
+				<Tab active  color='white'>Three</Tab>
+				<Tab color='white'>Four</Tab>
+				<Tab color='white'>Five</Tab>
+			</Tab.Group>
+			<Tab.Group style={{marginBottom: '20px'}}>
+				<Tab color='red'>One</Tab>
+				<Tab color='red'>Two</Tab>
+				<Tab active color='red'>Three</Tab>
+				<Tab color='red'>Four</Tab>
+				<Tab color='red'>Five</Tab>
+			</Tab.Group>
+			<Tab.Group style={{marginBottom: '20px'}}>
+				<Tab color='orange'>One</Tab>
+				<Tab color='orange'>Two</Tab>
+				<Tab active color='orange'>Three</Tab>
+				<Tab color='orange'>Four</Tab>
+				<Tab color='orange'>Five</Tab>
+			</Tab.Group>
+			<Tab.Group style={{marginBottom: '20px'}}>
+				<Tab color='green'>One</Tab>
+				<Tab color='green'>Two</Tab>
+				<Tab active color='green'>Three</Tab>
+				<Tab color='green'>Four</Tab>
+				<Tab color='green'>Five</Tab>
+			</Tab.Group>
+			<Tab.Group style={{marginBottom: '20px'}}>
+				<Tab color='blue'>One</Tab>
+				<Tab color='blue'>Two</Tab>
+				<Tab active color='blue'>Three</Tab>
+				<Tab color='blue'>Four</Tab>
+				<Tab color='blue'>Five</Tab>
+			</Tab.Group>
+			<Tab.Group style={{marginBottom: '20px'}}>
+				<Tab color='purple'>One</Tab>
+				<Tab color='purple'>Two</Tab>
+				<Tab active color='purple'>Three</Tab>
+				<Tab color='purple'>Four</Tab>
+				<Tab color='purple'>Five</Tab>
+			</Tab.Group>
+			<Tab.Group style={{marginBottom: '20px'}}>
+				<Tab color='gray'>One</Tab>
+				<Tab color='gray'>Two</Tab>
+				<Tab active color='gray'>Three</Tab>
+				<Tab color='gray'>Four</Tab>
+				<Tab color='gray'>Five</Tab>
+			</Tab.Group>
+			<Tab.Group style={{marginBottom: '20px'}}>
+				<Tab color='black'>One</Tab>
+				<Tab color='black'>Two</Tab>
+				<Tab active color='black'>Three</Tab>
+				<Tab color='black'>Four</Tab>
+				<Tab color='black'>Five</Tab>
+			</Tab.Group>
+		</Panel>
 	],
 	className: 'light-theme',
 	style: {
@@ -173,19 +304,138 @@ DarkTheme.args = {
 			<Tab color='black'>Four</Tab>
 			<Tab color='black'>Five</Tab>
 		</Tab.Group>,
-		<Tab.Group style={{marginBottom: '20px'}}>
-			<Tab>Standard</Tab>
-			<Tab color='white'>White</Tab>
-			<Tab color='red'>Red</Tab>
-			<Tab color='orange'>Orange</Tab>
-			<Tab color='green'>Green</Tab>
-			<Tab color='blue'>Blue</Tab>
-			<Tab color='purple'>Purple</Tab>
-			<Tab color='gray'>Gray</Tab>
-			<Tab color='black'>Black</Tab>
-		</Tab.Group>
+		<Panel shade='low'>
+			<Tab.Group style={{marginBottom: '20px'}}>
+				<Tab>One</Tab>
+				<Tab>Two</Tab>
+				<Tab active>Three</Tab>
+				<Tab>Four</Tab>
+				<Tab>Five</Tab>
+			</Tab.Group>
+			<Tab.Group style={{marginBottom: '20px'}}>
+				<Tab color='white'>One</Tab>
+				<Tab color='white'>Two</Tab>
+				<Tab active  color='white'>Three</Tab>
+				<Tab color='white'>Four</Tab>
+				<Tab color='white'>Five</Tab>
+			</Tab.Group>
+			<Tab.Group style={{marginBottom: '20px'}}>
+				<Tab color='red'>One</Tab>
+				<Tab color='red'>Two</Tab>
+				<Tab active color='red'>Three</Tab>
+				<Tab color='red'>Four</Tab>
+				<Tab color='red'>Five</Tab>
+			</Tab.Group>
+			<Tab.Group style={{marginBottom: '20px'}}>
+				<Tab color='orange'>One</Tab>
+				<Tab color='orange'>Two</Tab>
+				<Tab active color='orange'>Three</Tab>
+				<Tab color='orange'>Four</Tab>
+				<Tab color='orange'>Five</Tab>
+			</Tab.Group>
+			<Tab.Group style={{marginBottom: '20px'}}>
+				<Tab color='green'>One</Tab>
+				<Tab color='green'>Two</Tab>
+				<Tab active color='green'>Three</Tab>
+				<Tab color='green'>Four</Tab>
+				<Tab color='green'>Five</Tab>
+			</Tab.Group>
+			<Tab.Group style={{marginBottom: '20px'}}>
+				<Tab color='blue'>One</Tab>
+				<Tab color='blue'>Two</Tab>
+				<Tab active color='blue'>Three</Tab>
+				<Tab color='blue'>Four</Tab>
+				<Tab color='blue'>Five</Tab>
+			</Tab.Group>
+			<Tab.Group style={{marginBottom: '20px'}}>
+				<Tab color='purple'>One</Tab>
+				<Tab color='purple'>Two</Tab>
+				<Tab active color='purple'>Three</Tab>
+				<Tab color='purple'>Four</Tab>
+				<Tab color='purple'>Five</Tab>
+			</Tab.Group>
+			<Tab.Group style={{marginBottom: '20px'}}>
+				<Tab color='gray'>One</Tab>
+				<Tab color='gray'>Two</Tab>
+				<Tab active color='gray'>Three</Tab>
+				<Tab color='gray'>Four</Tab>
+				<Tab color='gray'>Five</Tab>
+			</Tab.Group>
+			<Tab.Group style={{marginBottom: '20px'}}>
+				<Tab color='black'>One</Tab>
+				<Tab color='black'>Two</Tab>
+				<Tab active color='black'>Three</Tab>
+				<Tab color='black'>Four</Tab>
+				<Tab color='black'>Five</Tab>
+			</Tab.Group>
+		</Panel>,
+		<Panel shade='high'>
+			<Tab.Group style={{marginBottom: '20px'}}>
+				<Tab>One</Tab>
+				<Tab>Two</Tab>
+				<Tab active>Three</Tab>
+				<Tab>Four</Tab>
+				<Tab>Five</Tab>
+			</Tab.Group>
+			<Tab.Group style={{marginBottom: '20px'}}>
+				<Tab color='white'>One</Tab>
+				<Tab color='white'>Two</Tab>
+				<Tab active  color='white'>Three</Tab>
+				<Tab color='white'>Four</Tab>
+				<Tab color='white'>Five</Tab>
+			</Tab.Group>
+			<Tab.Group style={{marginBottom: '20px'}}>
+				<Tab color='red'>One</Tab>
+				<Tab color='red'>Two</Tab>
+				<Tab active color='red'>Three</Tab>
+				<Tab color='red'>Four</Tab>
+				<Tab color='red'>Five</Tab>
+			</Tab.Group>
+			<Tab.Group style={{marginBottom: '20px'}}>
+				<Tab color='orange'>One</Tab>
+				<Tab color='orange'>Two</Tab>
+				<Tab active color='orange'>Three</Tab>
+				<Tab color='orange'>Four</Tab>
+				<Tab color='orange'>Five</Tab>
+			</Tab.Group>
+			<Tab.Group style={{marginBottom: '20px'}}>
+				<Tab color='green'>One</Tab>
+				<Tab color='green'>Two</Tab>
+				<Tab active color='green'>Three</Tab>
+				<Tab color='green'>Four</Tab>
+				<Tab color='green'>Five</Tab>
+			</Tab.Group>
+			<Tab.Group style={{marginBottom: '20px'}}>
+				<Tab color='blue'>One</Tab>
+				<Tab color='blue'>Two</Tab>
+				<Tab active color='blue'>Three</Tab>
+				<Tab color='blue'>Four</Tab>
+				<Tab color='blue'>Five</Tab>
+			</Tab.Group>
+			<Tab.Group style={{marginBottom: '20px'}}>
+				<Tab color='purple'>One</Tab>
+				<Tab color='purple'>Two</Tab>
+				<Tab active color='purple'>Three</Tab>
+				<Tab color='purple'>Four</Tab>
+				<Tab color='purple'>Five</Tab>
+			</Tab.Group>
+			<Tab.Group style={{marginBottom: '20px'}}>
+				<Tab color='gray'>One</Tab>
+				<Tab color='gray'>Two</Tab>
+				<Tab active color='gray'>Three</Tab>
+				<Tab color='gray'>Four</Tab>
+				<Tab color='gray'>Five</Tab>
+			</Tab.Group>
+			<Tab.Group style={{marginBottom: '20px'}}>
+				<Tab color='black'>One</Tab>
+				<Tab color='black'>Two</Tab>
+				<Tab active color='black'>Three</Tab>
+				<Tab color='black'>Four</Tab>
+				<Tab color='black'>Five</Tab>
+			</Tab.Group>
+		</Panel>
 	],
-	className: 'dark-theme',
+	className: 'enonic dark-theme',
 	style: {
 		padding: '30px 20px'
 	}

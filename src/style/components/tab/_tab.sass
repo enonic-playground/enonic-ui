@@ -1,130 +1,82 @@
-// @import ../../color
-
-$color-tab-border: $color-gray-lighter
-
 .enonic.tab:not(.group)
-	border-bottom-color: transparent
-	border-bottom-style: none
-	border-bottom-width: 0
-
-	border-left-color: transparent
-	border-left-style: solid
-	border-left-width: 1px
-
-	border-right-color: transparent
-	border-right-style: solid
-	border-right-width: 1px
-
-	border-top-color: transparent
 	border-top-left-radius: 5px
 	border-top-right-radius: 5px
-	border-top-style: solid
-	border-top-width: 1px
+
+	// Slight darken on non active
+	// NOTE: Overlaying a black background with darken, does nothing.
+	box-shadow: bsInset(rgba(0, 0, 0, .3)), bsFill(rgba(0, 0, 0, .15))
 
 	color: inherit
 	cursor: pointer
-	margin-bottom: -1px
 	padding: 5px
 
 	&.active
-		background-color: $color-background
-		border-left-color: $color-tab-border
-		border-right-color: $color-tab-border
-		border-top-color: $color-tab-border
+		// No overlay on active, but same "border"
+		box-shadow: bsInsetTopLeftRight(rgba(0, 0, 0, .3))
+
 	&:hover:not(:disabled)
-		background-color: $color-gray-lightest
+		color: var(--color-black)
+		// Strong lighten on hover
+		box-shadow: bsInset(var(--color-black)), bsFill(rgba(255, 255, 255, .8))
 
 	//──────────────────────────────────────────────────────────────────────────
 	// Colors
 	//──────────────────────────────────────────────────────────────────────────
-	&.black
-		background-color: $color-black
-		border-left-color: transparent
-		border-right-color: transparent
-		border-top-color: transparent
-		color: $color-background
-		&.active
-			background-color: $color-gray-darker
-		&:hover:not(:disabled)
-			background-color: $color-gray-light
-	&.blue
-		background-color: $color-blue
-		border-left-color: transparent
-		border-right-color: transparent
-		border-top-color: transparent
-		color: $color-background
-		&.active
-			background-color: $color-blue-dark
-		&:hover:not(:disabled)
-			background-color: $color-blue-lighter
-	&.gray
-		background-color: $color-gray
-		border-left-color: transparent
-		border-right-color: transparent
-		border-top-color: transparent
-		color: $color-background
-		&.active
-			background-color: $color-gray-darker
-		&:hover:not(:disabled)
-			background-color: $color-gray-light
-	&.green
-		background-color: $color-green
-		border-left-color: transparent
-		border-right-color: transparent
-		border-top-color: transparent
-		color: $color-background
-		&.active
-			background-color: $color-green-dark
-		&:hover:not(:disabled)
-			background-color: $color-green-lighter
-	&.orange
-		background-color: $color-orange
-		border-left-color: transparent
-		border-right-color: transparent
-		border-top-color: transparent
-		color: $color-background
-		&.active
-			background-color: $color-orange-dark
-		&:hover:not(:disabled)
-			background-color: $color-orange-lighter
-	&.purple
-		background-color: $color-purple
-		border-left-color: transparent
-		border-right-color: transparent
-		border-top-color: transparent
-		color: $color-background
-		&.active
-			background-color: $color-purple-dark
-		&:hover:not(:disabled)
-			background-color: $color-purple-lighter
+	&.blue,
+	&.gray,
+	&.green,
+	&.orange,
+	&.purple,
 	&.red
-		background-color: $color-red
-		border-left-color: transparent
-		border-right-color: transparent
-		border-top-color: transparent
-		color: $color-background
+		// More darken on non active for these colors
+		box-shadow: bsInset(rgba(0, 0, 0, .3)), bsFill(rgba(0, 0, 0, .25))
 		&.active
-			background-color: $color-red-dark
+			// No overlay on active, but same "border" (same as above but needed for specificiy)
+			box-shadow: bsInsetTopLeftRight(rgba(0, 0, 0, .3))
+			&:hover:not(:disabled)
+				box-shadow: bsInset(var(--color-black)), bsFill(rgba(255, 255, 255, .8))
+
+	&.black
+		background-color: var(--color-black)
+		color: var(--color-white)
+		&.active
+			// Slight lighten on active
+			box-shadow: bsInset(rgba(0, 0, 0, .3)), bsFill(rgba(255, 255, 255, .4))
 		&:hover:not(:disabled)
-			background-color: $color-red-lighter
+			box-shadow: bsInset(var(--color-black)), bsFill(rgba(255, 255, 255, .8))
+			// color: var(--color-black)
+	&.blue
+		background-color: var(--color-blue)
+		color: var(--color-white)
+	&.gray
+		background-color: var(--color-gray)
+		color: var(--color-white)
+	&.green
+		background-color: var(--color-green)
+		color: var(--color-white)
+	&.orange
+		background-color: var(--color-orange)
+		color: var(--color-white)
+	&.purple
+		background-color: var(--color-purple)
+		color: var(--color-white)
+	&.red
+		color: var(--color-white)
+		background-color: var(--color-red)
 	&.white
-		background-color: $color-white
-		&.active
-			background-color: $color-background
+		background-color: var(--color-white)
+		color: var(--color-black)
 
 //──────────────────────────────────────────────────────────────────────────────
 // Dark-theme
 //──────────────────────────────────────────────────────────────────────────────
 .dark-theme .enonic.tab:not(.group)
 	color: var(--darkmode-color-pair-darkest-fg)
-	&.active
-		background-color: var(--darkmode-color-pair-darkest-bg)
-	&:hover:not(:disabled)
-		color: $color-foreground
-
+	&.blue,
+	&.gray,
+	&.green,
+	&.orange,
+	&.purple,
+	&.red,
 	&.white
-		color: $color-foreground
-		&.active
-			background-color: $color-gray-light
-		&:hover:not(:disabled)
-			background-color: $color-gray-lighter
+		color: var(--color-black)

@@ -55,7 +55,7 @@ DarkTheme.args = {
 		<Header size='small'>Small</Header>,
 		<Header size='tiny'>Tiny</Header>
 	],
-	className: 'dark-theme'
+	className: 'enonic dark-theme'
 }
 
 export const AsDiv = Template.bind({});

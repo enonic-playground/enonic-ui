@@ -82,5 +82,5 @@ DarkTheme.args = {
 			<Button>Three</Button>
 		</Bar>
 	],
-	className: 'dark-theme'
+	className: 'enonic dark-theme'
 }

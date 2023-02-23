@@ -54,7 +54,7 @@ DarkMode.args = {
 		<Svg color='purple' name='users_404x404'/>,
 		<Svg color='black' name='users_404x404'/>,
 	],
-	className: 'dark-theme',
+	className: 'enonic dark-theme',
 	style: {
 		padding: '20px 30px'
 	}

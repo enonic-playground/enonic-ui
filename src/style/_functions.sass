@@ -3,3 +3,41 @@
 
 @function cssLighten($hue, $saturation, $lightness, $percent)
 	@return hsl(var($hue), var($saturation), calc(var($lightness) + $percent * 1%))
+
+@function bsInset($color, $width: 1px)
+	@return inset 0px 0px 0px $width $color
+
+@function bsFill($color)
+	@return bsInset($color, 99999px)
+
+@function bsInsetLeft($color, $width: 1px)
+	@return inset $width 0px 0px 0px $color
+
+@function bsInsetRight($color, $width: 1px)
+	@return inset (-$width) 0px 0px 0px $color
+
+@function bsInsetTop($color, $width: 1px)
+	@return inset 0px $width 0px 0px $color
+
+@function bsInsetTopLeft($color, $width: 1px)
+	@return inset $width $width 0px 0px $color
+
+@function bsInsetTopLeftRight($color, $width: 1px)
+	@return bsInsetTopLeft($color, $width), bsInsetRight($color, $width)
+
+@function bsOutLine($color, $width: 1px)
+	@return 0px 0px 0px $width $color
+
+@function bsBottom($color, $width: 1px)
+	@return 0px $width 0px 0px $color
+
+@function bsLeft($color, $width: 1px)
+	@return (-$width) 0px 0px 0px $color
+
+@function bsRight($color, $width: 1px)
+	@return $width 0px 0px 0px $color
+
+@function bsTop($color, $width: 1px)
+	@return 0px (-$width) 0px 0px $color
+
+//@function bs($top, $right, $bottom, $right, $color)

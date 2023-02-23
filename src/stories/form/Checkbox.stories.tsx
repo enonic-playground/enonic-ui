@@ -72,7 +72,7 @@ DarkTheme.args = {
 		<Checkbox defaultIndeterminate disabled/>,
 		<Checkbox error/>
 	],
-	className: 'dark-theme',
+	className: 'enonic dark-theme',
 	style: {
 		padding: '20px 30px'
 	}

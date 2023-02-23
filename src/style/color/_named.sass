@@ -1,20 +1,22 @@
-@import ./functions
-@import ./color/_enonicAdminArtifacts
-
 $color-black: #000
 $color-white: #fff
+
+:root
+	--color-black: #000
+	--color-white: #fff
 
 //──────────────────────────────────────────────────────────────────────────────
 // Gray
 //──────────────────────────────────────────────────────────────────────────────
 // CSS Named Colors
 //──────────────────────────────────────────────────────────────────────────────
-// gray: #808080 // 128,128,128
+// gray: #808080 // 128,128,128 // hsl(0, 0%, 50.2%)
 // darkgray: #a9a9a9 // 169,169,169
 // dimgray: #696969 // 105,105,105
 // lightgray: #d3d3d3 // 211,211,211
 
 :root
+	--color-gray: #808080
 	--color-gray-hue: 0
 	--color-gray-saturation: 0%
 	--color-gray-lightness: 50.2%
@@ -44,6 +46,7 @@ $color-gray-lightest: cssLighten(--color-gray-hue, --color-gray-saturation, --co
 // tomato: #ff6347 // 255,99,71
 
 :root
+	--color-red: #{$admin-red}
 	--color-red-hue: #{$admin-red-hue}
 	--color-red-saturation: #{$admin-red-saturation}
 	--color-red-lightness: #{$admin-red-lightness}
@@ -60,6 +63,7 @@ $color-red-lightest: cssLighten(--color-red-hue, --color-red-saturation, --color
 // Orange
 //──────────────────────────────────────────────────────────────────────────────
 :root
+	--color-orange: #{$admin-orange}
 	--color-orange-hue: #{$admin-orange-hue}
 	--color-orange-saturation: #{$admin-orange-saturation}
 	--color-orange-lightness: #{$admin-orange-lightness}
@@ -76,6 +80,7 @@ $color-orange-lightest: cssLighten(--color-orange-hue, --color-orange-saturation
 // Yellow
 //──────────────────────────────────────────────────────────────────────────────
 :root
+	--color-yellow: #{$admin-level-2}
 	--color-yellow-hue: #{$admin-level-2-hue}
 	--color-yellow-saturation: #{$admin-level-2-saturation}
 	--color-yellow-lightness: #{$admin-level-2-lightness}
@@ -92,6 +97,7 @@ $color-yellow-lightest: cssLighten(--color-yellow-hue, --color-yellow-saturation
 // Green
 //──────────────────────────────────────────────────────────────────────────────
 :root
+	--color-green: #{$admin-green}
 	--color-green-hue: #{$admin-green-hue}
 	--color-green-saturation: #{$admin-green-saturation}
 	--color-green-lightness: #{$admin-green-lightness}
@@ -114,6 +120,7 @@ $color-green-lightest: cssLighten(--color-green-hue, --color-green-saturation, -
 // royalblue: #4169E1
 
 :root
+	--color-blue: #{$admin-button-blue3}
 	--color-blue-hue: #{$admin-button-blue3-hue}
 	--color-blue-saturation: #{$admin-button-blue3-saturation}
 	--color-blue-lightness: #{$admin-button-blue3-lightness}
@@ -129,7 +136,9 @@ $color-blue-lightest: cssLighten(--color-blue-hue, --color-blue-saturation, --co
 //──────────────────────────────────────────────────────────────────────────────
 // Purple
 //──────────────────────────────────────────────────────────────────────────────
+// admin-level-0 is too dark
 :root
+	--color-purple: #8c40bf
 	--color-purple-hue: #{$admin-level-0-hue}
 	--color-purple-saturation: #{$admin-level-0-saturation}
 	--color-purple-lightness: #{$admin-level-0-lightness}
@@ -141,67 +150,3 @@ $color-purple-dark: cssDarken(--color-purple-hue, --color-purple-saturation, --c
 $color-purple-light: cssLighten(--color-purple-hue, --color-purple-saturation, --color-purple-lightness, 10)
 $color-purple-lighter: cssLighten(--color-purple-hue, --color-purple-saturation, --color-purple-lightness, 20)
 $color-purple-lightest: cssLighten(--color-purple-hue, --color-purple-saturation, --color-purple-lightness, 30)
-
-//──────────────────────────────────────────────────────────────────────────────
-// https://m2.material.io/design/color/dark-theme.html#properties
-// $material-recommended-dark-theme-surface-color: #121212 // rgb(18, 18, 18) // hsl(0, 0%, 7.1%)
-// $dark-theme-text-color: hsl(0, 0%, 92.9%) // rgb(237, 237, 237) // #ededed
-
-:root
-	// Default light-theme colors
-	--color-bg: #fff
-	--color-fg: #000
-
-	--color-low-shade-bg: #f7f7f7
-	--color-low-shade-fg: var(--color-fg)
-
-	--color-high-shade-bg: #333
-	--color-high-shade-fg: #eee
-
-	// Contrast Ratio 8.72:1 #a7a7a7 on #000, and color diff 501 :)
-	--darkmode-color-pair-darkest-bg: #000
-	--darkmode-color-pair-darkest-fg: #a7a7a7
-
-	// Contrast Ratio 9.62:1 #c8c8c8 on #212121 and color diff 501 :)
-	--darkmode-color-pair-darker-bg: #212121
-	--darkmode-color-pair-darker-fg: #c8c8c8
-
-	// Contrast Ratio 9.04:1 #dadada on #333, and color diff 501 :)
-	--darkmode-color-pair-dark-bg: #333
-	--darkmode-color-pair-dark-fg: #dadada
-
-	// Contrast Ratio 7.11:1 #fff on #585858, and color diff 501 :)
-	--darkmode-color-pair-lightest-bg: #585858
-	--darkmode-color-pair-lightest-fg: #fff
-
-	--color-error: #f0a197
-	--color-focus: #98c9f2
-
-	--color-background-hue: 0
-	--color-background-saturation: 0%
-	--color-background-lightness: 92.9%
-	--color-foreground-hue: 0
-	--color-foreground-saturation: 0%
-	--color-foreground-lightness: 7.1%
-
-$color-background: hsl(var(--color-background-hue), var(--color-background-saturation), var(--color-background-lightness))
-$color-foreground: hsl(var(--color-foreground-hue), var(--color-foreground-saturation), var(--color-foreground-lightness))
-// $color-foreground-dark-theme: $color-background
-// $color-background-dark-theme: $color-foreground
-
-// @media (prefers-color-scheme: dark)
-// 	background-color: var(--darkmode-color-pair-darker-bg)
-// 	color: var(--darkmode-color-pair-darker-fg)
-
-// @media (prefers-color-scheme: light)
-body,
-.light-theme
-	background-color: var(--color-bg)
-	color: var(--color-fg)
-	// color-scheme: light
-
-// .dark-theme .enonic
-.dark-theme
-	background-color: var(--darkmode-color-pair-darker-bg)
-	color: var(--darkmode-color-pair-darker-fg)
-	color-scheme: dark // For scrollbars and probably more

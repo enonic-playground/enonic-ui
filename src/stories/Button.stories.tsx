@@ -106,7 +106,7 @@ DarkTheme.args = {
 			<Button color='black' transparent>Black</Button>
 		</Button.Group>
 	],
-	className: 'dark-theme',
+	className: 'enonic dark-theme',
 	style: {
 		padding: '20px 30px'
 	}

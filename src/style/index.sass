@@ -8,5 +8,20 @@ html.enonic
 		padding: 0
 
 body.enonic
+	// color-scheme: light dark
 	height: 100%
 	// margin: 0 // covered by reset above under "html.enonic *"
+
+// @media (prefers-color-scheme: dark)
+// @media (prefers-color-scheme: light)
+
+body.enonic,
+.enonic.light-theme
+	background-color: var(--color-bg)
+	color: var(--color-fg)
+	color-scheme: light
+
+.enonic.dark-theme
+	background-color: var(--darkmode-color-pair-darker-bg)
+	color: var(--darkmode-color-pair-darker-fg)
+	color-scheme: dark // For scrollbars and probably more

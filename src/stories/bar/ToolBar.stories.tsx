@@ -32,5 +32,5 @@ DarkTheme.args = {
 			<Button transparent>Delete</Button>
 		</ToolBar>
 	],
-	className: 'dark-theme'
+	className: 'enonic dark-theme'
 }

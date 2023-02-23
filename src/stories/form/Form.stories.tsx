@@ -100,7 +100,7 @@ DarkTheme.args = {
 			label='Receive spam?'
 		/>
 	],
-	className: 'dark-theme',
+	className: 'enonic dark-theme',
 	style: {
 		padding: '20px 30px'
 	}

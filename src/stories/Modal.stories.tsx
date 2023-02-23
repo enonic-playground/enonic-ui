@@ -41,7 +41,7 @@ DarkTheme.args = {
 			<Button>Cancel</Button>
 		</Modal.Actions>
 	</Modal>,
-	className: 'dark-theme'
+	className: 'enonic dark-theme'
 }
 
 export const JustHeader = ModalTemplate.bind({});

@@ -83,5 +83,5 @@ DarkTheme.args = {
 			</Bar.Item>
 		</AppBar>
 	],
-	className: 'dark-theme'
+	className: 'enonic dark-theme'
 }
