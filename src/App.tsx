@@ -3,10 +3,12 @@ import * as React from 'react';
 import {
 	AppBar,
 	Bar, Button,
+	Form,
 	Grid,
 	Header,
 	Icon,
 	Main,
+	List,
 	Panel,
 	Resizable,
 	Span, Svg,
@@ -80,13 +82,11 @@ export default function App() {
 				<Panel style={{
 					width: '38%'
 				}}>
-					<div>Panel</div>
-					<div>One</div>
-					<div>Two</div>
-					<div>Three</div>
-					<div>Four</div>
-					<div>Five</div>
-					<div>Six</div>
+					<List selectable>
+						<List.Item><Form.Checkbox label='Content Studio'/></List.Item>
+						<List.Item><Form.Checkbox label='Data Toolbox'/></List.Item>
+						<List.Item><Form.Checkbox label='Explorer'/></List.Item>
+					</List>
 				</Panel>
 				<Main
 					stretch
