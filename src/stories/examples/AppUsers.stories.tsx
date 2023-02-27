@@ -4,7 +4,7 @@ import {
 	Bar,
 	ToolBar,
 } from '../../components/bar/Bar';
-import { Button } from '../../components/button/Button';
+import Button from '../../components/button';
 import { Span } from '../../components/Span';
 import { Svg } from '../../components/Svg';
 import { Tab } from '../../components/tab/Tab';

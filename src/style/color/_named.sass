@@ -1,33 +1,29 @@
-$color-black: #000
-$color-white: #fff
-
 :root
 	--color-black: #000
+	--color-hs-black: 0, 0%
+	--color-hsl-black: 0, 0%, 0%
+	--color-rgb-black: 0, 0, 0
 	--color-white: #fff
+	// same as black :(
+	--color-hs-white: 0, 0%
+	--color-hsl-white: 0, 0%, 100%
+	--color-rgb-white: 255, 255, 255
 
 //──────────────────────────────────────────────────────────────────────────────
 // Gray
 //──────────────────────────────────────────────────────────────────────────────
 // CSS Named Colors
 //──────────────────────────────────────────────────────────────────────────────
-// gray: #808080 // 128,128,128 // hsl(0, 0%, 50.2%)
+// gray: #808080 // 128,128,128 // hsl(0, 0%, 50%)
 // darkgray: #a9a9a9 // 169,169,169
 // dimgray: #696969 // 105,105,105
 // lightgray: #d3d3d3 // 211,211,211
-
 :root
-	--color-gray: #808080
-	--color-gray-hue: 0
-	--color-gray-saturation: 0%
-	--color-gray-lightness: 50.2%
+	--color-gray: #999999
+	--color-hs-gray: 0, 0%
+	--color-hsl-gray: 0, 0%, 60%
+	--color-rgb-gray: 153, 153, 153
 
-$color-gray: hsl(var(--color-gray-hue), var(--color-gray-saturation), var(--color-gray-lightness))
-$color-gray-darkest: cssDarken(--color-gray-hue, --color-gray-saturation, --color-gray-lightness, 30)
-$color-gray-darker: cssDarken(--color-gray-hue, --color-gray-saturation, --color-gray-lightness, 20)
-$color-gray-dark: cssDarken(--color-gray-hue, --color-gray-saturation, --color-gray-lightness, 10)
-$color-gray-light: cssLighten(--color-gray-hue, --color-gray-saturation, --color-gray-lightness, 15)
-$color-gray-lighter: cssLighten(--color-gray-hue, --color-gray-saturation, --color-gray-lightness, 30)
-$color-gray-lightest: cssLighten(--color-gray-hue, --color-gray-saturation, --color-gray-lightness, 45)
 
 //──────────────────────────────────────────────────────────────────────────────
 // Red
@@ -44,71 +40,36 @@ $color-gray-lightest: cssLighten(--color-gray-hue, --color-gray-saturation, --co
 // orangered: #ff4500 // 255,69,0
 // palevioletred: #db7093 // 219,112,147
 // tomato: #ff6347 // 255,99,71
-
 :root
 	--color-red: #{$admin-red}
-	--color-red-hue: #{$admin-red-hue}
-	--color-red-saturation: #{$admin-red-saturation}
-	--color-red-lightness: #{$admin-red-lightness}
-
-$color-red: hsl(var(--color-red-hue), var(--color-red-saturation), var(--color-red-lightness))
-$color-red-darkest: cssDarken(--color-red-hue, --color-red-saturation, --color-red-lightness, 30)
-$color-red-darker: cssDarken(--color-red-hue, --color-red-saturation, --color-red-lightness, 20)
-$color-red-dark: cssDarken(--color-red-hue, --color-red-saturation, --color-red-lightness, 10)
-$color-red-light: cssLighten(--color-red-hue, --color-red-saturation, --color-red-lightness, 10)
-$color-red-lighter: cssLighten(--color-red-hue, --color-red-saturation, --color-red-lightness, 20)
-$color-red-lightest: cssLighten(--color-red-hue, --color-red-saturation, --color-red-lightness, 30)
+	--color-rgb-red: 203, 3, 0
+	--color-hs-red: 1, 100%
+	--color-hsl-red: 1, 100%, 40%
 
 //──────────────────────────────────────────────────────────────────────────────
 // Orange
 //──────────────────────────────────────────────────────────────────────────────
 :root
 	--color-orange: #{$admin-orange}
-	--color-orange-hue: #{$admin-orange-hue}
-	--color-orange-saturation: #{$admin-orange-saturation}
-	--color-orange-lightness: #{$admin-orange-lightness}
-
-$color-orange: hsl(var(--color-orange-hue), var(--color-orange-saturation), var(--color-orange-lightness))
-$color-orange-darkest: cssDarken(--color-orange-hue, --color-orange-saturation, --color-orange-lightness, 30)
-$color-orange-darker: cssDarken(--color-orange-hue, --color-orange-saturation, --color-orange-lightness, 20)
-$color-orange-dark: cssDarken(--color-orange-hue, --color-orange-saturation, --color-orange-lightness, 10)
-$color-orange-light: cssLighten(--color-orange-hue, --color-orange-saturation, --color-orange-lightness, 10)
-$color-orange-lighter: cssLighten(--color-orange-hue, --color-orange-saturation, --color-orange-lightness, 20)
-$color-orange-lightest: cssLighten(--color-orange-hue, --color-orange-saturation, --color-orange-lightness, 30)
+	--color-hs-orange: 33, 100%
+	--color-hsl-orange: 33, 100%, 50%
+	--color-rgb-orange: 255, 140, 0
 
 //──────────────────────────────────────────────────────────────────────────────
 // Yellow
 //──────────────────────────────────────────────────────────────────────────────
 :root
 	--color-yellow: #{$admin-level-2}
-	--color-yellow-hue: #{$admin-level-2-hue}
-	--color-yellow-saturation: #{$admin-level-2-saturation}
-	--color-yellow-lightness: #{$admin-level-2-lightness}
-
-$color-yellow: hsl(var(--color-yellow-hue), var(--color-yellow-saturation), var(--color-yellow-lightness))
-$color-yellow-darkest: cssDarken(--color-yellow-hue, --color-yellow-saturation, --color-yellow-lightness, 30)
-$color-yellow-darker: cssDarken(--color-yellow-hue, --color-yellow-saturation, --color-yellow-lightness, 20)
-$color-yellow-dark: cssDarken(--color-yellow-hue, --color-yellow-saturation, --color-yellow-lightness, 10)
-$color-yellow-light: cssLighten(--color-yellow-hue, --color-yellow-saturation, --color-yellow-lightness, 10)
-$color-yellow-lighter: cssLighten(--color-yellow-hue, --color-yellow-saturation, --color-yellow-lightness, 20)
-$color-yellow-lightest: cssLighten(--color-yellow-hue, --color-yellow-saturation, --color-yellow-lightness, 30)
+	--color-rgb-yellow: 189, 141, 5
 
 //──────────────────────────────────────────────────────────────────────────────
 // Green
 //──────────────────────────────────────────────────────────────────────────────
 :root
 	--color-green: #{$admin-green}
-	--color-green-hue: #{$admin-green-hue}
-	--color-green-saturation: #{$admin-green-saturation}
-	--color-green-lightness: #{$admin-green-lightness}
-
-$color-green: hsl(var(--color-green-hue), var(--color-green-saturation), var(--color-green-lightness))
-$color-green-darkest: cssDarken(--color-green-hue, --color-green-saturation, --color-green-lightness, 30)
-$color-green-darker: cssDarken(--color-green-hue, --color-green-saturation, --color-green-lightness, 20)
-$color-green-dark: cssDarken(--color-green-hue, --color-green-saturation, --color-green-lightness, 10)
-$color-green-light: cssLighten(--color-green-hue, --color-green-saturation, --color-green-lightness, 10)
-$color-green-lighter: cssLighten(--color-green-hue, --color-green-saturation, --color-green-lightness, 20)
-$color-green-lightest: cssLighten(--color-green-hue, --color-green-saturation, --color-green-lightness, 30)
+	--color-hs-green: 90, 63%
+	--color-hsl-green: 90, 63%, 38%
+	--color-rgb-green: 96, 158, 36
 
 //──────────────────────────────────────────────────────────────────────────────
 // Blue
@@ -118,20 +79,11 @@ $color-green-lightest: cssLighten(--color-green-hue, --color-green-saturation, -
 // blue: #00F
 // cornflowerblue: #6495ED
 // royalblue: #4169E1
-
 :root
 	--color-blue: #{$admin-button-blue3}
-	--color-blue-hue: #{$admin-button-blue3-hue}
-	--color-blue-saturation: #{$admin-button-blue3-saturation}
-	--color-blue-lightness: #{$admin-button-blue3-lightness}
-
-$color-blue: hsl(var(--color-blue-hue), var(--color-blue-saturation), var(--color-blue-lightness))
-$color-blue-darkest: cssDarken(--color-blue-hue, --color-blue-saturation, --color-blue-lightness, 30)
-$color-blue-darker: cssDarken(--color-blue-hue, --color-blue-saturation, --color-blue-lightness, 20)
-$color-blue-dark: cssDarken(--color-blue-hue, --color-blue-saturation, --color-blue-lightness, 10)
-$color-blue-light: cssLighten(--color-blue-hue, --color-blue-saturation, --color-blue-lightness, 10)
-$color-blue-lighter: cssLighten(--color-blue-hue, --color-blue-saturation, --color-blue-lightness, 20)
-$color-blue-lightest: cssLighten(--color-blue-hue, --color-blue-saturation, --color-blue-lightness, 30)
+	--color-hs-blue: 232, 82%
+	--color-hsl-blue: 232, 82%, 53%
+	--color-rgb-blue: 38, 63, 233
 
 //──────────────────────────────────────────────────────────────────────────────
 // Purple
@@ -139,14 +91,6 @@ $color-blue-lightest: cssLighten(--color-blue-hue, --color-blue-saturation, --co
 // admin-level-0 is too dark
 :root
 	--color-purple: #8c40bf
-	--color-purple-hue: #{$admin-level-0-hue}
-	--color-purple-saturation: #{$admin-level-0-saturation}
-	--color-purple-lightness: #{$admin-level-0-lightness}
-
-$color-purple: hsl(var(--color-purple-hue), var(--color-purple-saturation), var(--color-purple-lightness))
-$color-purple-darkest: cssDarken(--color-purple-hue, --color-purple-saturation, --color-purple-lightness, 30)
-$color-purple-darker: cssDarken(--color-purple-hue, --color-purple-saturation, --color-purple-lightness, 20)
-$color-purple-dark: cssDarken(--color-purple-hue, --color-purple-saturation, --color-purple-lightness, 10)
-$color-purple-light: cssLighten(--color-purple-hue, --color-purple-saturation, --color-purple-lightness, 10)
-$color-purple-lighter: cssLighten(--color-purple-hue, --color-purple-saturation, --color-purple-lightness, 20)
-$color-purple-lightest: cssLighten(--color-purple-hue, --color-purple-saturation, --color-purple-lightness, 30)
+	--color-hs-purple: 276, 50%
+	--color-hsl-purple: 276, 50%, 50%
+	--color-rgb-purple: 140, 64, 191

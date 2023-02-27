@@ -1,36 +1,29 @@
-import type {Color, CommonProps} from '../index.d';
+import type {Color} from '../index.d';
 import cx from 'clsx';
 import * as React from 'react';
+import ButtonGroup from './ButtonGroup';
 
-//──────────────────────────────────────────────────────────────────────────
-// Typings
-//──────────────────────────────────────────────────────────────────────────
-
-export type ButtonColor = Color
 
 export interface StrictButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 	as?: any
-	color?: ButtonColor
+	color?: Color
+	content?: React.ReactNode
+	disabled?: boolean //
 	primary?: boolean
 	transparent?: boolean
 	uppercase?: boolean
 }
 
-export interface StrictButtonGroupProps extends CommonProps {
-	// color?: ButtonColor
-}
 
-//──────────────────────────────────────────────────────────────────────────
-// Button
-//──────────────────────────────────────────────────────────────────────────
-
-export const Button = ({
+const Button = ({
 	as = 'button',
 	children,
 	className,
 	color,
+	content,
+	disabled,
 	primary,
-	type = as === 'input' ? 'button' : undefined,
+	type = ['button','input'].includes(as) ? 'button' : undefined,
 	transparent,
 	uppercase,
 	...props
@@ -38,11 +31,11 @@ export const Button = ({
 	const ElementType = as;
 	return (
 		<ElementType
-			type={type}
 			className={cx(
 				'enonic',
 				'button',
 				{
+					disabled,
 					primary,
 					transparent,
 					uppercase
@@ -50,37 +43,17 @@ export const Button = ({
 				color,
 				className
 			)}
+			disabled={disabled}
+			type={type}
 			{...props}
 		>
-			{children}
+			{children ? children : content}
 		</ElementType>
 	);
 };
 
-//──────────────────────────────────────────────────────────────────────────
-// Button.Group
-//──────────────────────────────────────────────────────────────────────────
 
-Button.Group = ({
-	as = 'div',
-	children,
-	className,
-	// color,
-	...props
-}: StrictButtonProps) => {
-	const ElementType = as;
-	return (
-		<ElementType
-			className={cx(
-				'enonic',
-				'button',
-				'group',
-				// color,
-				className
-			)}
-			{...props}
-		>
-			{children}
-		</ElementType>
-	);
-}
+Button.Group = ButtonGroup;
+
+
+export default Button;

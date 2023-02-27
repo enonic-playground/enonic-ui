@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button } from '../components/button/Button';
+import Button from '../components/button';
 import { Modal } from '../components/modal/Modal';
 
 export default {

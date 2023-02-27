@@ -1,4 +1,44 @@
-// @import ../../color
+// "zindex" of css properties
+// mask?
+// outline
+// content
+// border
+// box-shadow
+@mixin disabled
+	&.disabled,
+	&:disabled
+		@content
+
+@mixin hover
+	&.hover,
+	&:hover
+		&:not(.disabled),
+		&:not(:disabled)
+			@content
+
+@mixin focus
+	&.focus,
+	&:focus-visible
+		&:not(.disabled),
+		&:not(:disabled)
+			@content
+
+@mixin active
+	&.active,
+	&:active
+		&:not(.disabled),
+		&:not(:disabled)
+			@content
+
+@mixin button-focus
+	@include focus
+		box-shadow: bsOutset(var(--color-focus), 2px, 1px), bsInset(var(--color-focus), 2px, 1px)
+		@content
+
+@mixin button-active-focus
+	@include focus
+		box-shadow: bsOutset(var(--color-focus), 2px, 1px), bsInset(var(--color-focus), 2px, 1px), bsFill(rgba(0,0,0,.5))
+		@content
 
 .enonic.button:not(.group)
 	border: none
@@ -6,117 +46,208 @@
 	font-family: Open Sans,Helvetica,sans-serif
 	font-size: 1rem
 	padding: 4px 19px
-	&:focus
-		outline-offset: -2px
-		outline-style: auto
-		outline-width: 2px
+
+	color: var(--color-white)
+	background-color: var(--color-gray)
+	box-shadow: bsLevelOne()
+
+	@include focus
+		outline: none
+		box-shadow: bsOutset(var(--color-focus), 2px, 1px), bsInset(var(--color-focus), 2px, 1px)
+
+	@include hover
+		box-shadow: bsLevelOne(), bsFill(rgba(255,255,255,.5))
+		color: var(--color-black)
+
+	// active must come after focus and hover
+	// because specificity is the same
+	@include active
+		box-shadow: bsLevelOne(true), bsFill(rgba(0,0,0,.5))
+		color: var(--color-white)
+		@include button-active-focus
+
+	@include disabled
+		// Chrome defaults:
+		// background-color: -internal-light-dark(rgba(239, 239, 239, 0.3), rgba(19, 1, 1, 0.3))
+		// color: -internal-light-dark(rgba(16, 16, 16, 0.3), rgba(255, 255, 255, 0.3))
+		box-shadow: bsFill(rgba(239, 239, 239, .9)), bsFill(rgba(19, 1, 1, .3))
+		color: hsla(var(--color-hsl-black), .3)
+		cursor: not-allowed
+		// opacity: .3 // Affects text, but depends on background
+		// pointer-events: none // This will disable the cursor property above
 
 	//──────────────────────────────────────────────────────────────────────────
 	// Colors
 	//──────────────────────────────────────────────────────────────────────────
-	color: $color-white
-	background-color: $color-gray-light
-	&:hover:not(:disabled)
-		background-color: $color-gray-lighter
 	&.black
-		background-color: $color-black
-		&:hover:not(:disabled)
-			background-color: $color-gray-darkest
-	&.blue
-		background-color: $color-blue
-		&:hover:not(:disabled)
-			background-color: $color-blue-light
-	// Same as default above
-	// &.gray
-	// 	background-color: $color-gray-light
-	// 	&:hover:not(:disabled)
-	// 		background-color: $color-gray-lighter
+		background-color: var(--color-black)
+		@include hover
+			// Needed to preserve contrast
+			box-shadow: bsFill(rgba(255,255,255,.7))
+		@include active
+			box-shadow: bsFill(rgba(255,255,255,.3))//, bsLevelOne(true, #fff)
+			@include button-active-focus
+
+	&.blue,
+	&.primary
+		background-color: var(--color-blue)
+
 	&.green
-		background-color: $color-green
-		&:hover:not(:disabled)
-			background-color: $color-green-light
+		background-color: var(--color-green)
+
 	&.orange
-		background-color: $color-orange
-		&:hover:not(:disabled)
-			background-color: $color-orange-light
+		background-color: var(--color-orange)
+
 	&.purple
-		--button-purple-h: var(--color-purple-hue)
-		--button-purple-s: var(--color-purple-saturation)
-		--button-purple-l: calc(var(--color-purple-lightness) + 10%)
-		background-color: hsl(var(--button-purple-h), var(--button-purple-s), var(--button-purple-l))
-		&:hover:not(:disabled)
-			--button-purple-l: calc(var(--color-purple-lightness) + 20%)
-			background-color: hsl(var(--button-purple-h), var(--button-purple-s), var(--button-purple-l))
+		background-color: var(--color-purple)
+
 	&.red
-		background-color: $color-red
-		&:hover:not(:disabled)
-			background-color: $color-red-light
+		background-color: var(--color-red)
 
 	&.white
-		background-color: $color-white
-		color: $color-black
-		&:hover:not(:disabled)
-			background-color: $color-gray-lightest
-
-	&.primary
-		background-color: $color-blue-light
-		&:hover:not(:disabled)
-			background-color: $color-blue-lighter
+		background-color: var(--color-white)
+		color: var(--color-black)
+		@include hover
+			box-shadow: bsLevelOne(), bsFill(rgba(0,0,0,.05))
+		@include active
+			box-shadow: bsLevelOne(true), bsFill(rgba(0,0,0,.4))
+			@include button-active-focus
+		&.disabled,
+		&:disabled
+			box-shadow: none
+			color: hsla(var(--color-hsl-black), .3)
 
 	//──────────────────────────────────────────────────────────────────────────
 	// Transparent
 	//──────────────────────────────────────────────────────────────────────────
 	&.transparent
-		color: $color-gray
 		background-color: transparent
-		&:hover:not(:disabled)
-			color: $color-gray-light
-			background-color: transparent
+		border-radius: 5px
+		box-shadow: none
+		color: var(--color-gray)
+
+		@include hover
+			box-shadow: none
+			color: var(--color-gray)
+			outline: 1px solid currentColor
+			outline-offset: -1px
+
+		@include focus
+			box-shadow: bsOutset(var(--color-focus), 2px, 1px)
+			outline: 1px solid currentColor
+			outline-offset: -1px
+
+		@include active
+			box-shadow: bsLevelOne(true)
+			color: hsl(var(--color-hs-black), 30%)
+			outline: 1px solid currentColor
+			outline-offset: -1px
+			@include focus
+				box-shadow: bsOutset(var(--color-focus), 2px, 1px), bsLevelOne(true)
+
+		@include disabled
+			color: hsl(var(--color-hsl-gray), 30%)
 
 		&.black
-			color: $color-black
-			&:hover:not(:disabled)
-				color: $color-gray-darkest
-		&.blue
-			color: $color-blue
-			&:hover:not(:disabled)
-				color: $color-blue-light
-		&.gray
-			color: $color-gray-light
-			&:hover:not(:disabled)
-				color: $color-gray-lighter
-		&.green
-			color: $color-green
-			&:hover:not(:disabled)
-				color: $color-green-light
-		&.orange
-			color: $color-orange
-			&:hover:not(:disabled)
-				color: $color-orange-light
-		&.purple
-			color: $color-purple-light
-			&:hover:not(:disabled)
-				color: $color-purple-lighter
-		&.red
-			color: $color-red
-			&:hover:not(:disabled)
-				color: $color-red-light
-		&.white
-			color: $color-white
-			&:hover:not(:disabled)
-				color: $color-gray-lighter
+			color: var(--color-black)
+			@include hover
+				color: var(--color-black)
+			@include active
+				color: hsl(var(--color-hs-black), 40%)
+			@include disabled
+				color: hsl(var(--color-hsl-black), 30%)
 
+		&.blue
+			color: var(--color-blue)
+			@include hover
+				color: var(--color-blue)
+			@include active
+				color: hsl(var(--color-hs-blue), 35%)
+			@include disabled
+				color: hsl(var(--color-hsl-blue), 30%)
+
+		&.green
+			color: var(--color-green)
+			@include hover
+				color: var(--color-green)
+			@include active
+				color: hsl(var(--color-hs-green), 30%)
+			@include disabled
+				color: hsl(var(--color-hsl-green), 30%)
+
+		&.orange
+			color: var(--color-orange)
+			@include hover
+				color: var(--color-orange)
+			@include active
+				color: hsl(var(--color-hs-orange), 30%)
+			@include disabled
+				color: hsl(var(--color-hsl-orange), 30%)
+
+		&.purple
+			color: var(--color-purple)
+			@include hover
+				color: var(--color-purple)
+			@include active
+				color: hsl(var(--color-hs-purple), 30%)
+			@include disabled
+				color: hsl(var(--color-hsl-purple), 30%)
+
+		&.red
+			color: var(--color-red)
+			@include hover
+				color: var(--color-red)
+			@include active
+				color: hsl(var(--color-hs-red), 30%)
+			@include disabled
+				color: hsl(var(--color-hsl-red), 30%)
+
+		&.white
+			color: var(--color-white)
+			@include hover
+				color: var(--color-white)
+			@include active
+				color: hsl(var(--color-hs-white), 70%)
+			@include disabled
+				color: hsl(var(--color-hsl-white), 30%)
 
 //──────────────────────────────────────────────────────────────────────────────
 // Dark-theme
 //──────────────────────────────────────────────────────────────────────────────
-.dark-theme .enonic.button:not(.group)
+.enonic.dark-theme .enonic.button:not(.group)
+	box-shadow: bsLevelOne(false, #333333)
+
+	@include focus
+		outline: none
+		box-shadow: bsOutset(var(--color-focus), 2px, 1px), bsInset(var(--color-focus), 2px, 1px)
+	@include disabled
+		box-shadow: bsFill(rgba(128, 128, 128, .9))
+		color: currentColor
+		opacity: .3 // Affects text, but depends on background
 	&.transparent
-		&.black
-			color: $color-white
-			&:hover:not(:disabled)
-				color: $color-gray-lighter
-		&.purple
-			color: $color-purple-lighter
-			&:hover:not(:disabled)
-				color: $color-purple-lightest
+		box-shadow: none
+		@include focus
+			box-shadow: bsOutset(var(--color-focus), 2px, 1px)
+			outline: 1px solid currentColor
+			outline-offset: -1px
+		@include active
+			box-shadow: bsLevelOne(true, #333333)
+			@include focus
+				box-shadow: bsOutset(var(--color-focus), 2px, 1px), bsLevelOne(true, #fff)
+		@include disabled
+			color: hsla(var(--color-hsl-gray), 40%)
+			opacity: 1
+			&.black
+				color: hsla(var(--color-hsl-black), 40%)
+			&.blue
+				color: hsla(var(--color-hsl-blue), 40%)
+			&.green
+				color: hsla(var(--color-hsl-green), 40%)
+			&.orange
+				color: hsla(var(--color-hsl-orange), 40%)
+			&.purple
+				color: hsla(var(--color-hsl-purple), 40%)
+			&.red
+				color: hsla(var(--color-hsl-red), 40%)
+			&.white
+				color: hsla(var(--color-hsl-white), 40%)

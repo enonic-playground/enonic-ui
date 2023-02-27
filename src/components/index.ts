@@ -1,9 +1,10 @@
+import Button from './button';
 import List from './list/List';
 
 export { Article } from './Article';
 export { Aside } from './Aside';
 export { AppBar, Bar, ToolBar } from './bar/Bar';
-export { Button } from './button/Button';
+export { Button };
 export { Checkbox } from './form/Checkbox';
 export { Div } from './Div';
 export { Footer } from './Footer';
@@ -15,7 +16,7 @@ export { Icon } from './icons/Icon';
 export { Input } from './form/Input';
 export { Main } from './Main';
 export { Modal } from './modal/Modal';
-export {List};
+export { List };
 export { Nav } from './Nav';
 export { Panel } from './Panel';
 export { Resizable } from './Resizable';

@@ -1,7 +1,7 @@
 import type { StrictBarProps } from '../../components/bar/bar.d';
 import * as React from 'react';
 import { Bar } from '../../components/bar/Bar';
-import { Button } from '../../components/button/Button';
+import Button from '../../components/button';
 
 export default {
 	title: 'Modules/Bar/Bar',

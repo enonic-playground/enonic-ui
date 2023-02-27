@@ -4,8 +4,8 @@
 @function cssLighten($hue, $saturation, $lightness, $percent)
 	@return hsl(var($hue), var($saturation), calc(var($lightness) + $percent * 1%))
 
-@function bsInset($color, $width: 1px)
-	@return inset 0px 0px 0px $width $color
+@function bsInset($color, $width: 1px, $blur: 0px)
+	@return inset 0px 0px $blur $width $color
 
 @function bsFill($color)
 	@return bsInset($color, 99999px)
@@ -25,8 +25,8 @@
 @function bsInsetTopLeftRight($color, $width: 1px)
 	@return bsInsetTopLeft($color, $width), bsInsetRight($color, $width)
 
-@function bsOutset($color, $width: 1px)
-	@return 0px 0px 0px $width $color
+@function bsOutset($color, $width: 1px, $blur: 0px)
+	@return 0px 0px $blur $width $color
 
 @function bsBottom($color, $width: 1px)
 	@return 0px $width 0px 0px $color
@@ -40,4 +40,10 @@
 @function bsTop($color, $width: 1px)
 	@return 0px (-$width) 0px 0px $color
 
-//@function bs($top, $right, $bottom, $right, $color)
+// https://htmlcssfreebies.com/material-design-box-shadow-level-one/
+// https://shadows.brumm.af/
+@function bsLevelOne($inset: false, $color: #000)
+	@if $inset
+		@return 0.1px 0.1px 0.4px rgba(red($color), green($color), blue($color), 0.12) inset, 1px 1px 3px rgba(red($color), green($color), blue($color), 0.24) inset
+	@else
+		@return 0.1px 0.1px 0.4px rgba(red($color), green($color), blue($color), 0.12), 1px 1px 3px rgba(red($color), green($color), blue($color), 0.24)

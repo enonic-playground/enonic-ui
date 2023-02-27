@@ -2,7 +2,7 @@ import * as React from 'react';
 import '../style/test.sass';
 
 export default {
-	title: 'Breakpoints',
+	title: 'Various/Breakpoints',
 };
 
 const DivTemplate = (args) => <div {...args} />;
