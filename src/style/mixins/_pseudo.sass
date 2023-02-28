@@ -1,0 +1,34 @@
+@mixin disabled
+	&.disabled,
+	&:disabled
+		@content
+
+// Using :disabled for something generic might be a bad idea since
+// :disabled only selects input elements which are disabled ?
+// An element can have the class .disbled without
+// having the attribute [disabled]
+@mixin notDisabled
+	&:not(.disabled):not(:disabled)
+		@content
+
+@mixin hover
+	&.hover,
+	&:hover
+		@include notDisabled
+			@content
+
+@mixin focus
+	&.focus,
+	&:focus-visible
+		@include notDisabled
+			@content
+
+@mixin active
+	&.active,
+	&:active
+		@include notDisabled
+			@content
+
+@mixin notFocus
+	&:not(.focus):not(:focus):not(:focus-visible):not(:focus-within)
+		@content

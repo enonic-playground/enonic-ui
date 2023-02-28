@@ -1,27 +1,34 @@
 :root
 	// Default light-theme colors
-	--color-bg: #fff
-	--color-fg: #000
+	--#{$prefix}-color-bg: #fff
+	--#{$prefix}-color-fg: #000
 
-	--color-low-shade-bg: #f7f7f7
-	--color-low-shade-fg: var(--color-fg)
+	--#{$prefix}-color-low-shade-bg: #f7f7f7
+	--#{$prefix}-color-low-shade-fg: var(--#{$prefix}-color-fg)
 
-	--color-high-shade-bg: #333
-	--color-high-shade-fg: #eee
+	--#{$prefix}-color-high-shade-bg: #333
+	--#{$prefix}-color-high-shade-fg: #eee
 
-	--color-error: #f0a197
+	--#{$prefix}-color-error: #f0a197
+	--#{$prefix}-color-hs-error: 7, 75%
+	--#{$prefix}-color-hsl-error: 7, 75%, 77%
 
 	// #98c9f2 // rgb(152, 201, 242) // hsl(207, 78%, 77%)
-	--color-focus: #98c9f2
+	--#{$prefix}-color-focus: #98c9f2
+	--#{$prefix}-color-hs-focus: 207, 78%
 
 	// #f2f297 // rgb(242, 242, 151) // hsl(60, 78%, 77%)
-	--color-hover: #f2f297
+	--#{$prefix}-color-hover: #f2f297
 
 	// TODO Remove not is use?
-	--color-tab-border: #aaa
+	--#{$prefix}-color-tab-border: #aaa
 
 	// #4294de // rgb(66, 148, 222)
-	--color-selected: #4294de
+	--#{$prefix}-color-selected: #4294de
 
 	// https://meyerweb.com/eric/tools/color-blend/#4294DE:F2F297:1:hex
-	--color-selected-hover: #9AC3BB
+	--#{$prefix}-color-selected-hover: #9AC3BB
+
+	--#{$prefix}-color-table-border: rgba(0,0,0,.15)
+	--#{$prefix}-color-table-header-cell-bg: #f0f0f0
+	--#{$prefix}-color-table-cell-striped-bg: #f9f9f9

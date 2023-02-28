@@ -4,40 +4,14 @@
 // content
 // border
 // box-shadow
-@mixin disabled
-	&.disabled,
-	&:disabled
-		@content
-
-@mixin hover
-	&.hover,
-	&:hover
-		&:not(.disabled),
-		&:not(:disabled)
-			@content
-
-@mixin focus
-	&.focus,
-	&:focus-visible
-		&:not(.disabled),
-		&:not(:disabled)
-			@content
-
-@mixin active
-	&.active,
-	&:active
-		&:not(.disabled),
-		&:not(:disabled)
-			@content
-
 @mixin button-focus
 	@include focus
-		box-shadow: bsOutset(var(--color-focus), 2px, 1px), bsInset(var(--color-focus), 2px, 1px)
+		box-shadow: bsOutset(var(--#{$prefix}-color-focus), 2px, 1px), bsInset(var(--#{$prefix}-color-focus), 2px, 1px)
 		@content
 
 @mixin button-active-focus
 	@include focus
-		box-shadow: bsOutset(var(--color-focus), 2px, 1px), bsInset(var(--color-focus), 2px, 1px), bsFill(rgba(0,0,0,.5))
+		box-shadow: bsOutset(var(--#{$prefix}-color-focus), 2px, 1px), bsInset(var(--#{$prefix}-color-focus), 2px, 1px), bsFill(rgba(0,0,0,.5))
 		@content
 
 .enonic.button:not(.group)
@@ -47,23 +21,23 @@
 	font-size: 1rem
 	padding: 4px 19px
 
-	color: var(--color-white)
-	background-color: var(--color-gray)
+	color: var(--#{$prefix}-color-white)
+	background-color: var(--#{$prefix}-color-gray)
 	box-shadow: bsLevelOne()
 
 	@include focus
 		outline: none
-		box-shadow: bsOutset(var(--color-focus), 2px, 1px), bsInset(var(--color-focus), 2px, 1px)
+		box-shadow: bsOutset(var(--#{$prefix}-color-focus), 2px, 1px), bsInset(var(--#{$prefix}-color-focus), 2px, 1px)
 
 	@include hover
 		box-shadow: bsLevelOne(), bsFill(rgba(255,255,255,.5))
-		color: var(--color-black)
+		color: var(--#{$prefix}-color-black)
 
 	// active must come after focus and hover
 	// because specificity is the same
 	@include active
 		box-shadow: bsLevelOne(true), bsFill(rgba(0,0,0,.5))
-		color: var(--color-white)
+		color: var(--#{$prefix}-color-white)
 		@include button-active-focus
 
 	@include disabled
@@ -71,7 +45,7 @@
 		// background-color: -internal-light-dark(rgba(239, 239, 239, 0.3), rgba(19, 1, 1, 0.3))
 		// color: -internal-light-dark(rgba(16, 16, 16, 0.3), rgba(255, 255, 255, 0.3))
 		box-shadow: bsFill(rgba(239, 239, 239, .9)), bsFill(rgba(19, 1, 1, .3))
-		color: hsla(var(--color-hsl-black), .3)
+		color: hsla(var(--#{$prefix}-color-hsl-black), .3)
 		cursor: not-allowed
 		// opacity: .3 // Affects text, but depends on background
 		// pointer-events: none // This will disable the cursor property above
@@ -80,7 +54,7 @@
 	// Colors
 	//──────────────────────────────────────────────────────────────────────────
 	&.black
-		background-color: var(--color-black)
+		background-color: var(--#{$prefix}-color-black)
 		@include hover
 			// Needed to preserve contrast
 			box-shadow: bsFill(rgba(255,255,255,.7))
@@ -90,32 +64,31 @@
 
 	&.blue,
 	&.primary
-		background-color: var(--color-blue)
+		background-color: var(--#{$prefix}-color-blue)
 
 	&.green
-		background-color: var(--color-green)
+		background-color: var(--#{$prefix}-color-green)
 
 	&.orange
-		background-color: var(--color-orange)
+		background-color: var(--#{$prefix}-color-orange)
 
 	&.purple
-		background-color: var(--color-purple)
+		background-color: var(--#{$prefix}-color-purple)
 
 	&.red
-		background-color: var(--color-red)
+		background-color: var(--#{$prefix}-color-red)
 
 	&.white
-		background-color: var(--color-white)
-		color: var(--color-black)
+		background-color: var(--#{$prefix}-color-white)
+		color: var(--#{$prefix}-color-black)
 		@include hover
 			box-shadow: bsLevelOne(), bsFill(rgba(0,0,0,.05))
 		@include active
 			box-shadow: bsLevelOne(true), bsFill(rgba(0,0,0,.4))
 			@include button-active-focus
-		&.disabled,
-		&:disabled
+		@include disabled
 			box-shadow: none
-			color: hsla(var(--color-hsl-black), .3)
+			color: hsla(var(--#{$prefix}-color-hsl-black), .3)
 
 	//──────────────────────────────────────────────────────────────────────────
 	// Transparent
@@ -124,92 +97,92 @@
 		background-color: transparent
 		border-radius: 5px
 		box-shadow: none
-		color: var(--color-gray)
+		color: var(--#{$prefix}-color-gray)
 
 		@include hover
 			box-shadow: none
-			color: var(--color-gray)
+			color: var(--#{$prefix}-color-gray)
 			outline: 1px solid currentColor
 			outline-offset: -1px
 
 		@include focus
-			box-shadow: bsOutset(var(--color-focus), 2px, 1px)
+			box-shadow: bsOutset(var(--#{$prefix}-color-focus), 2px, 1px)
 			outline: 1px solid currentColor
 			outline-offset: -1px
 
 		@include active
 			box-shadow: bsLevelOne(true)
-			color: hsl(var(--color-hs-black), 30%)
+			color: hsl(var(--#{$prefix}-color-hs-black), 30%)
 			outline: 1px solid currentColor
 			outline-offset: -1px
 			@include focus
-				box-shadow: bsOutset(var(--color-focus), 2px, 1px), bsLevelOne(true)
+				box-shadow: bsOutset(var(--#{$prefix}-color-focus), 2px, 1px), bsLevelOne(true)
 
 		@include disabled
-			color: hsl(var(--color-hsl-gray), 30%)
+			color: hsl(var(--#{$prefix}-color-hsl-gray), 30%)
 
 		&.black
-			color: var(--color-black)
+			color: var(--#{$prefix}-color-black)
 			@include hover
-				color: var(--color-black)
+				color: var(--#{$prefix}-color-black)
 			@include active
-				color: hsl(var(--color-hs-black), 40%)
+				color: hsl(var(--#{$prefix}-color-hs-black), 40%)
 			@include disabled
-				color: hsl(var(--color-hsl-black), 30%)
+				color: hsl(var(--#{$prefix}-color-hsl-black), 30%)
 
 		&.blue
-			color: var(--color-blue)
+			color: var(--#{$prefix}-color-blue)
 			@include hover
-				color: var(--color-blue)
+				color: var(--#{$prefix}-color-blue)
 			@include active
-				color: hsl(var(--color-hs-blue), 35%)
+				color: hsl(var(--#{$prefix}-color-hs-blue), 35%)
 			@include disabled
-				color: hsl(var(--color-hsl-blue), 30%)
+				color: hsl(var(--#{$prefix}-color-hsl-blue), 30%)
 
 		&.green
-			color: var(--color-green)
+			color: var(--#{$prefix}-color-green)
 			@include hover
-				color: var(--color-green)
+				color: var(--#{$prefix}-color-green)
 			@include active
-				color: hsl(var(--color-hs-green), 30%)
+				color: hsl(var(--#{$prefix}-color-hs-green), 30%)
 			@include disabled
-				color: hsl(var(--color-hsl-green), 30%)
+				color: hsl(var(--#{$prefix}-color-hsl-green), 30%)
 
 		&.orange
-			color: var(--color-orange)
+			color: var(--#{$prefix}-color-orange)
 			@include hover
-				color: var(--color-orange)
+				color: var(--#{$prefix}-color-orange)
 			@include active
-				color: hsl(var(--color-hs-orange), 30%)
+				color: hsl(var(--#{$prefix}-color-hs-orange), 30%)
 			@include disabled
-				color: hsl(var(--color-hsl-orange), 30%)
+				color: hsl(var(--#{$prefix}-color-hsl-orange), 30%)
 
 		&.purple
-			color: var(--color-purple)
+			color: var(--#{$prefix}-color-purple)
 			@include hover
-				color: var(--color-purple)
+				color: var(--#{$prefix}-color-purple)
 			@include active
-				color: hsl(var(--color-hs-purple), 30%)
+				color: hsl(var(--#{$prefix}-color-hs-purple), 30%)
 			@include disabled
-				color: hsl(var(--color-hsl-purple), 30%)
+				color: hsl(var(--#{$prefix}-color-hsl-purple), 30%)
 
 		&.red
-			color: var(--color-red)
+			color: var(--#{$prefix}-color-red)
 			@include hover
-				color: var(--color-red)
+				color: var(--#{$prefix}-color-red)
 			@include active
-				color: hsl(var(--color-hs-red), 30%)
+				color: hsl(var(--#{$prefix}-color-hs-red), 30%)
 			@include disabled
-				color: hsl(var(--color-hsl-red), 30%)
+				color: hsl(var(--#{$prefix}-color-hsl-red), 30%)
 
 		&.white
-			color: var(--color-white)
+			color: var(--#{$prefix}-color-white)
 			@include hover
-				color: var(--color-white)
+				color: var(--#{$prefix}-color-white)
 			@include active
-				color: hsl(var(--color-hs-white), 70%)
+				color: hsl(var(--#{$prefix}-color-hs-white), 70%)
 			@include disabled
-				color: hsl(var(--color-hsl-white), 30%)
+				color: hsl(var(--#{$prefix}-color-hsl-white), 30%)
 
 //──────────────────────────────────────────────────────────────────────────────
 // Dark-theme
@@ -219,7 +192,7 @@
 
 	@include focus
 		outline: none
-		box-shadow: bsOutset(var(--color-focus), 2px, 1px), bsInset(var(--color-focus), 2px, 1px)
+		box-shadow: bsOutset(var(--#{$prefix}-color-focus), 2px, 1px), bsInset(var(--#{$prefix}-color-focus), 2px, 1px)
 	@include disabled
 		box-shadow: bsFill(rgba(128, 128, 128, .9))
 		color: currentColor
@@ -227,27 +200,27 @@
 	&.transparent
 		box-shadow: none
 		@include focus
-			box-shadow: bsOutset(var(--color-focus), 2px, 1px)
+			box-shadow: bsOutset(var(--#{$prefix}-color-focus), 2px, 1px)
 			outline: 1px solid currentColor
 			outline-offset: -1px
 		@include active
 			box-shadow: bsLevelOne(true, #333333)
 			@include focus
-				box-shadow: bsOutset(var(--color-focus), 2px, 1px), bsLevelOne(true, #fff)
+				box-shadow: bsOutset(var(--#{$prefix}-color-focus), 2px, 1px), bsLevelOne(true, #fff)
 		@include disabled
-			color: hsla(var(--color-hsl-gray), 40%)
+			color: hsla(var(--#{$prefix}-color-hsl-gray), 40%)
 			opacity: 1
 			&.black
-				color: hsla(var(--color-hsl-black), 40%)
+				color: hsla(var(--#{$prefix}-color-hsl-black), 40%)
 			&.blue
-				color: hsla(var(--color-hsl-blue), 40%)
+				color: hsla(var(--#{$prefix}-color-hsl-blue), 40%)
 			&.green
-				color: hsla(var(--color-hsl-green), 40%)
+				color: hsla(var(--#{$prefix}-color-hsl-green), 40%)
 			&.orange
-				color: hsla(var(--color-hsl-orange), 40%)
+				color: hsla(var(--#{$prefix}-color-hsl-orange), 40%)
 			&.purple
-				color: hsla(var(--color-hsl-purple), 40%)
+				color: hsla(var(--#{$prefix}-color-hsl-purple), 40%)
 			&.red
-				color: hsla(var(--color-hsl-red), 40%)
+				color: hsla(var(--#{$prefix}-color-hsl-red), 40%)
 			&.white
-				color: hsla(var(--color-hsl-white), 40%)
+				color: hsla(var(--#{$prefix}-color-hsl-white), 40%)

@@ -1,0 +1,127 @@
+$tableSelector: ".#{$prefix}.table:not(.header):not(.body):not(.footer):not(.row):not(.cell)"
+$tableHeaderSelector: ".#{$prefix}.table.header:not(.cell)"
+$tableBodySelector: ".#{$prefix}.table.body"
+$tableFooterSelector: ".#{$prefix}.table.footer"
+$tableRowSelector: ".#{$prefix}.table.row"
+$tableAnyCellSelector: ".#{$prefix}.table.cell"
+$tableHeaderCellSelector: ".#{$prefix}.table.header.cell"
+$tableCellSelector: ".#{$prefix}.table.cell:not(.header)"
+
+:root
+	--#{$prefix}-border-radius-table: 5px
+	--#{$prefix}-border-width-table: 1px
+
+@mixin table
+	#{$tableSelector}
+		@content
+
+@mixin tableHeader
+	#{$tableHeaderSelector}
+		@content
+
+@mixin tableBody
+	#{$tableBodySelector}
+		@content
+
+@mixin tableFooter
+	#{$tableFooterSelector}
+		@content
+
+@mixin tableSection
+	#{$tableHeaderSelector},
+	#{$tableBodySelector},
+	#{$tableFooterSelector}
+		@content
+
+@mixin tableRow
+	#{$tableRowSelector}
+		@content
+
+@mixin tableAnyCell
+	#{$tableAnyCellSelector}
+		@content
+
+@mixin tableHeaderCell
+	#{$tableHeaderCellSelector}
+		@content
+
+@mixin tableCell
+	#{$tableCellSelector}
+		@content
+
+@include table
+	border-collapse: separate // Can't make round corners with collapse!
+	border-spacing: 0
+	display: table
+	text-indent: initial // Same as Chrome
+
+	&.celled
+		border: var(--#{$prefix}-border-width-table) solid var(--#{$prefix}-color-table-border)
+		border-radius: var(--#{$prefix}-border-radius-table)
+		@include tableAnyCell
+			border-right: var(--#{$prefix}-border-width-table) solid var(--#{$prefix}-color-table-border)
+			border-bottom: var(--#{$prefix}-border-width-table) solid var(--#{$prefix}-color-table-border)
+			&:last-child
+				border-right: none
+		@include tableSection
+			&:last-child
+				@include tableRow
+					&:last-child
+						@include tableAnyCell
+							border-bottom: none
+
+	&.stretch
+		width: 100%
+
+	&.striped
+		@include tableRow
+			&:nth-child(2n)
+				background-color: var(--#{$prefix}-color-table-cell-striped-bg)
+
+@include tableHeader
+	display: table-header-group
+
+@include tableBody
+	border-color: inherit // Same as Chrome
+	display: table-row-group
+	vertical-align: middle // Same as Chrome
+
+@include tableFooter
+	border-color: inherit // Same as Chrome
+	display: table-footer-group
+	vertical-align: middle // Same as Chrome
+
+@include tableRow
+	border-color: inherit // Same as Chrome
+	display: table-row
+	vertical-align: inherit // Same as Chrome
+	&.bottom
+		vertical-align: bottom
+	&.center
+		text-align: center
+	&.right
+		text-align: right
+	&.top
+		vertical-align: top
+
+@include tableAnyCell
+	display: table-cell
+	padding: var(--#{$prefix}-air-horizontal)
+	text-align: inherit
+	vertical-align: inherit
+	&.bottom
+		vertical-align: bottom
+	&.center
+		text-align: center
+	&.left
+		text-align: left
+	&.middle
+		vertical-align: middle
+	&.right
+		text-align: right
+	&.top
+		vertical-align: top
+
+@include tableHeaderCell
+	background-color: var(--#{$prefix}-color-table-header-cell-bg)
+	font-weight: bold

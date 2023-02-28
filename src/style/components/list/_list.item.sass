@@ -1,28 +1,28 @@
 .enonic.list.item
-	padding: var(--air-vertical) var(--air-horizontal)
+	padding: var(--#{$prefix}-air-vertical) var(--#{$prefix}-air-horizontal)
 
 //──────────────────────────────────────────────────────────────────────────────
 // Mouse Hover
 //──────────────────────────────────────────────────────────────────────────────
 .enonic.list.item.selectable.hover,
 .enonic.list.item.selectable:hover
-	background-color: var(--color-hover)
-	color: var(--color-black)
+	background-color: var(--#{$prefix}-color-hover)
+	color: var(--#{$prefix}-color-black)
 
 //──────────────────────────────────────────────────────────────────────────────
 // State: Selected
 //──────────────────────────────────────────────────────────────────────────────
 .enonic.list.item.selectable.selected
-	background-color: var(--color-selected)
-	color: var(--color-white)
+	background-color: var(--#{$prefix}-color-selected)
+	color: var(--#{$prefix}-color-white)
 
 //──────────────────────────────────────────────────────────────────────────────
 // Selected Hover
 //──────────────────────────────────────────────────────────────────────────────
 .enonic.list.item.selectable.selected.hover,
 .enonic.list.item.selectable.selected:hover
-	background-color: var(--color-selected-hover)
-	color: var(--color-black)
+	background-color: var(--#{$prefix}-color-selected-hover)
+	color: var(--#{$prefix}-color-black)
 
 //──────────────────────────────────────────────────────────────────────────────
 // Keyboard Focus
@@ -30,7 +30,7 @@
 .enonic.list.item.selectable.focus,
 .enonic.list.item.selectable:focus-visible
 	outline: none
-	box-shadow: bsInset(var(--color-focus), 3px)
+	box-shadow: bsInset(var(--#{$prefix}-color-focus), 3px)
 
 //──────────────────────────────────────────────────────────────────────────────
 // Dark mode
@@ -41,4 +41,4 @@
 
 .enonic.dark-theme .enonic.list.item.selectable.selected
 	box-shadow: bsFill(rgba(0,0,0,.4))
-	color: var(--darkmode-color-pair-dark-fg)
+	color: var(--#{$prefix}-darkmode-color-pair-dark-fg)

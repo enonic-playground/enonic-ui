@@ -6,25 +6,27 @@ $padding-vertical-input: 10px
 
 .enonic.input
 	background-color: transparent
-	border-color: var(--color-gray)
+	border-color: var(--#{$prefix}-color-gray)
 	border-width: 1px
 	border-style: solid
 	display: inline-flex
 	gap: $padding-horizontal-input
 	padding: $padding-vertical-input $padding-horizontal-input
-	&:not(.disabled)
+	@include notDisabled
 		cursor: text
-	&.disabled
+	@include disabled
+		cursor: not-allowed
 		opacity: .5
-	&.focus
-		// box-shadow: 0 0 0 1px var(--color-focus)
-		border-color: var(--color-focus)
+	@include hover
+		border-color: hsl(var(--#{$prefix}-color-hs-focus), 85%)
+	@include focus
+		border-color: hsl(var(--#{$prefix}-color-hs-focus), 50%)
 	&.error
-		border-color: var(--color-error)
+		border-color: var(--#{$prefix}-color-error)
 	&.stretch
 		align-self: stretch
 		flex-grow: 1
-		// width: 100% // This makes it overflow
+		// width: 100% // This makes it overflow :(
 
 //──────────────────────────────────────────────────────────────────────────────
 // Input
@@ -36,7 +38,7 @@ $padding-vertical-input: 10px
 
 	background-color: transparent
 	color: currentColor
-	outline: 0
+	outline: none
 
 	// Override User Agent Stylesheet
 	border-width: 0
@@ -45,20 +47,44 @@ $padding-vertical-input: 10px
 
 	width: 100%
 
+	@include disabled
+		cursor: not-allowed
+
+//──────────────────────────────────────────────────────────────────────────────
+// Placeholder
+//──────────────────────────────────────────────────────────────────────────────
+.enonic.input
+	&>input::placeholder
+		color: hsla(var(--#{$prefix}-color-hsl-gray), 75%)
+	@include focus
+		&>input::placeholder
+			color: hsla(var(--#{$prefix}-color-hsl-gray), 25%)
+	&.error
+		&>input::placeholder
+			color: hsla(var(--#{$prefix}-color-hsl-error), 50%)
+
 //──────────────────────────────────────────────────────────────────────────────
 // Error message
 //──────────────────────────────────────────────────────────────────────────────
 .enonic.input>.enonic.error
-	color: var(--color-error)
+	color: var(--#{$prefix}-color-error)
 	font-size: .83em // small
 	white-space: nowrap
 
 //──────────────────────────────────────────────────────────────────────────────
 // Icon
 //──────────────────────────────────────────────────────────────────────────────
-.enonic.input>.enonic.icon
-	// align-self: center
-	color: var(--color-gray)
-	// cursor: default
-	// &:not(.link)
-	// pointer-events: none
+.enonic.input
+	>.enonic.icon
+		// align-self: center
+		color: var(--#{$prefix}-color-gray)
+		// cursor: default
+		// &:not(.link)
+		// pointer-events: none
+	@include focus
+		>.enonic.icon
+			color: var(--#{$prefix}-color-black)
+.enonic.input.error
+	@include notFocus
+		>.enonic.icon
+			color: hsla(var(--#{$prefix}-color-hsl-error), 50%)

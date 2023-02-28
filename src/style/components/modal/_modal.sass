@@ -3,7 +3,7 @@
 $padding-vertical-modal: 20px
 
 .enonic.modal
-	background-color: var(--color-white)
+	background-color: var(--#{$prefix}-color-white)
 	display: flex
 	flex-direction: column
 	gap: $padding-vertical-modal
@@ -25,5 +25,5 @@ $padding-vertical-modal: 20px
 // Dark-theme
 //──────────────────────────────────────────────────────────────────────────────
 .dark-theme .enonic.modal
-	background-color: var(--darkmode-color-pair-darkest-bg)
-	color: var(--darkmode-color-pair-darkest-fg)
+	background-color: var(--#{$prefix}-darkmode-color-pair-darkest-bg)
+	color: var(--#{$prefix}-darkmode-color-pair-darkest-fg)

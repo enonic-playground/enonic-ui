@@ -1,4 +1,4 @@
-.enonic.tab:not(.group)
+.enonic.tab:not(.group,.icon)
 	border-top-left-radius: 5px
 	border-top-right-radius: 5px
 
@@ -15,9 +15,9 @@
 		box-shadow: bsInsetTopLeftRight(rgba(0, 0, 0, .3))
 
 	&:hover:not(:disabled)
-		color: var(--color-black)
+		color: var(--#{$prefix}-color-black)
 		// Strong lighten on hover
-		box-shadow: bsInset(var(--color-black)), bsFill(rgba(255, 255, 255, .8))
+		box-shadow: bsInset(var(--#{$prefix}-color-black)), bsFill(rgba(255, 255, 255, .8))
 
 	//──────────────────────────────────────────────────────────────────────────
 	// Colors
@@ -34,44 +34,44 @@
 			// No overlay on active, but same "border" (same as above but needed for specificiy)
 			box-shadow: bsInsetTopLeftRight(rgba(0, 0, 0, .3))
 			&:hover:not(:disabled)
-				box-shadow: bsInset(var(--color-black)), bsFill(rgba(255, 255, 255, .8))
+				box-shadow: bsInset(var(--#{$prefix}-color-black)), bsFill(rgba(255, 255, 255, .8))
 
 	&.black
-		background-color: var(--color-black)
-		color: var(--color-white)
+		background-color: var(--#{$prefix}-color-black)
+		color: var(--#{$prefix}-color-white)
 		&.active
 			// Slight lighten on active
 			box-shadow: bsInset(rgba(0, 0, 0, .3)), bsFill(rgba(255, 255, 255, .4))
 		&:hover:not(:disabled)
-			box-shadow: bsInset(var(--color-black)), bsFill(rgba(255, 255, 255, .8))
-			// color: var(--color-black)
+			box-shadow: bsInset(var(--#{$prefix}-color-black)), bsFill(rgba(255, 255, 255, .8))
+			// color: var(--#{$prefix}-color-black)
 	&.blue
-		background-color: var(--color-blue)
-		color: var(--color-white)
+		background-color: var(--#{$prefix}-color-blue)
+		color: var(--#{$prefix}-color-white)
 	&.gray
-		background-color: var(--color-gray)
-		color: var(--color-white)
+		background-color: var(--#{$prefix}-color-gray)
+		color: var(--#{$prefix}-color-white)
 	&.green
-		background-color: var(--color-green)
-		color: var(--color-white)
+		background-color: var(--#{$prefix}-color-green)
+		color: var(--#{$prefix}-color-white)
 	&.orange
-		background-color: var(--color-orange)
-		color: var(--color-white)
+		background-color: var(--#{$prefix}-color-orange)
+		color: var(--#{$prefix}-color-white)
 	&.purple
-		background-color: var(--color-purple)
-		color: var(--color-white)
+		background-color: var(--#{$prefix}-color-purple)
+		color: var(--#{$prefix}-color-white)
 	&.red
-		color: var(--color-white)
-		background-color: var(--color-red)
+		color: var(--#{$prefix}-color-white)
+		background-color: var(--#{$prefix}-color-red)
 	&.white
-		background-color: var(--color-white)
-		color: var(--color-black)
+		background-color: var(--#{$prefix}-color-white)
+		color: var(--#{$prefix}-color-black)
 
 //──────────────────────────────────────────────────────────────────────────────
 // Dark-theme
 //──────────────────────────────────────────────────────────────────────────────
 .dark-theme .enonic.tab:not(.group)
-	color: var(--darkmode-color-pair-darkest-fg)
+	color: var(--#{$prefix}-darkmode-color-pair-darkest-fg)
 	&.blue,
 	&.gray,
 	&.green,
@@ -79,4 +79,4 @@
 	&.purple,
 	&.red,
 	&.white
-		color: var(--color-black)
+		color: var(--#{$prefix}-color-black)

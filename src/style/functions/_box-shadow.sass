@@ -1,9 +1,3 @@
-@function cssDarken($hue, $saturation, $lightness, $percent)
-	@return hsl(var($hue), var($saturation), calc(var($lightness) - $percent * 1%))
-
-@function cssLighten($hue, $saturation, $lightness, $percent)
-	@return hsl(var($hue), var($saturation), calc(var($lightness) + $percent * 1%))
-
 @function bsInset($color, $width: 1px, $blur: 0px)
 	@return inset 0px 0px $blur $width $color
 

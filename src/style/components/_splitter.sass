@@ -3,11 +3,11 @@
 	position: relative // for ghosts absolute
 	width: 5px
 	&.low-shade
-		background-color: var(--color-low-shade-bg)
-		color: var(--color-low-shade-fg)
+		background-color: var(--#{$prefix}-color-low-shade-bg)
+		color: var(--#{$prefix}-color-low-shade-fg)
 	&.high-shade
-		background-color: var(--color-high-shade-bg)
-		color: var(--color-high-shade-fg)
+		background-color: var(--#{$prefix}-color-high-shade-bg)
+		color: var(--#{$prefix}-color-high-shade-fg)
 
 .enonic.splitter.ghost
 	background-color: transparent
@@ -18,13 +18,13 @@
 	right: 0
 	top: 0
 	&:focus
-		background-color: var(--color-focus)
+		background-color: var(--#{$prefix}-color-focus)
 		outline: none
 
 .dark-theme .enonic.splitter:not(ghost)
 	&.low-tint
-		background-color: var(--darkmode-color-pair-dark-bg)
-		color: var(--darkmode-color-pair-dark-fg)
+		background-color: var(--#{$prefix}-darkmode-color-pair-dark-bg)
+		color: var(--#{$prefix}-darkmode-color-pair-dark-fg)
 	&.high-tint
-		background-color: var(--darkmode-color-pair-lightest-bg)
-		color: var(--darkmode-color-pair-lightest-fg)
+		background-color: var(--#{$prefix}-darkmode-color-pair-lightest-bg)
+		color: var(--#{$prefix}-darkmode-color-pair-lightest-fg)

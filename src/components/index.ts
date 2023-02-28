@@ -1,5 +1,6 @@
 import Button from './button';
 import List from './list/List';
+import Table from './table';
 
 export { Article } from './Article';
 export { Aside } from './Aside';
@@ -24,3 +25,4 @@ export { Section } from './Section';
 export { Span } from './Span';
 export { Splitter } from './Splitter';
 export { Svg } from './Svg';
+export { Table };

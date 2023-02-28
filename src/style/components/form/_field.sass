@@ -13,7 +13,7 @@
 	&.left,
 	&.right
 		align-items: center
-		column-gap: var(--air-horizontal)
+		column-gap: var(--#{$prefix}-air-horizontal)
 		display: flex
 		flex-direction: row
 
@@ -30,7 +30,7 @@
 		content: '*'
 
 	&.error.required>label:after
-		color: var(--color-error)
+		color: var(--#{$prefix}-color-error)
 
 	&:not(.disabled)>label
 		cursor: pointer
@@ -40,7 +40,7 @@
 //──────────────────────────────────────────────────────────────────────────────
 .enonic.field
 	&>span.enonic.error
-		color: var(--color-error)
+		color: var(--#{$prefix}-color-error)
 		font-size: .83em // small
 		white-space: nowrap
 
